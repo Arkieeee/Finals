@@ -31,16 +31,16 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.password = new System.Windows.Forms.TextBox();
-            this.userName = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnlogin = new System.Windows.Forms.Button();
+            this.lblexit = new System.Windows.Forms.Label();
+            this.lbl_clear = new System.Windows.Forms.Label();
+            this.txtpassword = new System.Windows.Forms.TextBox();
+            this.txtusername = new System.Windows.Forms.TextBox();
+            this.btnsingup = new System.Windows.Forms.Button();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.chkshow_pass = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -49,14 +49,13 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("SF Compact Display", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label1.Location = new System.Drawing.Point(97, 139);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(112, 38);
+            this.label1.Size = new System.Drawing.Size(132, 37);
             this.label1.TabIndex = 1;
             this.label1.Text = "LOG IN";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // panel1
             // 
@@ -74,74 +73,76 @@
             this.panel2.Size = new System.Drawing.Size(236, 1);
             this.panel2.TabIndex = 5;
             // 
-            // button1
+            // btnlogin
             // 
-            this.button1.BackColor = System.Drawing.Color.Black;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("SF Pro Text", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(27, 297);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(236, 30);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "LOG IN";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnlogin.BackColor = System.Drawing.Color.Black;
+            this.btnlogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnlogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnlogin.ForeColor = System.Drawing.Color.White;
+            this.btnlogin.Location = new System.Drawing.Point(27, 297);
+            this.btnlogin.Name = "btnlogin";
+            this.btnlogin.Size = new System.Drawing.Size(236, 30);
+            this.btnlogin.TabIndex = 6;
+            this.btnlogin.Text = "LOG IN";
+            this.btnlogin.UseVisualStyleBackColor = false;
+            this.btnlogin.Click += new System.EventHandler(this.btnlogin_Click);
             // 
-            // label2
+            // lblexit
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("SF Compact Display", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(127, 411);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(30, 16);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "Exit";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+            this.lblexit.AutoSize = true;
+            this.lblexit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblexit.Location = new System.Drawing.Point(127, 411);
+            this.lblexit.Name = "lblexit";
+            this.lblexit.Size = new System.Drawing.Size(32, 16);
+            this.lblexit.TabIndex = 7;
+            this.lblexit.Text = "Exit";
+            this.lblexit.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblexit.Click += new System.EventHandler(this.lblexit_Click);
             // 
-            // label3
+            // lbl_clear
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("SF Compact Display", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(185, 272);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(78, 16);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "Clear Fields";
+            this.lbl_clear.AutoSize = true;
+            this.lbl_clear.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_clear.Location = new System.Drawing.Point(185, 272);
+            this.lbl_clear.Name = "lbl_clear";
+            this.lbl_clear.Size = new System.Drawing.Size(91, 16);
+            this.lbl_clear.TabIndex = 8;
+            this.lbl_clear.Text = "Clear Fields";
+            this.lbl_clear.Click += new System.EventHandler(this.lbl_clear_Click);
             // 
-            // password
+            // txtpassword
             // 
-            this.password.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.password.Font = new System.Drawing.Font("SF Compact Display", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.password.Location = new System.Drawing.Point(59, 237);
-            this.password.Multiline = true;
-            this.password.Name = "password";
-            this.password.Size = new System.Drawing.Size(204, 24);
-            this.password.TabIndex = 9;
+            this.txtpassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtpassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtpassword.Location = new System.Drawing.Point(59, 237);
+            this.txtpassword.Name = "txtpassword";
+            this.txtpassword.Size = new System.Drawing.Size(204, 17);
+            this.txtpassword.TabIndex = 9;
+            this.txtpassword.UseSystemPasswordChar = true;
             // 
-            // userName
+            // txtusername
             // 
-            this.userName.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.userName.Font = new System.Drawing.Font("SF Compact Display", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.userName.Location = new System.Drawing.Point(59, 180);
-            this.userName.Multiline = true;
-            this.userName.Name = "userName";
-            this.userName.Size = new System.Drawing.Size(204, 24);
-            this.userName.TabIndex = 10;
+            this.txtusername.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtusername.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtusername.Location = new System.Drawing.Point(59, 180);
+            this.txtusername.Multiline = true;
+            this.txtusername.Name = "txtusername";
+            this.txtusername.Size = new System.Drawing.Size(204, 24);
+            this.txtusername.TabIndex = 10;
             // 
-            // button2
+            // btnsingup
             // 
-            this.button2.BackColor = System.Drawing.Color.Black;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("SF Pro Text", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(27, 344);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(236, 30);
-            this.button2.TabIndex = 11;
-            this.button2.Text = "SIGN UP";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnsingup.BackColor = System.Drawing.Color.Black;
+            this.btnsingup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnsingup.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnsingup.ForeColor = System.Drawing.Color.White;
+            this.btnsingup.Location = new System.Drawing.Point(27, 344);
+            this.btnsingup.Name = "btnsingup";
+            this.btnsingup.Size = new System.Drawing.Size(236, 30);
+            this.btnsingup.TabIndex = 11;
+            this.btnsingup.Text = "SIGN UP";
+            this.btnsingup.UseVisualStyleBackColor = false;
+            this.btnsingup.Click += new System.EventHandler(this.btnsingup_Click);
             // 
             // pictureBox3
             // 
@@ -162,7 +163,6 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 2;
             this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // pictureBox1
             // 
@@ -174,17 +174,18 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // checkBox1
+            // chkshow_pass
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.BackColor = System.Drawing.Color.White;
-            this.checkBox1.Font = new System.Drawing.Font("SF Compact Display", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox1.Location = new System.Drawing.Point(27, 274);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(108, 17);
-            this.checkBox1.TabIndex = 21;
-            this.checkBox1.Text = "Show Password";
-            this.checkBox1.UseVisualStyleBackColor = false;
+            this.chkshow_pass.AutoSize = true;
+            this.chkshow_pass.BackColor = System.Drawing.Color.White;
+            this.chkshow_pass.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkshow_pass.Location = new System.Drawing.Point(27, 274);
+            this.chkshow_pass.Name = "chkshow_pass";
+            this.chkshow_pass.Size = new System.Drawing.Size(115, 17);
+            this.chkshow_pass.TabIndex = 21;
+            this.chkshow_pass.Text = "Show Password";
+            this.chkshow_pass.UseVisualStyleBackColor = false;
+            this.chkshow_pass.CheckedChanged += new System.EventHandler(this.chkshow_pass_CheckedChanged);
             // 
             // Form1
             // 
@@ -192,13 +193,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(292, 447);
-            this.Controls.Add(this.checkBox1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.userName);
-            this.Controls.Add(this.password);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.chkshow_pass);
+            this.Controls.Add(this.btnsingup);
+            this.Controls.Add(this.txtusername);
+            this.Controls.Add(this.txtpassword);
+            this.Controls.Add(this.lbl_clear);
+            this.Controls.Add(this.lblexit);
+            this.Controls.Add(this.btnlogin);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.panel1);
@@ -225,13 +226,13 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox password;
-        private System.Windows.Forms.TextBox userName;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.Button btnlogin;
+        private System.Windows.Forms.Label lblexit;
+        private System.Windows.Forms.Label lbl_clear;
+        private System.Windows.Forms.TextBox txtpassword;
+        private System.Windows.Forms.TextBox txtusername;
+        private System.Windows.Forms.Button btnsingup;
+        private System.Windows.Forms.CheckBox chkshow_pass;
     }
 }
 
