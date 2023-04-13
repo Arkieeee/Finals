@@ -114,21 +114,30 @@
             // 
             this.txtpassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtpassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtpassword.ForeColor = System.Drawing.Color.Gray;
             this.txtpassword.Location = new System.Drawing.Point(59, 237);
             this.txtpassword.Name = "txtpassword";
             this.txtpassword.Size = new System.Drawing.Size(204, 17);
             this.txtpassword.TabIndex = 9;
-            this.txtpassword.UseSystemPasswordChar = true;
+            this.txtpassword.Text = "Password";
+            this.txtpassword.TextChanged += new System.EventHandler(this.txtpassword_TextChanged);
+            this.txtpassword.Enter += new System.EventHandler(this.txtpassword_Enter);
+            this.txtpassword.Leave += new System.EventHandler(this.txtpassword_Leave);
             // 
             // txtusername
             // 
+            this.txtusername.BackColor = System.Drawing.SystemColors.Window;
             this.txtusername.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtusername.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtusername.Location = new System.Drawing.Point(59, 180);
+            this.txtusername.ForeColor = System.Drawing.Color.Gray;
+            this.txtusername.Location = new System.Drawing.Point(58, 179);
             this.txtusername.Multiline = true;
             this.txtusername.Name = "txtusername";
             this.txtusername.Size = new System.Drawing.Size(204, 24);
             this.txtusername.TabIndex = 10;
+            this.txtusername.Text = "Username";
+            this.txtusername.Enter += new System.EventHandler(this.txtusername_Enter);
+            this.txtusername.Leave += new System.EventHandler(this.txtusername_Leave);
             // 
             // btnsingup
             // 

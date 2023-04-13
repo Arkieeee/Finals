@@ -23,6 +23,8 @@ namespace Finals
         public Form1()
         {
             InitializeComponent();
+            txtusername.Enter += new EventHandler(txtusername_Enter);
+            txtusername.Leave += new EventHandler(txtusername_Leave);
         }
 
         public void gotohome_user(object obj)
@@ -132,6 +134,48 @@ namespace Finals
         private void lblexit_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void txtusername_Enter(object sender, EventArgs e)
+        {
+            if (txtusername.Text == "Username")
+            {
+                txtusername.Text = "";
+                txtusername.ForeColor = Color.Black; // Set the text color back to black for regular input
+            }
+        }
+
+        private void txtusername_Leave(object sender, EventArgs e)
+        {
+            if (txtusername.Text == "")
+            {
+                txtusername.Text = "Username";
+                txtusername.ForeColor = Color.Silver; // Set the text color back to black for regular input
+            }
+        }
+        private void txtpassword_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtpassword.Text))
+            {
+                txtpassword.UseSystemPasswordChar = false;
+                txtpassword.Text = "Password";
+                txtpassword.ForeColor = Color.Gray;
+            }
+        }
+
+        private void txtpassword_Enter(object sender, EventArgs e)
+        {
+            if (txtpassword.Text == "Password")
+            {
+                txtpassword.Text = "";
+                txtpassword.UseSystemPasswordChar = true;
+                txtpassword.ForeColor = Color.Black; // Set the text color back to black for regular input
+            }
+        }
+
+        private void txtpassword_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
