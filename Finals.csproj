@@ -224,6 +224,9 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Home_Admin.resx">
+      <DependentUpon>Home_Admin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Home_User.resx">
       <DependentUpon>Home_User.cs</DependentUpon>
     </EmbeddedResource>
@@ -262,6 +265,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\security-symbol_icon-icons.com_71572.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pngwing.com %281%291.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\my-profile-icon-png-15.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
