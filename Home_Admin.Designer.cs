@@ -29,30 +29,32 @@
         private void InitializeComponent()
         {
             this.sideMenu = new System.Windows.Forms.Panel();
-            this.panelLogo = new System.Windows.Forms.Panel();
-            this.add_item = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.addShirt = new System.Windows.Forms.Button();
-            this.addPolo = new System.Windows.Forms.Button();
-            this.addJacket = new System.Windows.Forms.Button();
+            this.btn_about = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.transac = new System.Windows.Forms.Button();
-            this.btn_about = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.addJacket = new System.Windows.Forms.Button();
+            this.addPolo = new System.Windows.Forms.Button();
+            this.addShirt = new System.Windows.Forms.Button();
+            this.add_item = new System.Windows.Forms.Button();
+            this.panelLogo = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.button4 = new System.Windows.Forms.Button();
             this.sideMenu.SuspendLayout();
-            this.panelLogo.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // sideMenu
             // 
             this.sideMenu.BackColor = System.Drawing.Color.Black;
+            this.sideMenu.Controls.Add(this.button4);
             this.sideMenu.Controls.Add(this.btn_about);
             this.sideMenu.Controls.Add(this.panel2);
             this.sideMenu.Controls.Add(this.transac);
@@ -66,95 +68,20 @@
             this.sideMenu.Size = new System.Drawing.Size(189, 401);
             this.sideMenu.TabIndex = 0;
             // 
-            // panelLogo
+            // btn_about
             // 
-            this.panelLogo.Controls.Add(this.label1);
-            this.panelLogo.Controls.Add(this.pictureBox1);
-            this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelLogo.Location = new System.Drawing.Point(0, 0);
-            this.panelLogo.Name = "panelLogo";
-            this.panelLogo.Size = new System.Drawing.Size(189, 70);
-            this.panelLogo.TabIndex = 0;
-            // 
-            // add_item
-            // 
-            this.add_item.Dock = System.Windows.Forms.DockStyle.Top;
-            this.add_item.FlatAppearance.BorderSize = 0;
-            this.add_item.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.add_item.ForeColor = System.Drawing.Color.Gainsboro;
-            this.add_item.Location = new System.Drawing.Point(0, 70);
-            this.add_item.Name = "add_item";
-            this.add_item.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.add_item.Size = new System.Drawing.Size(189, 25);
-            this.add_item.TabIndex = 1;
-            this.add_item.Text = "Add Items";
-            this.add_item.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.add_item.UseVisualStyleBackColor = true;
-            this.add_item.Click += new System.EventHandler(this.add_item_Click);
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.panel1.Controls.Add(this.addJacket);
-            this.panel1.Controls.Add(this.addPolo);
-            this.panel1.Controls.Add(this.addShirt);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.panel1.Location = new System.Drawing.Point(0, 95);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(189, 82);
-            this.panel1.TabIndex = 2;
-            // 
-            // addShirt
-            // 
-            this.addShirt.Dock = System.Windows.Forms.DockStyle.Top;
-            this.addShirt.FlatAppearance.BorderSize = 0;
-            this.addShirt.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray;
-            this.addShirt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.addShirt.ForeColor = System.Drawing.Color.LightGray;
-            this.addShirt.Location = new System.Drawing.Point(0, 0);
-            this.addShirt.Name = "addShirt";
-            this.addShirt.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.addShirt.Size = new System.Drawing.Size(189, 25);
-            this.addShirt.TabIndex = 0;
-            this.addShirt.Text = "T-Shirt";
-            this.addShirt.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.addShirt.UseVisualStyleBackColor = true;
-            this.addShirt.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // addPolo
-            // 
-            this.addPolo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.addPolo.FlatAppearance.BorderSize = 0;
-            this.addPolo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray;
-            this.addPolo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.addPolo.ForeColor = System.Drawing.Color.LightGray;
-            this.addPolo.Location = new System.Drawing.Point(0, 25);
-            this.addPolo.Name = "addPolo";
-            this.addPolo.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.addPolo.Size = new System.Drawing.Size(189, 25);
-            this.addPolo.TabIndex = 1;
-            this.addPolo.Text = "Polo-Shirt";
-            this.addPolo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.addPolo.UseVisualStyleBackColor = true;
-            this.addPolo.Click += new System.EventHandler(this.addPolo_Click);
-            // 
-            // addJacket
-            // 
-            this.addJacket.Dock = System.Windows.Forms.DockStyle.Top;
-            this.addJacket.FlatAppearance.BorderSize = 0;
-            this.addJacket.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray;
-            this.addJacket.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.addJacket.ForeColor = System.Drawing.Color.LightGray;
-            this.addJacket.Location = new System.Drawing.Point(0, 50);
-            this.addJacket.Name = "addJacket";
-            this.addJacket.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.addJacket.Size = new System.Drawing.Size(189, 29);
-            this.addJacket.TabIndex = 2;
-            this.addJacket.Text = "Jacket";
-            this.addJacket.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.addJacket.UseVisualStyleBackColor = true;
-            this.addJacket.Click += new System.EventHandler(this.addJacket_Click);
+            this.btn_about.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_about.FlatAppearance.BorderSize = 0;
+            this.btn_about.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_about.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btn_about.Location = new System.Drawing.Point(0, 284);
+            this.btn_about.Name = "btn_about";
+            this.btn_about.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btn_about.Size = new System.Drawing.Size(189, 25);
+            this.btn_about.TabIndex = 7;
+            this.btn_about.Text = "User";
+            this.btn_about.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_about.UseVisualStyleBackColor = true;
             // 
             // panel2
             // 
@@ -236,20 +163,105 @@
             this.transac.UseVisualStyleBackColor = true;
             this.transac.Click += new System.EventHandler(this.transac_Click);
             // 
-            // btn_about
+            // panel1
             // 
-            this.btn_about.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btn_about.FlatAppearance.BorderSize = 0;
-            this.btn_about.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_about.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btn_about.Location = new System.Drawing.Point(0, 284);
-            this.btn_about.Name = "btn_about";
-            this.btn_about.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btn_about.Size = new System.Drawing.Size(189, 25);
-            this.btn_about.TabIndex = 7;
-            this.btn_about.Text = "About";
-            this.btn_about.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_about.UseVisualStyleBackColor = true;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.panel1.Controls.Add(this.addJacket);
+            this.panel1.Controls.Add(this.addPolo);
+            this.panel1.Controls.Add(this.addShirt);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.panel1.Location = new System.Drawing.Point(0, 95);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(189, 82);
+            this.panel1.TabIndex = 2;
+            // 
+            // addJacket
+            // 
+            this.addJacket.Dock = System.Windows.Forms.DockStyle.Top;
+            this.addJacket.FlatAppearance.BorderSize = 0;
+            this.addJacket.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray;
+            this.addJacket.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.addJacket.ForeColor = System.Drawing.Color.LightGray;
+            this.addJacket.Location = new System.Drawing.Point(0, 50);
+            this.addJacket.Name = "addJacket";
+            this.addJacket.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.addJacket.Size = new System.Drawing.Size(189, 29);
+            this.addJacket.TabIndex = 2;
+            this.addJacket.Text = "Jacket";
+            this.addJacket.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.addJacket.UseVisualStyleBackColor = true;
+            this.addJacket.Click += new System.EventHandler(this.addJacket_Click);
+            // 
+            // addPolo
+            // 
+            this.addPolo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.addPolo.FlatAppearance.BorderSize = 0;
+            this.addPolo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray;
+            this.addPolo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.addPolo.ForeColor = System.Drawing.Color.LightGray;
+            this.addPolo.Location = new System.Drawing.Point(0, 25);
+            this.addPolo.Name = "addPolo";
+            this.addPolo.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.addPolo.Size = new System.Drawing.Size(189, 25);
+            this.addPolo.TabIndex = 1;
+            this.addPolo.Text = "Polo-Shirt";
+            this.addPolo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.addPolo.UseVisualStyleBackColor = true;
+            this.addPolo.Click += new System.EventHandler(this.addPolo_Click);
+            // 
+            // addShirt
+            // 
+            this.addShirt.Dock = System.Windows.Forms.DockStyle.Top;
+            this.addShirt.FlatAppearance.BorderSize = 0;
+            this.addShirt.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray;
+            this.addShirt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.addShirt.ForeColor = System.Drawing.Color.LightGray;
+            this.addShirt.Location = new System.Drawing.Point(0, 0);
+            this.addShirt.Name = "addShirt";
+            this.addShirt.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.addShirt.Size = new System.Drawing.Size(189, 25);
+            this.addShirt.TabIndex = 0;
+            this.addShirt.Text = "T-Shirt";
+            this.addShirt.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.addShirt.UseVisualStyleBackColor = true;
+            this.addShirt.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // add_item
+            // 
+            this.add_item.Dock = System.Windows.Forms.DockStyle.Top;
+            this.add_item.FlatAppearance.BorderSize = 0;
+            this.add_item.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.add_item.ForeColor = System.Drawing.Color.Gainsboro;
+            this.add_item.Location = new System.Drawing.Point(0, 70);
+            this.add_item.Name = "add_item";
+            this.add_item.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.add_item.Size = new System.Drawing.Size(189, 25);
+            this.add_item.TabIndex = 1;
+            this.add_item.Text = "Add Items";
+            this.add_item.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.add_item.UseVisualStyleBackColor = true;
+            this.add_item.Click += new System.EventHandler(this.add_item_Click);
+            // 
+            // panelLogo
+            // 
+            this.panelLogo.Controls.Add(this.label1);
+            this.panelLogo.Controls.Add(this.pictureBox1);
+            this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelLogo.Location = new System.Drawing.Point(0, 0);
+            this.panelLogo.Name = "panelLogo";
+            this.panelLogo.Size = new System.Drawing.Size(189, 70);
+            this.panelLogo.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.Gainsboro;
+            this.label1.Location = new System.Drawing.Point(68, 26);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(69, 16);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "User ni ari";
             // 
             // pictureBox1
             // 
@@ -262,15 +274,20 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // label1
+            // button4
             // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label1.Location = new System.Drawing.Point(68, 26);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(69, 16);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "User ni ari";
+            this.button4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button4.FlatAppearance.BorderSize = 0;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.ForeColor = System.Drawing.Color.Gainsboro;
+            this.button4.Location = new System.Drawing.Point(0, 309);
+            this.button4.Name = "button4";
+            this.button4.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.button4.Size = new System.Drawing.Size(189, 25);
+            this.button4.TabIndex = 8;
+            this.button4.Text = "About";
+            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button4.UseVisualStyleBackColor = true;
             // 
             // Home_Admin
             // 
@@ -279,16 +296,16 @@
             this.ClientSize = new System.Drawing.Size(863, 401);
             this.Controls.Add(this.sideMenu);
             this.Font = new System.Drawing.Font("SF Compact Display", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MinimumSize = new System.Drawing.Size(650, 400);
             this.Name = "Home_Admin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Home_Admin";
             this.sideMenu.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             this.panelLogo.ResumeLayout(false);
             this.panelLogo.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
@@ -311,5 +328,6 @@
         private System.Windows.Forms.Button transac;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button4;
     }
 }
