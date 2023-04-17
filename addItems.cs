@@ -15,7 +15,7 @@ namespace Finals
 {
     public partial class addItems : Form
     {
-        SqlConnection con = new SqlConnection("Data Source=DESKTOP-9HU6DH7\\SQLEXPRESS;Initial Catalog=NSDAP_APPAREL_dB;Integrated Security=True");
+        SqlConnection con = new SqlConnection("Data Source=ARKI\\SQLEXPRESS;Initial Catalog=NSDAP_APPAREL_dB;Integrated Security=True");
         string imgLoc = "";
         public addItems()
         {
@@ -27,16 +27,16 @@ namespace Finals
             try
             {
                 OpenFileDialog dlg = new OpenFileDialog();
-                dlg.Filter = "JPG Files (*.jpg)|*.jpg|GIF Files (*.gif)|*.gif|ALL Files (*.*)|*.*";
+                dlg.Filter = "JPG Files (.jpg)|.jpg|GIF Files (.gif)|.gif|ALL Files (.)|*.*";
                 dlg.Title = "Select an Image";
-                if(dlg.ShowDialog() == DialogResult.OK)
+                if (dlg.ShowDialog() == DialogResult.OK)
                 {
                     imgLoc = dlg.FileName.ToString();
                     picEmp.ImageLocation = imgLoc;
 
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -44,33 +44,52 @@ namespace Finals
         private void btnadd_Click(object sender, EventArgs e)
         {
 
+            //otwen
+            byte[] img = null;
+            FileStream fs = new FileStream(imgLoc, FileMode.Open, FileAccess.Read);
+            BinaryReader br = new BinaryReader(fs);
+            img = br.ReadBytes((int)fs.Length);
 
-                byte[] img = null;
-                FileStream fs = new FileStream(imgLoc, FileMode.Open, FileAccess.Read);
-                BinaryReader br = new BinaryReader(fs);
-                img = br.ReadBytes((int)fs.Length);
+            int quantity = Convert.ToInt32(txtquantity.Text);
 
-                int quantity = Convert.ToInt32(txtquantity.Text);
+            SqlCommand insertToProducts = new SqlCommand("INSERT INTO Products (Name, Quantity, Description, Size, Price, Image_apparel) VALUES (@name, @quantity, @description, @size, @price, @img)", con);
 
-                SqlCommand insertToProducts = new SqlCommand("INSERT INTO Products (Name, Quantity, Description, Size, Price, Image_apparel) VALUES (@name, @quantity, @description, @size, @price, @img)", con);
+            insertToProducts.Parameters.AddWithValue("@name", txtname.Text);
+            insertToProducts.Parameters.AddWithValue("@quantity", quantity);
+            insertToProducts.Parameters.AddWithValue("@description", txtdescription.Text);
+            insertToProducts.Parameters.AddWithValue("@size", txtsize.Text);
+            insertToProducts.Parameters.AddWithValue("@price", Double.Parse(txtprice.Text));
+            insertToProducts.Parameters.AddWithValue("@img", img);
 
-                insertToProducts.Parameters.AddWithValue("@name", txtname.Text);
-                insertToProducts.Parameters.AddWithValue("@quantity", quantity);
-                insertToProducts.Parameters.AddWithValue("@description", lbldescription.Text);
-                insertToProducts.Parameters.AddWithValue("@size", txtsize.Text);
-                insertToProducts.Parameters.AddWithValue("@price", Double.Parse(txtprice.Text));
-                insertToProducts.Parameters.AddWithValue("@img", img);
+            con.Open();
+            insertToProducts.ExecuteNonQuery();
+            con.Close();
 
-                con.Open();
-                insertToProducts.ExecuteNonQuery();
-                con.Close();
-
-                MessageBox.Show("Product successfully inserted", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-  
-            }
-
+            MessageBox.Show("Product successfully inserted", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
         }
-    }
-  
+        private void loadDatagrid()
+        {
+           
+                con.Open();
+                SqlCommand com = new SqlCommand("Select Image_apparel, Name, Quantity, Price from Products", con);
 
+                SqlDataAdapter adap = new SqlDataAdapter(com);
+                DataTable tab = new DataTable();
+
+                adap.Fill(tab);
+            dataGridView1.DataSource = tab;
+
+                con.Close();
+            }
+
+        private void addItems_Load(object sender, EventArgs e)
+        {
+            loadDatagrid();
+        }
+
+     
+    }
+
+       
+    }

@@ -1,6 +1,6 @@
 ﻿namespace Finals
 {
-    partial class Home_Admin
+    partial class HomeUser
     {
         /// <summary>
         /// Required designer variable.
@@ -28,9 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home_Admin));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HomeUser));
             this.sideMenu = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.button4 = new System.Windows.Forms.Button();
             this.btn_about = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -38,13 +37,14 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.transac = new System.Windows.Forms.Button();
-            this.add_item = new System.Windows.Forms.Button();
             this.panelLogo = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.button5 = new System.Windows.Forms.Button();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.panelMain = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.sideMenu.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panelLogo.SuspendLayout();
@@ -57,26 +57,19 @@
             // 
             this.sideMenu.BackColor = System.Drawing.Color.Black;
             this.sideMenu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.sideMenu.Controls.Add(this.panel1);
+            this.sideMenu.Controls.Add(this.button5);
             this.sideMenu.Controls.Add(this.button4);
             this.sideMenu.Controls.Add(this.btn_about);
             this.sideMenu.Controls.Add(this.panel2);
             this.sideMenu.Controls.Add(this.transac);
-            this.sideMenu.Controls.Add(this.add_item);
             this.sideMenu.Controls.Add(this.panelLogo);
             this.sideMenu.Dock = System.Windows.Forms.DockStyle.Left;
+            this.sideMenu.Font = new System.Drawing.Font("SF Compact Display", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sideMenu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.sideMenu.Location = new System.Drawing.Point(0, 0);
             this.sideMenu.Name = "sideMenu";
             this.sideMenu.Size = new System.Drawing.Size(189, 496);
-            this.sideMenu.TabIndex = 0;
-            // 
-            // panel1
-            // 
-            this.panel1.Location = new System.Drawing.Point(195, 273);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 100);
-            this.panel1.TabIndex = 1;
+            this.sideMenu.TabIndex = 1;
             // 
             // button4
             // 
@@ -84,12 +77,12 @@
             this.button4.FlatAppearance.BorderSize = 0;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.ForeColor = System.Drawing.Color.Gainsboro;
-            this.button4.Location = new System.Drawing.Point(0, 227);
+            this.button4.Location = new System.Drawing.Point(0, 202);
             this.button4.Name = "button4";
             this.button4.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.button4.Size = new System.Drawing.Size(189, 25);
             this.button4.TabIndex = 8;
-            this.button4.Text = "About";
+            this.button4.Text = "Orders";
             this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button4.UseVisualStyleBackColor = true;
             // 
@@ -99,15 +92,14 @@
             this.btn_about.FlatAppearance.BorderSize = 0;
             this.btn_about.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_about.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btn_about.Location = new System.Drawing.Point(0, 202);
+            this.btn_about.Location = new System.Drawing.Point(0, 177);
             this.btn_about.Name = "btn_about";
             this.btn_about.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btn_about.Size = new System.Drawing.Size(189, 25);
             this.btn_about.TabIndex = 7;
-            this.btn_about.Text = "Users";
+            this.btn_about.Text = "Cart";
             this.btn_about.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_about.UseVisualStyleBackColor = true;
-            this.btn_about.Click += new System.EventHandler(this.btn_about_Click);
             // 
             // panel2
             // 
@@ -117,7 +109,7 @@
             this.panel2.Controls.Add(this.button3);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.panel2.Location = new System.Drawing.Point(0, 120);
+            this.panel2.Location = new System.Drawing.Point(0, 95);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(189, 82);
             this.panel2.TabIndex = 5;
@@ -154,7 +146,7 @@
             this.button2.Text = "Polo-Shirt";
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click_1);
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
@@ -179,31 +171,15 @@
             this.transac.FlatAppearance.BorderSize = 0;
             this.transac.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.transac.ForeColor = System.Drawing.Color.Gainsboro;
-            this.transac.Location = new System.Drawing.Point(0, 95);
+            this.transac.Location = new System.Drawing.Point(0, 70);
             this.transac.Name = "transac";
             this.transac.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.transac.Size = new System.Drawing.Size(189, 25);
             this.transac.TabIndex = 4;
-            this.transac.Text = "Transactions";
+            this.transac.Text = "Category";
             this.transac.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.transac.UseVisualStyleBackColor = true;
             this.transac.Click += new System.EventHandler(this.transac_Click);
-            // 
-            // add_item
-            // 
-            this.add_item.Dock = System.Windows.Forms.DockStyle.Top;
-            this.add_item.FlatAppearance.BorderSize = 0;
-            this.add_item.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.add_item.ForeColor = System.Drawing.Color.Gainsboro;
-            this.add_item.Location = new System.Drawing.Point(0, 70);
-            this.add_item.Name = "add_item";
-            this.add_item.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.add_item.Size = new System.Drawing.Size(189, 25);
-            this.add_item.TabIndex = 1;
-            this.add_item.Text = "Add Items";
-            this.add_item.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.add_item.UseVisualStyleBackColor = true;
-            this.add_item.Click += new System.EventHandler(this.add_item_Click);
             // 
             // panelLogo
             // 
@@ -236,15 +212,41 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // button5
+            // 
+            this.button5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button5.FlatAppearance.BorderSize = 0;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.ForeColor = System.Drawing.Color.Gainsboro;
+            this.button5.Location = new System.Drawing.Point(0, 227);
+            this.button5.Name = "button5";
+            this.button5.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.button5.Size = new System.Drawing.Size(189, 25);
+            this.button5.TabIndex = 9;
+            this.button5.Text = "About";
+            this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button5.UseVisualStyleBackColor = true;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(23)))));
+            this.panel3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel3.BackgroundImage")));
+            this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel3.Location = new System.Drawing.Point(189, 261);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(445, 100);
+            this.panel3.TabIndex = 2;
+            // 
             // panelMain
             // 
             this.panelMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(23)))));
+            this.panelMain.Controls.Add(this.panel1);
             this.panelMain.Controls.Add(this.pictureBox2);
             this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelMain.Location = new System.Drawing.Point(189, 0);
             this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(691, 396);
-            this.panelMain.TabIndex = 2;
+            this.panelMain.Size = new System.Drawing.Size(691, 496);
+            this.panelMain.TabIndex = 3;
             // 
             // pictureBox2
             // 
@@ -259,32 +261,30 @@
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
             // 
-            // panel3
+            // panel1
             // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(23)))));
-            this.panel3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel3.BackgroundImage")));
-            this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(189, 396);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(691, 100);
-            this.panel3.TabIndex = 1;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(23)))));
+            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(0, 396);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(691, 100);
+            this.panel1.TabIndex = 2;
             // 
-            // Home_Admin
+            // HomeUser
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(880, 496);
             this.Controls.Add(this.panelMain);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.sideMenu);
-            this.Font = new System.Drawing.Font("SF Compact Display", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.MinimumSize = new System.Drawing.Size(650, 400);
-            this.Name = "Home_Admin";
+            this.Name = "HomeUser";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Home_Admin";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Text = "HomeUser";
+            this.Load += new System.EventHandler(this.HomeUser_Load);
             this.sideMenu.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panelLogo.ResumeLayout(false);
@@ -299,20 +299,20 @@
         #endregion
 
         private System.Windows.Forms.Panel sideMenu;
-        private System.Windows.Forms.Button add_item;
-        private System.Windows.Forms.Panel panelLogo;
+        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button btn_about;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button transac;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Panel panelLogo;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panelMain;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Panel panel1;
     }
 }

@@ -62,8 +62,6 @@ namespace Finals
                 addItemsForm = null;
             }
 
-
-
         }
 
         private void addPolo_Click(object sender, EventArgs e)

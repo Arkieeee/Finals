@@ -43,7 +43,9 @@
             this.btndelete = new System.Windows.Forms.Button();
             this.txtprice = new System.Windows.Forms.TextBox();
             this.lblprice = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.picEmp)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblsize
@@ -162,13 +164,12 @@
             // 
             // picEmp
             // 
-            this.picEmp.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.picEmp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.picEmp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(30)))));
-            this.picEmp.Location = new System.Drawing.Point(327, 12);
+            this.picEmp.Location = new System.Drawing.Point(27, 320);
             this.picEmp.Name = "picEmp";
-            this.picEmp.Size = new System.Drawing.Size(368, 301);
+            this.picEmp.Size = new System.Drawing.Size(332, 166);
+            this.picEmp.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.picEmp.TabIndex = 7;
             this.picEmp.TabStop = false;
             // 
@@ -217,12 +218,26 @@
             this.lblprice.TabIndex = 1;
             this.lblprice.Text = "Price";
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(309, 27);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(574, 272);
+            this.dataGridView1.TabIndex = 9;
+            // 
             // addItems
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(23)))));
-            this.ClientSize = new System.Drawing.Size(761, 358);
+            this.ClientSize = new System.Drawing.Size(913, 538);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnImg);
             this.Controls.Add(this.picEmp);
             this.Controls.Add(this.btndelete);
@@ -240,7 +255,10 @@
             this.Controls.Add(this.label3);
             this.Name = "addItems";
             this.Text = "addItems";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.addItems_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picEmp)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -262,5 +280,6 @@
         private System.Windows.Forms.Button btndelete;
         private System.Windows.Forms.TextBox txtprice;
         private System.Windows.Forms.Label lblprice;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
