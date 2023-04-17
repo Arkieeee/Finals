@@ -28,37 +28,37 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtsize = new System.Windows.Forms.Label();
+            this.lblsize = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtdescription = new System.Windows.Forms.Label();
+            this.lbldescription = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.txtname = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtsize = new System.Windows.Forms.TextBox();
             this.txtquantity = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtdescription = new System.Windows.Forms.TextBox();
             this.btnadd = new System.Windows.Forms.Button();
             this.btnexit = new System.Windows.Forms.Button();
             this.picEmp = new System.Windows.Forms.PictureBox();
             this.btnImg = new System.Windows.Forms.Button();
             this.btndelete = new System.Windows.Forms.Button();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.txtprice = new System.Windows.Forms.Label();
+            this.txtprice = new System.Windows.Forms.TextBox();
+            this.lblprice = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picEmp)).BeginInit();
             this.SuspendLayout();
             // 
-            // txtsize
+            // lblsize
             // 
-            this.txtsize.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.lblsize.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtsize.AutoSize = true;
-            this.txtsize.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtsize.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.txtsize.Location = new System.Drawing.Point(12, 109);
-            this.txtsize.Name = "txtsize";
-            this.txtsize.Size = new System.Drawing.Size(37, 16);
-            this.txtsize.TabIndex = 1;
-            this.txtsize.Text = "Size";
+            this.lblsize.AutoSize = true;
+            this.lblsize.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblsize.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblsize.Location = new System.Drawing.Point(12, 109);
+            this.lblsize.Name = "lblsize";
+            this.lblsize.Size = new System.Drawing.Size(37, 16);
+            this.lblsize.TabIndex = 1;
+            this.lblsize.Text = "Size";
             // 
             // label3
             // 
@@ -74,19 +74,19 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "Quantity";
             // 
-            // txtdescription
+            // lbldescription
             // 
-            this.txtdescription.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.lbldescription.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtdescription.AutoSize = true;
-            this.txtdescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtdescription.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.txtdescription.Location = new System.Drawing.Point(12, 84);
-            this.txtdescription.Name = "txtdescription";
-            this.txtdescription.Size = new System.Drawing.Size(86, 16);
-            this.txtdescription.TabIndex = 1;
-            this.txtdescription.Text = "Description";
+            this.lbldescription.AutoSize = true;
+            this.lbldescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbldescription.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lbldescription.Location = new System.Drawing.Point(12, 84);
+            this.lbldescription.Name = "lbldescription";
+            this.lbldescription.Size = new System.Drawing.Size(86, 16);
+            this.lbldescription.TabIndex = 1;
+            this.lbldescription.Text = "Description";
             // 
             // label5
             // 
@@ -111,15 +111,15 @@
             this.txtname.Size = new System.Drawing.Size(154, 20);
             this.txtname.TabIndex = 4;
             // 
-            // textBox2
+            // txtsize
             // 
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.textBox2.Location = new System.Drawing.Point(103, 105);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(153, 20);
-            this.textBox2.TabIndex = 4;
+            this.txtsize.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtsize.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.txtsize.Location = new System.Drawing.Point(103, 105);
+            this.txtsize.Multiline = true;
+            this.txtsize.Name = "txtsize";
+            this.txtsize.Size = new System.Drawing.Size(153, 20);
+            this.txtsize.TabIndex = 4;
             // 
             // txtquantity
             // 
@@ -130,14 +130,14 @@
             this.txtquantity.Size = new System.Drawing.Size(154, 20);
             this.txtquantity.TabIndex = 4;
             // 
-            // textBox4
+            // txtdescription
             // 
-            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox4.Location = new System.Drawing.Point(103, 79);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(153, 20);
-            this.textBox4.TabIndex = 4;
+            this.txtdescription.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtdescription.Location = new System.Drawing.Point(103, 79);
+            this.txtdescription.Multiline = true;
+            this.txtdescription.Name = "txtdescription";
+            this.txtdescription.Size = new System.Drawing.Size(153, 20);
+            this.txtdescription.TabIndex = 4;
             // 
             // btnadd
             // 
@@ -193,29 +193,29 @@
             this.btndelete.Text = "Delete";
             this.btndelete.UseVisualStyleBackColor = true;
             // 
-            // textBox5
-            // 
-            this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox5.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.textBox5.Location = new System.Drawing.Point(103, 131);
-            this.textBox5.Multiline = true;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(153, 20);
-            this.textBox5.TabIndex = 4;
-            // 
             // txtprice
             // 
-            this.txtprice.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.txtprice.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtprice.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.txtprice.Location = new System.Drawing.Point(103, 131);
+            this.txtprice.Multiline = true;
+            this.txtprice.Name = "txtprice";
+            this.txtprice.Size = new System.Drawing.Size(153, 20);
+            this.txtprice.TabIndex = 4;
+            // 
+            // lblprice
+            // 
+            this.lblprice.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtprice.AutoSize = true;
-            this.txtprice.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtprice.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.txtprice.Location = new System.Drawing.Point(12, 131);
-            this.txtprice.Name = "txtprice";
-            this.txtprice.Size = new System.Drawing.Size(43, 16);
-            this.txtprice.TabIndex = 1;
-            this.txtprice.Text = "Price";
+            this.lblprice.AutoSize = true;
+            this.lblprice.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblprice.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblprice.Location = new System.Drawing.Point(12, 131);
+            this.lblprice.Name = "lblprice";
+            this.lblprice.Size = new System.Drawing.Size(43, 16);
+            this.lblprice.TabIndex = 1;
+            this.lblprice.Text = "Price";
             // 
             // addItems
             // 
@@ -228,15 +228,15 @@
             this.Controls.Add(this.btndelete);
             this.Controls.Add(this.btnexit);
             this.Controls.Add(this.btnadd);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.txtquantity);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.txtname);
             this.Controls.Add(this.txtdescription);
-            this.Controls.Add(this.label5);
+            this.Controls.Add(this.txtquantity);
             this.Controls.Add(this.txtprice);
             this.Controls.Add(this.txtsize);
+            this.Controls.Add(this.txtname);
+            this.Controls.Add(this.lbldescription);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.lblprice);
+            this.Controls.Add(this.lblsize);
             this.Controls.Add(this.label3);
             this.Name = "addItems";
             this.Text = "addItems";
@@ -247,20 +247,20 @@
         }
 
         #endregion
-        private System.Windows.Forms.Label txtsize;
+        private System.Windows.Forms.Label lblsize;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label txtdescription;
+        private System.Windows.Forms.Label lbldescription;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtname;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtsize;
         private System.Windows.Forms.TextBox txtquantity;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtdescription;
         private System.Windows.Forms.Button btnadd;
         private System.Windows.Forms.Button btnexit;
         private System.Windows.Forms.PictureBox picEmp;
         private System.Windows.Forms.Button btnImg;
         private System.Windows.Forms.Button btndelete;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.Label txtprice;
+        private System.Windows.Forms.TextBox txtprice;
+        private System.Windows.Forms.Label lblprice;
     }
 }

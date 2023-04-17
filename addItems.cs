@@ -45,9 +45,6 @@ namespace Finals
         {
 
 
-            string priceString = txtprice.Text;
-            if (double.TryParse(priceString, out double price))
-            {
                 byte[] img = null;
                 FileStream fs = new FileStream(imgLoc, FileMode.Open, FileAccess.Read);
                 BinaryReader br = new BinaryReader(fs);
@@ -59,9 +56,9 @@ namespace Finals
 
                 insertToProducts.Parameters.AddWithValue("@name", txtname.Text);
                 insertToProducts.Parameters.AddWithValue("@quantity", quantity);
-                insertToProducts.Parameters.AddWithValue("@description", txtdescription.Text);
+                insertToProducts.Parameters.AddWithValue("@description", lbldescription.Text);
                 insertToProducts.Parameters.AddWithValue("@size", txtsize.Text);
-                insertToProducts.Parameters.AddWithValue("@price", price);
+                insertToProducts.Parameters.AddWithValue("@price", Double.Parse(txtprice.Text));
                 insertToProducts.Parameters.AddWithValue("@img", img);
 
                 con.Open();
@@ -69,14 +66,11 @@ namespace Finals
                 con.Close();
 
                 MessageBox.Show("Product successfully inserted", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
-            {
-                MessageBox.Show("Invalid price format.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+  
             }
 
 
         }
     }
-    }
+  
 
