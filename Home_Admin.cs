@@ -47,10 +47,23 @@ namespace Finals
             else
                 panel1.Visible = false;
         }
-
+        private Form addItemsForm = null;
         private void add_item_Click(object sender, EventArgs e)
         {
-            showSubMenu(panel1);
+            if (addItemsForm == null || addItemsForm.IsDisposed)
+            {
+                addItemsForm = new addItems();
+                addItemsForm.FormClosed += (s, args) => addItemsForm = null;
+                openChildForm(addItemsForm);
+            }
+            else
+            {
+                addItemsForm.Close();
+                addItemsForm = null;
+            }
+
+
+
         }
 
         private void addPolo_Click(object sender, EventArgs e)
@@ -87,5 +100,25 @@ namespace Finals
         {
 
         }
+
+        private void btn_about_Click(object sender, EventArgs e)
+        {
+
+        }
+        private Form activeForm = null;
+        private void openChildForm(Form childForm)
+        {
+            if (activeForm != null)
+                activeForm.Close();
+                activeForm = childForm;
+                childForm.TopLevel = false;
+                childForm.FormBorderStyle = FormBorderStyle.None;
+                childForm.Dock = DockStyle.Fill;
+                panelMain.Controls.Add(childForm);
+                panelMain.Tag = childForm;
+                childForm.BringToFront();
+                childForm.Show();
+          }
+
     }
 }
