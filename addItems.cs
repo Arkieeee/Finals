@@ -20,6 +20,9 @@ namespace Finals
         public addItems()
         {
             InitializeComponent();
+            txtname.Enter += new EventHandler(txtname_Enter);
+            txtname.Leave += new EventHandler(txtname_Leave);
+            this.MouseDown += Form1_MouseDown;
         }
 
         private void btnImg_Click(object sender, EventArgs e)
@@ -70,26 +73,179 @@ namespace Finals
         }
         private void loadDatagrid()
         {
-           
-                con.Open();
-                SqlCommand com = new SqlCommand("Select Image_apparel, Name, Quantity, Price from Products", con);
 
-                SqlDataAdapter adap = new SqlDataAdapter(com);
-                DataTable tab = new DataTable();
+            con.Open();
+            SqlCommand com = new SqlCommand("Select Image_apparel, Name, Quantity, Price from Products", con);
 
-                adap.Fill(tab);
+            SqlDataAdapter adap = new SqlDataAdapter(com);
+            DataTable tab = new DataTable();
+
+            adap.Fill(tab);
             dataGridView1.DataSource = tab;
 
-                con.Close();
-            }
+            con.Close();
+        }
 
         private void addItems_Load(object sender, EventArgs e)
         {
             loadDatagrid();
         }
 
-     
-    }
+        private void txtname_Enter(object sender, EventArgs e)
+        {
+            if (txtname.Text == "Name")
+            {
+                txtname.Text = "";
+                txtname.ForeColor = Color.Black; // Set the text color back to black for regular input
+            }
+        }
 
-       
+
+        private void txtname_Leave(object sender, EventArgs e)
+        {
+            if (txtname.Text == "")
+            {
+                txtname.Text = "Name";
+                txtname.ForeColor = Color.Silver; // Set the text color back to black for regular input
+            }
+        }
+
+        private void txtquantity_Enter(object sender, EventArgs e)
+        {
+            if (txtquantity.Text == "Quantity")
+            {
+                txtquantity.Text = "";
+                txtquantity.ForeColor = Color.Black; // Set the text color back to black for regular input
+            }
+        }
+
+        private void txtquantity_Leave(object sender, EventArgs e)
+        {
+            if (txtquantity.Text == "")
+            {
+                txtquantity.Text = "Quantity";
+                txtquantity.ForeColor = Color.Silver; // Set the text color back to black for regular input
+            }
+        }
+
+        private void txtdescription_Enter(object sender, EventArgs e)
+        {
+            if (txtdescription.Text == "Description")
+            {
+                txtdescription.Text = "";
+                txtdescription.ForeColor = Color.Black; // Set the text color back to black for regular input
+            }
+        }
+
+        private void txtdescription_Leave(object sender, EventArgs e)
+        {
+            if (txtdescription.Text == "")
+            {
+                txtdescription.Text = "Description";
+                txtdescription.ForeColor = Color.Silver; // Set the text color back to black for regular input
+            }
+        }
+
+        private void txtsize_Enter(object sender, EventArgs e)
+        {
+            if (txtsize.Text == "Size")
+            {
+                txtsize.Text = "";
+                txtsize.ForeColor = Color.Black; // Set the text color back to black for regular input
+            }
+        }
+
+        private void txtsize_Leave(object sender, EventArgs e)
+        {
+            if (txtsize.Text == "")
+            {
+                txtsize.Text = "Size";
+                txtsize.ForeColor = Color.Silver; // Set the text color back to black for regular input
+            }
+        }
+
+        private void txtprice_Enter(object sender, EventArgs e)
+        {
+            if (txtprice.Text == "Price")
+            {
+                txtprice.Text = "";
+                txtprice.ForeColor = Color.Black; // Set the text color back to black for regular input
+            }
+        }
+
+        private void txtprice_Leave(object sender, EventArgs e)
+        {
+            if (txtprice.Text == "")
+            {
+                txtprice.Text = "Price";
+                txtprice.ForeColor = Color.Silver; // Set the text color back to black for regular input
+            }
+        }
+
+        private void txtname_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (txtname.Text == "Name")
+            {
+                // If the current text is the placeholder text, clear it and set the text color to black for regular input
+                txtname.Text = "";
+                txtname.ForeColor = Color.Black;
+            }
+        }
+        private void Form1_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (!txtname.Bounds.Contains(e.Location))
+            {
+                // If the user clicked outside the textbox, and the textbox is empty, set the text to the placeholder text and the color to silver
+                if (!txtname.Bounds.Contains(e.Location))
+                {
+                    if (txtname.Text == "")
+                    {
+                        txtname.Text = "Name";
+                        txtname.ForeColor = Color.Silver;
+                    }
+                }
+
+                if (!txtquantity.Bounds.Contains(e.Location))
+                {
+                    if (txtquantity.Text == "")
+                    {
+                        txtquantity.Text = "Quantity";
+                        txtquantity.ForeColor = Color.Silver;
+                    }
+                }
+
+                if (!txtdescription.Bounds.Contains(e.Location))
+                {
+                    if (txtdescription.Text == "")
+                    {
+                        txtdescription.Text = "Description";
+                        txtdescription.ForeColor = Color.Silver;
+                    }
+                }
+
+                if (!txtsize.Bounds.Contains(e.Location))
+                {
+                    if (txtsize.Text == "")
+                    {
+                        txtsize.Text = "Size";
+                        txtsize.ForeColor = Color.Silver;
+                    }
+                }
+
+                if (!txtprice.Bounds.Contains(e.Location))
+                {
+                    if (txtprice.Text == "")
+                    {
+                        txtprice.Text = "Price";
+                        txtprice.ForeColor = Color.Silver;
+                    }
+                }
+            }
+        }
     }
+}
+
+
+
+
+
