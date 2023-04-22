@@ -221,12 +221,6 @@
     <Compile Include="Home_Admin.Designer.cs">
       <DependentUpon>Home_Admin.cs</DependentUpon>
     </Compile>
-    <Compile Include="Home_User.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Home_User.Designer.cs">
-      <DependentUpon>Home_User.cs</DependentUpon>
-    </Compile>
     <Compile Include="jacket.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -265,8 +259,11 @@
     <EmbeddedResource Include="Home_Admin.resx">
       <DependentUpon>Home_Admin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Home_User.resx">
-      <DependentUpon>Home_User.cs</DependentUpon>
+    <EmbeddedResource Include="jacket.resx">
+      <DependentUpon>jacket.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="poloshirt.resx">
+      <DependentUpon>poloshirt.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

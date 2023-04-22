@@ -29,7 +29,7 @@ namespace Finals
 
         public void gotohome_user(object obj)
         {
-            Application.Run(new Home_User());
+            Application.Run(new HomeUser());
         }
 
         public void gotohome_admin(object obj)

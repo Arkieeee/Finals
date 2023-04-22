@@ -34,7 +34,7 @@ namespace Finals
         }
         private void customizeDesign()
         {
-            
+
             panel2.Visible = false;
 
         }
@@ -109,19 +109,29 @@ namespace Finals
         private Form activeForm = null;
         private void openChildForm(Form childForm)
         {
-            if (activeForm != null)
-            activeForm.Close();
-            activeForm = childForm;
-            childForm.TopLevel = false;
-            childForm.FormBorderStyle = FormBorderStyle.None;
-            childForm.Dock = DockStyle.Fill;
-            panelMain.Controls.Add(childForm);
-            panelMain.Tag = childForm;
-            childForm.BringToFront();
-            childForm.Show();
+            if (activeForm == childForm)
+            {
+                // The child form is already open, so bring it to the front
+                childForm.BringToFront();
+            }
+            else
+            {
+                // The child form is not open yet, so add it to the panel
+                if (activeForm != null)
+                {
+                    activeForm.Close();
+                }
+                activeForm = childForm;
+                childForm.TopLevel = false;
+                childForm.FormBorderStyle = FormBorderStyle.None;
+                childForm.Dock = DockStyle.Fill;
+                panelMain.Controls.Add(childForm);
+                panelMain.Tag = childForm;
+                childForm.BringToFront();
+                childForm.Show();
+            }
         }
 
+
     }
-
-
 }
