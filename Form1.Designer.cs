@@ -41,6 +41,7 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.chkshow_pass = new System.Windows.Forms.CheckBox();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -145,7 +146,7 @@
             this.btnsingup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnsingup.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnsingup.ForeColor = System.Drawing.Color.White;
-            this.btnsingup.Location = new System.Drawing.Point(27, 344);
+            this.btnsingup.Location = new System.Drawing.Point(27, 364);
             this.btnsingup.Name = "btnsingup";
             this.btnsingup.Size = new System.Drawing.Size(236, 30);
             this.btnsingup.TabIndex = 11;
@@ -196,12 +197,25 @@
             this.chkshow_pass.UseVisualStyleBackColor = false;
             this.chkshow_pass.CheckedChanged += new System.EventHandler(this.chkshow_pass_CheckedChanged);
             // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.LinkColor = System.Drawing.Color.Black;
+            this.linkLabel1.Location = new System.Drawing.Point(101, 340);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(91, 13);
+            this.linkLabel1.TabIndex = 22;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "Forgot password?";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(292, 447);
+            this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.chkshow_pass);
             this.Controls.Add(this.btnsingup);
             this.Controls.Add(this.txtusername);
@@ -242,6 +256,7 @@
         private System.Windows.Forms.TextBox txtusername;
         private System.Windows.Forms.Button btnsingup;
         private System.Windows.Forms.CheckBox chkshow_pass;
+        private System.Windows.Forms.LinkLabel linkLabel1;
     }
 }
 

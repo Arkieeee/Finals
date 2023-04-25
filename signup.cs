@@ -17,7 +17,7 @@ namespace Finals
 {
     public partial class signup : Form
     {
-        SqlConnection con = new SqlConnection("Data Source=DESKTOP-QI6H2EA\\SQLEXPRESS01;Initial Catalog=NSDAP_APPAREL_dB;Integrated Security=True");
+        SqlConnection con = new SqlConnection("Data Source=DOMINICPC\\SQLEXPRESS;Initial Catalog=NSDAP_APPAREL_dB;Integrated Security=True");
         Thread tologin;
         public signup()
         {
@@ -151,6 +151,16 @@ namespace Finals
                 txtpassword.UseSystemPasswordChar = true;
         }
 
+        private void chk_showpass2_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chk_showpass2.Checked == true)
+            {
+                txtconfirm_password.UseSystemPasswordChar = false;
+            }
+            else
+                txtconfirm_password.UseSystemPasswordChar = true;
+        }
+
         private void link_alreadyhaveanacc_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
 
@@ -159,6 +169,7 @@ namespace Finals
             tologin.SetApartmentState(ApartmentState.STA);
             tologin.Start();
         }
+
     }
     }
 

@@ -16,10 +16,11 @@ namespace Finals
 {
     public partial class Form1 : Form
     {
-        SqlConnection con = new SqlConnection("Data Source=DESKTOP-QI6H2EA\\SQLEXPRESS01;Initial Catalog=NSDAP_APPAREL_dB;Integrated Security=True");
+        SqlConnection con = new SqlConnection("Data Source=DOMINICPC\\SQLEXPRESS;Initial Catalog=NSDAP_APPAREL_dB;Integrated Security=True");
         Thread signup;
         Thread Admin;
         Thread User;
+        Thread fpass;
         public Form1()
         {
             InitializeComponent();
@@ -45,6 +46,10 @@ namespace Finals
         public void goto_signup(object obj)
         {
             Application.Run(new signup());
+        }
+        public void forgotpassword(object obj)
+        {
+            Application.Run(new forgotpass());
         }
         public static string Encrypt(string encryptString)
         {
@@ -183,6 +188,14 @@ namespace Finals
         private void txtpassword_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.Close();
+            fpass = new Thread(forgotpassword);
+            fpass.SetApartmentState(ApartmentState.STA);
+            fpass.Start();
         }
     }
 }

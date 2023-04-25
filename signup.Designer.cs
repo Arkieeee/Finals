@@ -55,6 +55,7 @@
             this.txtaddress = new System.Windows.Forms.TextBox();
             this.panel7 = new System.Windows.Forms.Panel();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
+            this.chk_showpass2 = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -180,7 +181,7 @@
             this.chk_showpass.AutoSize = true;
             this.chk_showpass.BackColor = System.Drawing.Color.White;
             this.chk_showpass.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chk_showpass.Location = new System.Drawing.Point(156, 396);
+            this.chk_showpass.Location = new System.Drawing.Point(140, 396);
             this.chk_showpass.Name = "chk_showpass";
             this.chk_showpass.Size = new System.Drawing.Size(115, 17);
             this.chk_showpass.TabIndex = 20;
@@ -223,7 +224,7 @@
             this.btnsignup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnsignup.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnsignup.ForeColor = System.Drawing.Color.White;
-            this.btnsignup.Location = new System.Drawing.Point(20, 450);
+            this.btnsignup.Location = new System.Drawing.Point(19, 479);
             this.btnsignup.Name = "btnsignup";
             this.btnsignup.Size = new System.Drawing.Size(236, 30);
             this.btnsignup.TabIndex = 24;
@@ -237,7 +238,7 @@
             this.link_alreadyhaveanacc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.link_alreadyhaveanacc.ForeColor = System.Drawing.SystemColors.ActiveBorder;
             this.link_alreadyhaveanacc.LinkColor = System.Drawing.Color.Silver;
-            this.link_alreadyhaveanacc.Location = new System.Drawing.Point(67, 483);
+            this.link_alreadyhaveanacc.Location = new System.Drawing.Point(62, 512);
             this.link_alreadyhaveanacc.Name = "link_alreadyhaveanacc";
             this.link_alreadyhaveanacc.Size = new System.Drawing.Size(172, 15);
             this.link_alreadyhaveanacc.TabIndex = 25;
@@ -335,12 +336,26 @@
             this.pictureBox8.TabIndex = 32;
             this.pictureBox8.TabStop = false;
             // 
+            // chk_showpass2
+            // 
+            this.chk_showpass2.AutoSize = true;
+            this.chk_showpass2.BackColor = System.Drawing.Color.White;
+            this.chk_showpass2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chk_showpass2.Location = new System.Drawing.Point(140, 449);
+            this.chk_showpass2.Name = "chk_showpass2";
+            this.chk_showpass2.Size = new System.Drawing.Size(115, 17);
+            this.chk_showpass2.TabIndex = 35;
+            this.chk_showpass2.Text = "Show Password";
+            this.chk_showpass2.UseVisualStyleBackColor = false;
+            this.chk_showpass2.CheckedChanged += new System.EventHandler(this.chk_showpass2_CheckedChanged);
+            // 
             // signup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(276, 516);
+            this.ClientSize = new System.Drawing.Size(276, 547);
+            this.Controls.Add(this.chk_showpass2);
             this.Controls.Add(this.txtaddress);
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.pictureBox8);
@@ -412,5 +427,6 @@
         private System.Windows.Forms.TextBox txtaddress;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.PictureBox pictureBox8;
+        private System.Windows.Forms.CheckBox chk_showpass2;
     }
 }

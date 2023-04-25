@@ -68,6 +68,8 @@ namespace Finals
                 panel1.Visible = false;
         }
         private Form addtshirt = null;
+        private Form addpoloshirt = null;
+        private Form addjacket= null;
         private void button3_Click(object sender, EventArgs e)
         {
             hideSubMenu();
@@ -88,32 +90,32 @@ namespace Finals
         private void button2_Click(object sender, EventArgs e)
         {
             hideSubMenu();
-            if (addtshirt == null || addtshirt.IsDisposed)
+            if (addpoloshirt == null || addpoloshirt.IsDisposed)
             {
-                addtshirt = new poloshirt();
-                addtshirt.FormClosed += (s, args) => addtshirt = null;
-                openChildForm(addtshirt);
+                addpoloshirt = new poloshirt(_username);
+                addpoloshirt.FormClosed += (s, args) => addpoloshirt = null;
+                openChildForm(addpoloshirt);
             }
             else
             {
-                addtshirt.Close();
-                addtshirt = null;
+                addpoloshirt.Close();
+                addpoloshirt = null;
             }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             hideSubMenu();
-            if (addtshirt == null || addtshirt.IsDisposed)
+            if (addjacket == null || addjacket.IsDisposed)
             {
-                addtshirt = new jacket();
-                addtshirt.FormClosed += (s, args) => addtshirt = null;
-                openChildForm(addtshirt);
+                addjacket = new jacket(_username);
+                addjacket.FormClosed += (s, args) => addjacket = null;
+                openChildForm(addjacket);
             }
             else
             {
-                addtshirt.Close();
-                addtshirt = null;
+                addjacket.Close();
+                addjacket = null;
             }
         }
 
