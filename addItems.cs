@@ -15,7 +15,7 @@ namespace Finals
 {
     public partial class addItems : Form
     {
-        SqlConnection con = new SqlConnection("Data Source=ARKI\\SQLEXPRESS;Initial Catalog=NSDAP_APPAREL_dB;Integrated Security=True");
+        SqlConnection con = new SqlConnection("Data Source=DESKTOP-QI6H2EA\\SQLEXPRESS01;Initial Catalog=NSDAP_APPAREL_dB;Integrated Security=True");
         string imgLoc = "";
         public addItems()
         {
@@ -55,11 +55,11 @@ namespace Finals
 
             int quantity = Convert.ToInt32(txtquantity.Text);
 
-            SqlCommand insertToProducts = new SqlCommand("INSERT INTO Products (Name, Quantity, Description, Size, Price, Image_apparel) VALUES (@name, @quantity, @description, @size, @price, @img)", con);
+            SqlCommand insertToProducts = new SqlCommand("INSERT INTO Products (Name, Quantity, Category, Size, Price, Image_apparel) VALUES (@name, @quantity, @category, @size, @price, @img)", con);
 
             insertToProducts.Parameters.AddWithValue("@name", txtname.Text);
             insertToProducts.Parameters.AddWithValue("@quantity", quantity);
-            insertToProducts.Parameters.AddWithValue("@description", txtdescription.Text);
+            insertToProducts.Parameters.AddWithValue("@category", txtCategory.Text);
             insertToProducts.Parameters.AddWithValue("@size", txtsize.Text);
             insertToProducts.Parameters.AddWithValue("@price", Double.Parse(txtprice.Text));
             insertToProducts.Parameters.AddWithValue("@img", img);
@@ -130,19 +130,19 @@ namespace Finals
 
         private void txtdescription_Enter(object sender, EventArgs e)
         {
-            if (txtdescription.Text == "Description")
+            if (txtCategory.Text == "Description")
             {
-                txtdescription.Text = "";
-                txtdescription.ForeColor = Color.Black; // Set the text color back to black for regular input
+                txtCategory.Text = "";
+                txtCategory.ForeColor = Color.Black; // Set the text color back to black for regular input
             }
         }
 
         private void txtdescription_Leave(object sender, EventArgs e)
         {
-            if (txtdescription.Text == "")
+            if (txtCategory.Text == "")
             {
-                txtdescription.Text = "Description";
-                txtdescription.ForeColor = Color.Silver; // Set the text color back to black for regular input
+                txtCategory.Text = "Description";
+                txtCategory.ForeColor = Color.Silver; // Set the text color back to black for regular input
             }
         }
 
@@ -214,12 +214,12 @@ namespace Finals
                     }
                 }
 
-                if (!txtdescription.Bounds.Contains(e.Location))
+                if (!txtCategory.Bounds.Contains(e.Location))
                 {
-                    if (txtdescription.Text == "")
+                    if (txtCategory.Text == "")
                     {
-                        txtdescription.Text = "Description";
-                        txtdescription.ForeColor = Color.Silver;
+                        txtCategory.Text = "Description";
+                        txtCategory.ForeColor = Color.Silver;
                     }
                 }
 

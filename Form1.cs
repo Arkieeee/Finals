@@ -16,7 +16,7 @@ namespace Finals
 {
     public partial class Form1 : Form
     {
-        SqlConnection con = new SqlConnection("Data Source=DESKTOP-9HU6DH7\\SQLEXPRESS;Initial Catalog=NSDAP_APPAREL_dB;Integrated Security=True");
+        SqlConnection con = new SqlConnection("Data Source=DESKTOP-QI6H2EA\\SQLEXPRESS01;Initial Catalog=NSDAP_APPAREL_dB;Integrated Security=True");
         Thread signup;
         Thread Admin;
         Thread User;
@@ -26,10 +26,15 @@ namespace Finals
             txtusername.Enter += new EventHandler(txtusername_Enter);
             txtusername.Leave += new EventHandler(txtusername_Leave);
         }
+        public string Username
+        {
+            get { return txtusername.Text; }
+            set { txtusername.Text = value; }
+        }
 
         public void gotohome_user(object obj)
         {
-            Application.Run(new HomeUser());
+            Application.Run(new HomeUser(Username));
         }
 
         public void gotohome_admin(object obj)
@@ -75,12 +80,13 @@ namespace Finals
 
             Checkifexist.Connection = con;
             con.Open();
+
             SqlDataReader dt = Checkifexist.ExecuteReader();
-            if(txtusername.Text == "" && txtpassword.Text == "")
+            if (txtusername.Text == "" && txtpassword.Text == "")
             {
-             MessageBox.Show("Username and password must be filled", "info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Username and password must be filled", "info", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            else if(!dt.HasRows)
+            else if (!dt.HasRows)
             {
                 MessageBox.Show("Username or password incorrect", "info", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -88,23 +94,24 @@ namespace Finals
             {
                 if (txtusername.Text == "Admin")
                 {
-                    MessageBox.Show("Welcome, "+ txtusername.Text, "info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    this.Close();
-                    Admin = new Thread(gotohome_admin);
-                    Admin.SetApartmentState(ApartmentState.STA);
-                    Admin.Start();
+                    MessageBox.Show("Success! Welcome: " + txtusername.Text, "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    Home_Admin home_Admin = new Home_Admin(); // Pass txtusername.Text to the constructor
+                    this.Hide(); // Hide the current form
+                    home_Admin.Show(); // Show the HomeUser form
+
                 }
                 else
                 {
-                    MessageBox.Show("Welcome, " + txtusername.Text, "info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    this.Close();
-                    User= new Thread(gotohome_user);
-                    User.SetApartmentState(ApartmentState.STA);
-                    User.Start();
+                    MessageBox.Show("Success! Welcome user: " + txtusername.Text, "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    con.Close();
+                    HomeUser homeUser = new HomeUser(txtusername.Text); // Pass txtusername.Text to the constructor
+                    this.Hide(); // Hide the current form
+                    homeUser.Show(); // Show the HomeUser form
                 }
             }
-
         }
+
 
         private void btnsingup_Click(object sender, EventArgs e)
         {
@@ -118,7 +125,7 @@ namespace Finals
         {
             txtusername.Text = "";
             txtpassword.Text = "";
-       
+
         }
 
         private void chkshow_pass_CheckedChanged(object sender, EventArgs e)

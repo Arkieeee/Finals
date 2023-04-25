@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(addItems));
             this.txtsize = new System.Windows.Forms.TextBox();
             this.txtquantity = new System.Windows.Forms.TextBox();
-            this.txtdescription = new System.Windows.Forms.TextBox();
+            this.txtCategory = new System.Windows.Forms.TextBox();
             this.btnadd = new System.Windows.Forms.Button();
             this.btnexit = new System.Windows.Forms.Button();
             this.picEmp = new System.Windows.Forms.PictureBox();
@@ -57,7 +57,7 @@
             // txtsize
             // 
             this.txtsize.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtsize.Font = new System.Drawing.Font("SF Compact Display", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtsize.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtsize.ForeColor = System.Drawing.Color.Silver;
             this.txtsize.Location = new System.Drawing.Point(55, 120);
             this.txtsize.Multiline = true;
@@ -71,7 +71,7 @@
             // txtquantity
             // 
             this.txtquantity.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtquantity.Font = new System.Drawing.Font("SF Compact Display", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtquantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtquantity.ForeColor = System.Drawing.Color.Silver;
             this.txtquantity.Location = new System.Drawing.Point(55, 58);
             this.txtquantity.Multiline = true;
@@ -82,19 +82,19 @@
             this.txtquantity.Enter += new System.EventHandler(this.txtquantity_Enter);
             this.txtquantity.Leave += new System.EventHandler(this.txtquantity_Leave);
             // 
-            // txtdescription
+            // txtCategory
             // 
-            this.txtdescription.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtdescription.Font = new System.Drawing.Font("SF Compact Display", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtdescription.ForeColor = System.Drawing.Color.Silver;
-            this.txtdescription.Location = new System.Drawing.Point(55, 89);
-            this.txtdescription.Multiline = true;
-            this.txtdescription.Name = "txtdescription";
-            this.txtdescription.Size = new System.Drawing.Size(153, 20);
-            this.txtdescription.TabIndex = 4;
-            this.txtdescription.Text = "Description";
-            this.txtdescription.Enter += new System.EventHandler(this.txtdescription_Enter);
-            this.txtdescription.Leave += new System.EventHandler(this.txtdescription_Leave);
+            this.txtCategory.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCategory.ForeColor = System.Drawing.Color.Silver;
+            this.txtCategory.Location = new System.Drawing.Point(55, 89);
+            this.txtCategory.Multiline = true;
+            this.txtCategory.Name = "txtCategory";
+            this.txtCategory.Size = new System.Drawing.Size(153, 20);
+            this.txtCategory.TabIndex = 4;
+            this.txtCategory.Text = "Category";
+            this.txtCategory.Enter += new System.EventHandler(this.txtdescription_Enter);
+            this.txtCategory.Leave += new System.EventHandler(this.txtdescription_Leave);
             // 
             // btnadd
             // 
@@ -154,7 +154,7 @@
             // txtprice
             // 
             this.txtprice.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtprice.Font = new System.Drawing.Font("SF Compact Display", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtprice.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtprice.ForeColor = System.Drawing.Color.Silver;
             this.txtprice.Location = new System.Drawing.Point(55, 151);
             this.txtprice.Multiline = true;
@@ -192,7 +192,7 @@
             // txtname
             // 
             this.txtname.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtname.Font = new System.Drawing.Font("SF Compact Display", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtname.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtname.ForeColor = System.Drawing.Color.Silver;
             this.txtname.Location = new System.Drawing.Point(55, 27);
             this.txtname.Multiline = true;
@@ -265,7 +265,7 @@
             this.Controls.Add(this.btndelete);
             this.Controls.Add(this.btnexit);
             this.Controls.Add(this.btnadd);
-            this.Controls.Add(this.txtdescription);
+            this.Controls.Add(this.txtCategory);
             this.Controls.Add(this.txtquantity);
             this.Controls.Add(this.txtprice);
             this.Controls.Add(this.txtsize);
@@ -289,7 +289,7 @@
         #endregion
         private System.Windows.Forms.TextBox txtsize;
         private System.Windows.Forms.TextBox txtquantity;
-        private System.Windows.Forms.TextBox txtdescription;
+        private System.Windows.Forms.TextBox txtCategory;
         private System.Windows.Forms.Button btnadd;
         private System.Windows.Forms.Button btnexit;
         private System.Windows.Forms.PictureBox picEmp;

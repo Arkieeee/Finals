@@ -5,19 +5,30 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace Finals
 {
     public partial class HomeUser : Form
     {
-        public HomeUser()
+        private string _username;
+        Thread th;
+
+        public HomeUser(string username) // Accept username parameter in constructor
         {
             InitializeComponent();
             customizeDesign();
+            _username = username; // Set _username to the passed parameter
+            lblUser.Text = _username; // Set lblUser.Text to _username
         }
 
+        public void goToHome(Object obj)
+        {
+            Application.Run(new HomeUser(_username));
+        }
         private void HomeUser_Load(object sender, EventArgs e)
         {
 
@@ -62,7 +73,7 @@ namespace Finals
             hideSubMenu();
             if (addtshirt == null || addtshirt.IsDisposed)
             {
-                addtshirt = new tshirt();
+                addtshirt = new tshirt(_username);
                 addtshirt.FormClosed += (s, args) => addtshirt = null;
                 openChildForm(addtshirt);
             }
@@ -132,6 +143,25 @@ namespace Finals
             }
         }
 
+        private void sideMenu_Paint(object sender, PaintEventArgs e)
+        {
 
+        }
+
+        private void btnhome_Click(object sender, EventArgs e)
+        {
+            hideSubMenu();
+            if (addtshirt == null || addtshirt.IsDisposed)
+            {
+                addtshirt = new HomeUser(_username);
+                addtshirt.FormClosed += (s, args) => addtshirt = null;
+                openChildForm(addtshirt);
+            }
+            else
+            {
+                addtshirt.Close();
+                addtshirt = null;
+            }
+        }
     }
 }

@@ -13,7 +13,7 @@ namespace Finals
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new HomeUser());
+            Application.Run(new Form1());
         }
     }
 }
