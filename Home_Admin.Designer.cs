@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home_Admin));
             this.sideMenu = new System.Windows.Forms.Panel();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button4 = new System.Windows.Forms.Button();
             this.btn_about = new System.Windows.Forms.Button();
@@ -40,18 +41,17 @@
             this.transac = new System.Windows.Forms.Button();
             this.add_item = new System.Windows.Forms.Button();
             this.panelLogo = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblUser = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelMain = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.sideMenu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panel2.SuspendLayout();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // sideMenu
@@ -72,6 +72,17 @@
             this.sideMenu.Name = "sideMenu";
             this.sideMenu.Size = new System.Drawing.Size(189, 496);
             this.sideMenu.TabIndex = 0;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pictureBox3.Image = global::Finals.Properties.Resources.Black_and_White_Typography_Logo_modified;
+            this.pictureBox3.Location = new System.Drawing.Point(0, 352);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(189, 144);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 9;
+            this.pictureBox3.TabStop = false;
             // 
             // panel1
             // 
@@ -217,7 +228,7 @@
             // panelLogo
             // 
             this.panelLogo.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panelLogo.Controls.Add(this.label1);
+            this.panelLogo.Controls.Add(this.lblUser);
             this.panelLogo.Controls.Add(this.pictureBox1);
             this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelLogo.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -226,16 +237,15 @@
             this.panelLogo.Size = new System.Drawing.Size(189, 70);
             this.panelLogo.TabIndex = 0;
             // 
-            // label1
+            // lblUser
             // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(68, 26);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(69, 16);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "User ni ari";
-      
+            this.lblUser.AutoSize = true;
+            this.lblUser.ForeColor = System.Drawing.Color.Black;
+            this.lblUser.Location = new System.Drawing.Point(68, 26);
+            this.lblUser.Name = "lblUser";
+            this.lblUser.Size = new System.Drawing.Size(78, 16);
+            this.lblUser.TabIndex = 1;
+            this.lblUser.Text = "User ni ari";
             // 
             // pictureBox1
             // 
@@ -271,25 +281,14 @@
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
             // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pictureBox3.Image = global::Finals.Properties.Resources.Black_and_White_Typography_Logo_modified;
-            this.pictureBox3.Location = new System.Drawing.Point(0, 352);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(189, 144);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 9;
-            this.pictureBox3.TabStop = false;
-            // 
             // Home_Admin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(880, 496);
             this.Controls.Add(this.panelMain);
             this.Controls.Add(this.sideMenu);
-            this.Font = new System.Drawing.Font("SF Compact Display", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MinimumSize = new System.Drawing.Size(650, 400);
             this.Name = "Home_Admin";
@@ -297,13 +296,13 @@
             this.Text = "Home_Admin";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.sideMenu.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panelLogo.ResumeLayout(false);
             this.panelLogo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelMain.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -320,7 +319,7 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button transac;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblUser;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panelMain;

@@ -12,10 +12,13 @@ namespace Finals
 {
     public partial class Home_Admin : Form
     {
-        public Home_Admin()
+        private string _username;
+        public Home_Admin(string username)
         {
             InitializeComponent();
             customizeDesign();
+            _username = username; // Set _username to the passed parameter
+            lblUser.Text = _username; // Set lblUser.Text to _username
         }
 
         private void button2_Click(object sender, EventArgs e)

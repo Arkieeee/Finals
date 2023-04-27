@@ -36,6 +36,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AdvancedDataGridView, Version=0.1.0.10, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\ADGV.0.1.0.10\lib\net40\AdvancedDataGridView.dll</HintPath>
+    </Reference>
     <Reference Include="ByValue, Version=0.2.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\ByValue.0.2.0\lib\netstandard1.4\ByValue.dll</HintPath>
     </Reference>
@@ -233,6 +236,16 @@
     <Compile Include="jacket.Designer.cs">
       <DependentUpon>jacket.cs</DependentUpon>
     </Compile>
+    <Compile Include="NSDAP_APPAREL_dBDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NSDAP_APPAREL_dBDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="NSDAP_APPAREL_dBDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NSDAP_APPAREL_dBDataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="poloshirt.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -290,6 +303,28 @@
     <EmbeddedResource Include="tshirt.resx">
       <DependentUpon>tshirt.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="NSDAP_APPAREL_dBDataSet.xsc">
+      <DependentUpon>NSDAP_APPAREL_dBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="NSDAP_APPAREL_dBDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>NSDAP_APPAREL_dBDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="NSDAP_APPAREL_dBDataSet.xss">
+      <DependentUpon>NSDAP_APPAREL_dBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="NSDAP_APPAREL_dBDataSet1.xsc">
+      <DependentUpon>NSDAP_APPAREL_dBDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="NSDAP_APPAREL_dBDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>NSDAP_APPAREL_dBDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="NSDAP_APPAREL_dBDataSet1.xss">
+      <DependentUpon>NSDAP_APPAREL_dBDataSet1.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

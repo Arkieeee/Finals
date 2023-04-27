@@ -16,7 +16,7 @@ namespace Finals
 {
     public partial class Form1 : Form
     {
-        SqlConnection con = new SqlConnection("Data Source=DOMINICPC\\SQLEXPRESS;Initial Catalog=NSDAP_APPAREL_dB;Integrated Security=True");
+        SqlConnection con = new SqlConnection("Data Source=DESKTOP-QI6H2EA\\SQLEXPRESS01;Initial Catalog=NSDAP_APPAREL_dB;Integrated Security=True");
         Thread signup;
         Thread Admin;
         Thread User;
@@ -40,7 +40,7 @@ namespace Finals
 
         public void gotohome_admin(object obj)
         {
-            Application.Run(new Home_Admin());
+            Application.Run(new Home_Admin(Username));
         }
 
         public void goto_signup(object obj)
@@ -84,7 +84,9 @@ namespace Finals
             Checkifexist.Parameters.AddWithValue("@Password", Encrypt(txtpassword.Text));
 
             Checkifexist.Connection = con;
+
             con.Open();
+           
 
             SqlDataReader dt = Checkifexist.ExecuteReader();
             if (txtusername.Text == "" && txtpassword.Text == "")
@@ -94,6 +96,7 @@ namespace Finals
             else if (!dt.HasRows)
             {
                 MessageBox.Show("Username or password incorrect", "info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                con.Close();
             }
             else if (dt.HasRows)
             {
@@ -101,7 +104,7 @@ namespace Finals
                 {
                     MessageBox.Show("Success! Welcome: " + txtusername.Text, "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    Home_Admin home_Admin = new Home_Admin(); // Pass txtusername.Text to the constructor
+                    Home_Admin home_Admin = new Home_Admin(txtusername.Text); // Pass txtusername.Text to the constructor
                     this.Hide(); // Hide the current form
                     home_Admin.Show(); // Show the HomeUser form
 

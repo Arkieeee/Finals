@@ -1,8 +1,10 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
+using System.Diagnostics;
 using System.Drawing;
 using System.Globalization;
 using System.IO;
@@ -15,7 +17,7 @@ namespace Finals
 {
     public partial class addItems : Form
     {
-        SqlConnection con = new SqlConnection("Data Source=DOMINICPC\\SQLEXPRESS;Initial Catalog=NSDAP_APPAREL_dB;Integrated Security=True");
+        SqlConnection con = new SqlConnection("Data Source=DESKTOP-QI6H2EA\\SQLEXPRESS01;Initial Catalog=NSDAP_APPAREL_dB;Integrated Security=True");
         string imgLoc = "";
         public addItems()
         {
@@ -75,7 +77,7 @@ namespace Finals
         {
 
             con.Open();
-            SqlCommand com = new SqlCommand("Select Image_apparel, Name, Quantity, Price from Products", con);
+            SqlCommand com = new SqlCommand("Select Product_ID, Image_apparel, Name, Category, Quantity, Size, Price from Products", con);
 
             SqlDataAdapter adap = new SqlDataAdapter(com);
             DataTable tab = new DataTable();
@@ -86,8 +88,57 @@ namespace Finals
             con.Close();
         }
 
+        private void loadDatagridTShirt()
+        {
+
+            con.Open();
+            SqlCommand com = new SqlCommand("SELECT Product_ID, Image_apparel, Name, Category, Quantity, Size, Price FROM Products WHERE Category = 'T-Shirt'", con);
+
+            SqlDataAdapter adap = new SqlDataAdapter(com);
+            DataTable tab = new DataTable();
+
+            adap.Fill(tab);
+            dataGridView1.DataSource = tab;
+
+            con.Close();
+        }
+
+        private void loadDatagridPoloShirt()
+        {
+
+            con.Open();
+            SqlCommand com = new SqlCommand("SELECT Product_ID, Image_apparel, Name, Category, Quantity, Size, Price FROM Products WHERE Category = 'Polo Shirt'", con);
+
+            SqlDataAdapter adap = new SqlDataAdapter(com);
+            DataTable tab = new DataTable();
+
+            adap.Fill(tab);
+            dataGridView1.DataSource = tab;
+
+            con.Close();
+        }
+
+
+        private void loadDatagridJacket()
+        {
+
+            con.Open();
+            SqlCommand com = new SqlCommand("SELECT Product_ID, Image_apparel, Name, Category, Quantity, Size, Price FROM Products WHERE Category = 'Jacket'", con);
+
+            SqlDataAdapter adap = new SqlDataAdapter(com);
+            DataTable tab = new DataTable();
+
+            adap.Fill(tab);
+            dataGridView1.DataSource = tab;
+
+            con.Close();
+        }
         private void addItems_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'nSDAP_APPAREL_dBDataSet1.Products' table. You can move, or remove it, as needed.
+            this.productsTableAdapter.Fill(this.nSDAP_APPAREL_dBDataSet1.Products);
+            // TODO: This line of code loads data into the 'nSDAP_APPAREL_dBDataSet.Orders' table. You can move, or remove it, as needed.
+            this.ordersTableAdapter.Fill(this.nSDAP_APPAREL_dBDataSet.Orders);
             loadDatagrid();
         }
 
@@ -240,6 +291,74 @@ namespace Finals
                         txtprice.ForeColor = Color.Silver;
                     }
                 }
+            }
+        }
+
+        private void btnedit_Click(object sender, EventArgs e)
+        {
+            int no;
+            no = int.Parse(lblProduct_ID.Text);
+            con.Open();
+            SqlCommand cmd = new SqlCommand("Update Products SET Name= '" + txtname.Text + "', Quantity ='" + txtquantity.Text + "', Category = '" + txtCategory.Text + "', Size ='" + txtsize.Text + "', Price ='"+txtprice.Text+"'  where Product_ID= '" + no + "'", con);
+            cmd.ExecuteNonQuery();
+
+            MessageBox.Show("Successfully Updated! ", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            
+            con.Close();
+            loadDatagrid();
+            
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            lblProduct_ID.Text = dataGridView1.Rows[e.RowIndex].Cells["Product_ID"].Value.ToString();
+            txtname.Text = dataGridView1.Rows[e.RowIndex].Cells["Name"].Value.ToString();
+            txtquantity.Text = dataGridView1.Rows[e.RowIndex].Cells["Quantity"].Value.ToString();
+            txtCategory.Text = dataGridView1.Rows[e.RowIndex].Cells["Category"].Value.ToString();
+            txtsize.Text = dataGridView1.Rows[e.RowIndex].Cells["Size"].Value.ToString();
+            txtprice.Text = dataGridView1.Rows[e.RowIndex].Cells["Price"].Value.ToString();
+        }
+
+        private void btndelete_Click(object sender, EventArgs e)
+        {
+            int no;
+            no = int.Parse(lblProduct_ID.Text);
+            con.Open();
+
+            DialogResult dr = MessageBox.Show("Are you sure you want to delete this?", "Confirm Deletion", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (dr == DialogResult.Yes)
+            {
+                SqlCommand com = new SqlCommand("Delete from Products where Product_ID = '" + no + "'", con);
+                com.ExecuteNonQuery();
+
+                MessageBox.Show("Successfully DELETED!", "info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("CANCELLED!", "info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            con.Close();
+            loadDatagrid();
+        
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch (comboBox1.SelectedItem.ToString())
+            {
+                case "T-Shirt":
+                    loadDatagridTShirt();
+                    break;
+                case "Polo Shirt":
+                    loadDatagridPoloShirt();
+                    break;
+                case "Jacket":
+                    loadDatagridJacket();
+                    break;
+                default:
+                    loadDatagrid();
+                    break;
             }
         }
     }
