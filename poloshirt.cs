@@ -26,7 +26,7 @@ namespace Finals
         private void loadDatagrid()
         {
             con.Open();
-            SqlCommand com = new SqlCommand("Select Image_apparel, Name, Quantity, Price, Product_ID from Products where Category ='poloshirt'", con);
+            SqlCommand com = new SqlCommand("Select Image_apparel, Name, Quantity, Price, Product_ID from Products where Category ='Polo Shirt'", con);
             SqlDataAdapter adap = new SqlDataAdapter(com);
             DataTable tab = new DataTable();
             adap.Fill(tab);
@@ -36,7 +36,7 @@ namespace Finals
         }
 
 
-        private void tshirt_Load(object sender, EventArgs e)
+        private void poloshirt_Load(object sender, EventArgs e)
         {
 
             loadDatagrid();
@@ -149,6 +149,9 @@ namespace Finals
                 MessageBox.Show("An error occurred: " + ex.Message);
             }
         }
+
+        
+        
     }
 
 }

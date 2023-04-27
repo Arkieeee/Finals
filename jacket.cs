@@ -36,7 +36,7 @@ namespace Finals
         }
 
 
-        private void tshirt_Load(object sender, EventArgs e)
+        private void jacket_Load(object sender, EventArgs e)
         {
 
             loadDatagrid();
@@ -149,6 +149,8 @@ namespace Finals
                 MessageBox.Show("An error occurred: " + ex.Message);
             }
         }
+
+      
     }
 
 }

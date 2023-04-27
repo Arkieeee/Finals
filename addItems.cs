@@ -135,10 +135,7 @@ namespace Finals
         }
         private void addItems_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'nSDAP_APPAREL_dBDataSet1.Products' table. You can move, or remove it, as needed.
-            this.productsTableAdapter.Fill(this.nSDAP_APPAREL_dBDataSet1.Products);
-            // TODO: This line of code loads data into the 'nSDAP_APPAREL_dBDataSet.Orders' table. You can move, or remove it, as needed.
-            this.ordersTableAdapter.Fill(this.nSDAP_APPAREL_dBDataSet.Orders);
+    
             loadDatagrid();
         }
 

@@ -48,12 +48,9 @@
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.lblProduct_ID = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.nSDAP_APPAREL_dBDataSet = new Finals.NSDAP_APPAREL_dBDataSet();
+   
             this.ordersBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.ordersTableAdapter = new Finals.NSDAP_APPAREL_dBDataSetTableAdapters.OrdersTableAdapter();
-            this.nSDAP_APPAREL_dBDataSet1 = new Finals.NSDAP_APPAREL_dBDataSet1();
-            this.productsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.productsTableAdapter = new Finals.NSDAP_APPAREL_dBDataSet1TableAdapters.ProductsTableAdapter();
+      
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picEmp)).BeginInit();
@@ -63,9 +60,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nSDAP_APPAREL_dBDataSet)).BeginInit();
+   
             ((System.ComponentModel.ISupportInitialize)(this.ordersBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nSDAP_APPAREL_dBDataSet1)).BeginInit();
+          
             ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -289,31 +286,11 @@
             // 
             // nSDAP_APPAREL_dBDataSet
             // 
-            this.nSDAP_APPAREL_dBDataSet.DataSetName = "NSDAP_APPAREL_dBDataSet";
-            this.nSDAP_APPAREL_dBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+      
+
             // 
-            // ordersBindingSource
-            // 
-            this.ordersBindingSource.DataMember = "Orders";
-            this.ordersBindingSource.DataSource = this.nSDAP_APPAREL_dBDataSet;
-            // 
-            // ordersTableAdapter
-            // 
-            this.ordersTableAdapter.ClearBeforeFill = true;
-            // 
-            // nSDAP_APPAREL_dBDataSet1
-            // 
-            this.nSDAP_APPAREL_dBDataSet1.DataSetName = "NSDAP_APPAREL_dBDataSet1";
-            this.nSDAP_APPAREL_dBDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // productsBindingSource
-            // 
-            this.productsBindingSource.DataMember = "Products";
-            this.productsBindingSource.DataSource = this.nSDAP_APPAREL_dBDataSet1;
-            // 
-            // productsTableAdapter
-            // 
-            this.productsTableAdapter.ClearBeforeFill = true;
+        
+            
             // 
             // comboBox1
             // 
@@ -377,9 +354,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nSDAP_APPAREL_dBDataSet)).EndInit();
+  
             ((System.ComponentModel.ISupportInitialize)(this.ordersBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nSDAP_APPAREL_dBDataSet1)).EndInit();
+        
             ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -405,12 +382,11 @@
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.Label lblProduct_ID;
         private System.Windows.Forms.Label label1;
-        private NSDAP_APPAREL_dBDataSet nSDAP_APPAREL_dBDataSet;
+     
         private System.Windows.Forms.BindingSource ordersBindingSource;
-        private NSDAP_APPAREL_dBDataSetTableAdapters.OrdersTableAdapter ordersTableAdapter;
-        private NSDAP_APPAREL_dBDataSet1 nSDAP_APPAREL_dBDataSet1;
+       
         private System.Windows.Forms.BindingSource productsBindingSource;
-        private NSDAP_APPAREL_dBDataSet1TableAdapters.ProductsTableAdapter productsTableAdapter;
+      
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label2;
     }
