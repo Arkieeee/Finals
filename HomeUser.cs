@@ -170,7 +170,7 @@ namespace Finals
         {
             if (addtoCartForm == null || addtoCartForm.IsDisposed)
             {
-                addtoCartForm = new cart();
+                addtoCartForm = new cart(_username);
                 addtoCartForm.FormClosed += (s, args) => addtoCartForm = null;
                 openChildForm(addtoCartForm);
             }
