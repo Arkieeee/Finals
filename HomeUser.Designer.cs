@@ -30,10 +30,11 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HomeUser));
             this.sideMenu = new System.Windows.Forms.Panel();
+            this.btnhome = new System.Windows.Forms.Button();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            this.btn_about = new System.Windows.Forms.Button();
+            this.btn_cart = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -45,7 +46,6 @@
             this.panelMain = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.btnhome = new System.Windows.Forms.Button();
             this.sideMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panel2.SuspendLayout();
@@ -63,7 +63,7 @@
             this.sideMenu.Controls.Add(this.pictureBox3);
             this.sideMenu.Controls.Add(this.button5);
             this.sideMenu.Controls.Add(this.button4);
-            this.sideMenu.Controls.Add(this.btn_about);
+            this.sideMenu.Controls.Add(this.btn_cart);
             this.sideMenu.Controls.Add(this.panel2);
             this.sideMenu.Controls.Add(this.transac);
             this.sideMenu.Controls.Add(this.panelLogo);
@@ -75,6 +75,22 @@
             this.sideMenu.Size = new System.Drawing.Size(189, 496);
             this.sideMenu.TabIndex = 1;
             this.sideMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.sideMenu_Paint);
+            // 
+            // btnhome
+            // 
+            this.btnhome.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnhome.FlatAppearance.BorderSize = 0;
+            this.btnhome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnhome.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnhome.Location = new System.Drawing.Point(0, 252);
+            this.btnhome.Name = "btnhome";
+            this.btnhome.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnhome.Size = new System.Drawing.Size(189, 25);
+            this.btnhome.TabIndex = 11;
+            this.btnhome.Text = "Home";
+            this.btnhome.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnhome.UseVisualStyleBackColor = true;
+            this.btnhome.Click += new System.EventHandler(this.btnhome_Click);
             // 
             // pictureBox3
             // 
@@ -116,21 +132,23 @@
             this.button4.Text = "Orders";
             this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
-            // btn_about
+            // btn_cart
             // 
-            this.btn_about.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btn_about.FlatAppearance.BorderSize = 0;
-            this.btn_about.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_about.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btn_about.Location = new System.Drawing.Point(0, 177);
-            this.btn_about.Name = "btn_about";
-            this.btn_about.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btn_about.Size = new System.Drawing.Size(189, 25);
-            this.btn_about.TabIndex = 7;
-            this.btn_about.Text = "Cart";
-            this.btn_about.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_about.UseVisualStyleBackColor = true;
+            this.btn_cart.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_cart.FlatAppearance.BorderSize = 0;
+            this.btn_cart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_cart.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btn_cart.Location = new System.Drawing.Point(0, 177);
+            this.btn_cart.Name = "btn_cart";
+            this.btn_cart.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btn_cart.Size = new System.Drawing.Size(189, 25);
+            this.btn_cart.TabIndex = 7;
+            this.btn_cart.Text = "Cart";
+            this.btn_cart.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_cart.UseVisualStyleBackColor = true;
+            this.btn_cart.Click += new System.EventHandler(this.btn_cart_Click);
             // 
             // panel2
             // 
@@ -279,22 +297,6 @@
             this.panel3.Size = new System.Drawing.Size(445, 100);
             this.panel3.TabIndex = 2;
             // 
-            // btnhome
-            // 
-            this.btnhome.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnhome.FlatAppearance.BorderSize = 0;
-            this.btnhome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnhome.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnhome.Location = new System.Drawing.Point(0, 252);
-            this.btnhome.Name = "btnhome";
-            this.btnhome.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnhome.Size = new System.Drawing.Size(189, 25);
-            this.btnhome.TabIndex = 11;
-            this.btnhome.Text = "Home";
-            this.btnhome.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnhome.UseVisualStyleBackColor = true;
-            this.btnhome.Click += new System.EventHandler(this.btnhome_Click);
-            // 
             // HomeUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -325,7 +327,7 @@
 
         private System.Windows.Forms.Panel sideMenu;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button btn_about;
+        private System.Windows.Forms.Button btn_cart;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;

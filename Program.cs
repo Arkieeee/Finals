@@ -5,6 +5,8 @@ namespace Finals
 {
     internal static class Program
     {
+        private static string username;
+
         /// <summary>
         /// The main entry point for the application.
         /// </summary>

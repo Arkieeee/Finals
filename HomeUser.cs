@@ -69,7 +69,7 @@ namespace Finals
         }
         private Form addtshirt = null;
         private Form addpoloshirt = null;
-        private Form addjacket= null;
+        private Form addjacket = null;
         private void button3_Click(object sender, EventArgs e)
         {
             hideSubMenu();
@@ -163,6 +163,36 @@ namespace Finals
             {
                 addtshirt.Close();
                 addtshirt = null;
+            }
+        }
+        private Form addtoCartForm = null;
+        private void btn_cart_Click(object sender, EventArgs e)
+        {
+            if (addtoCartForm == null || addtoCartForm.IsDisposed)
+            {
+                addtoCartForm = new cart();
+                addtoCartForm.FormClosed += (s, args) => addtoCartForm = null;
+                openChildForm(addtoCartForm);
+            }
+            else
+            {
+                addtoCartForm.Close();
+                addtoCartForm = null;
+            }
+        }
+        private Form ordersForm = null;
+        private void button4_Click(object sender, EventArgs e)
+        {
+            if (ordersForm == null || ordersForm.IsDisposed)
+            {
+                ordersForm = new orders();
+                ordersForm.FormClosed += (s, args) => ordersForm = null;
+                openChildForm(ordersForm);
+            }
+            else
+            {
+                ordersForm.Close();
+                ordersForm = null;
             }
         }
     }
