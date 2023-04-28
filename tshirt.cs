@@ -14,15 +14,20 @@ namespace Finals
     public partial class tshirt : Form
     {
         private string _username;
+    
         private int ProductId; // declare as class-level variable
+
+
+
         public tshirt(string username)
         {
 
             InitializeComponent();
             _username = username; // Set _username to the passed parameter
+            
         }
 
-        SqlConnection con = new SqlConnection("Data Source=DESKTOP-QI6H2EA\\SQLEXPRESS01;Initial Catalog=NSDAP_APPAREL_dB;Integrated Security=True");
+        SqlConnection con = new SqlConnection("Data Source=IVERSONKOBE\\SQLEXPRESS;Initial Catalog=NSDAP_APPAREL_dB;Integrated Security=True");
         private void loadDatagrid()
         {
             con.Open();
@@ -47,6 +52,7 @@ namespace Finals
             txtName.Text = dataGridView1.Rows[e.RowIndex].Cells["Name"].Value.ToString();
             lblPrice.Text = dataGridView1.Rows[e.RowIndex].Cells["Price"].Value.ToString();
             ProductId = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["Product_ID"].Value.ToString());
+         
         }
 
         private void btnAddToCart_Click(object sender, EventArgs e)
@@ -77,11 +83,10 @@ namespace Finals
                 }
 
                 // Use parameterized queries to avoid SQL injection attacks
-                using (SqlCommand insertToCart = new SqlCommand("INSERT INTO Cart(Username, Product_ID, Name, Quantity, Price) VALUES(@username, @productId, @name, @quantity, @price)", con))
+                using (SqlCommand insertToCart = new SqlCommand("INSERT INTO Cart(Username, Product_ID,Quantity, Price) VALUES(@username, @productId, @quantity, @price)", con))
                 {
                     insertToCart.Parameters.AddWithValue("@username", _username);
                     insertToCart.Parameters.AddWithValue("@productId", ProductId);
-                    insertToCart.Parameters.AddWithValue("@name", txtName.Text);
                     insertToCart.Parameters.AddWithValue("@quantity", txtQuantity.Text);
                     insertToCart.Parameters.AddWithValue("@price", lblPrice.Text);
 
@@ -140,6 +145,7 @@ namespace Finals
 
                     // Update the txtPrice field with the total price
                     lblPrice.Text = totalPrice.ToString();
+                    con.Close() ;
 
 
                 }

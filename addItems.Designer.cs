@@ -63,7 +63,7 @@
    
             ((System.ComponentModel.ISupportInitialize)(this.ordersBindingSource)).BeginInit();
           
-            ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).BeginInit();
+            //((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // txtsize
@@ -357,7 +357,7 @@
   
             ((System.ComponentModel.ISupportInitialize)(this.ordersBindingSource)).EndInit();
         
-            ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).EndInit();
+            
             this.ResumeLayout(false);
             this.PerformLayout();
 

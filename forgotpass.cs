@@ -16,6 +16,7 @@ namespace Finals
 {
     public partial class forgotpass : Form
     {
+        SqlConnection con = new SqlConnection("Data Source=IVERSONKOBE\\SQLEXPRESS;Initial Catalog=NSDAP_APPAREL_dB;Integrated Security=True");
         public forgotpass()
         {
             InitializeComponent();

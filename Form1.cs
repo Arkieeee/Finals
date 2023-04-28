@@ -16,7 +16,7 @@ namespace Finals
 {
     public partial class Form1 : Form
     {
-        SqlConnection con = new SqlConnection("Data Source=DESKTOP-QI6H2EA\\SQLEXPRESS01;Initial Catalog=NSDAP_APPAREL_dB;Integrated Security=True");
+       
         Thread signup;
         Thread Admin;
         Thread User;
@@ -27,6 +27,7 @@ namespace Finals
             txtusername.Enter += new EventHandler(txtusername_Enter);
             txtusername.Leave += new EventHandler(txtusername_Leave);
         }
+        SqlConnection con = new SqlConnection("Data Source=IVERSONKOBE\\SQLEXPRESS;Initial Catalog=NSDAP_APPAREL_dB;Integrated Security=True");
         public string Username
         {
             get { return txtusername.Text; }
@@ -35,7 +36,9 @@ namespace Finals
 
         public void gotohome_user(object obj)
         {
-            Application.Run(new HomeUser(Username));
+            double balance = 0; // Set a default balance of 0
+            HomeUser homeUser = new HomeUser(Username, balance);
+            Application.Run(homeUser);
         }
 
         public void gotohome_admin(object obj)
@@ -82,13 +85,11 @@ namespace Finals
             Checkifexist.CommandText = "SELECT * FROM NSDAP_user WHERE Username = '" + txtusername.Text + "' and Password = '" + Encrypt(txtpassword.Text) + "'";
             Checkifexist.Parameters.AddWithValue("@Username", txtusername.Text);
             Checkifexist.Parameters.AddWithValue("@Password", Encrypt(txtpassword.Text));
-
             Checkifexist.Connection = con;
 
             con.Open();
-           
-
             SqlDataReader dt = Checkifexist.ExecuteReader();
+
             if (txtusername.Text == "" && txtpassword.Text == "")
             {
                 MessageBox.Show("Username and password must be filled", "info", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -103,24 +104,41 @@ namespace Finals
                 if (txtusername.Text == "Admin")
                 {
                     MessageBox.Show("Success! Welcome: " + txtusername.Text, "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    con.Close();
 
                     Home_Admin home_Admin = new Home_Admin(txtusername.Text); // Pass txtusername.Text to the constructor
                     this.Hide(); // Hide the current form
                     home_Admin.Show(); // Show the HomeUser form
-
                 }
                 else
                 {
-                    MessageBox.Show("Success! Welcome user: " + txtusername.Text, "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    con.Close(); // Close the connection before opening a new one
+
+                    SqlCommand getBalance = new SqlCommand();
+                    getBalance.CommandText = "SELECT balance FROM Balance WHERE Username = @Username";
+                    getBalance.Parameters.AddWithValue("@Username", txtusername.Text);
+                    getBalance.Connection = con;
+
+                    con.Open();
+                    SqlDataReader balanceReader = getBalance.ExecuteReader();
+                    if (balanceReader.Read())
+                    {
+                        double balance = Convert.ToDouble(balanceReader[0]);
+
+                        // Show the HomeUser form with the balance value passed to the constructor
+                        MessageBox.Show("Success! Welcome user: " + txtusername.Text, "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        balanceReader.Close(); // Close the SqlDataReader object before executing the next one
+
+                        HomeUser homeUser = new HomeUser(txtusername.Text, balance);
+                        this.Hide();
+                        homeUser.Show();
+                    }
+
                     con.Close();
-                    HomeUser homeUser = new HomeUser(txtusername.Text); // Pass txtusername.Text to the constructor
-                    this.Hide(); // Hide the current form
-                    homeUser.Show(); // Show the HomeUser form
                 }
             }
         }
-
-
         private void btnsingup_Click(object sender, EventArgs e)
         {
             this.Close();

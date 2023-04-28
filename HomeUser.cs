@@ -12,22 +12,27 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace Finals
 {
+    //DKO KBAW MO GIT
     public partial class HomeUser : Form
     {
         private string _username;
+        private double _balance;
         Thread th;
 
-        public HomeUser(string username) // Accept username parameter in constructor
+        public HomeUser(string username, double balance) // Accept username parameter in constructor
         {
             InitializeComponent();
             customizeDesign();
             _username = username; // Set _username to the passed parameter
             lblUser.Text = _username; // Set lblUser.Text to _username
+            _balance = balance;
+            lblBalance.Text = balance.ToString();
+
         }
 
         public void goToHome(Object obj)
         {
-            Application.Run(new HomeUser(_username));
+            Application.Run(new HomeUser(_username, _balance));
         }
         private void HomeUser_Load(object sender, EventArgs e)
         {
@@ -155,7 +160,7 @@ namespace Finals
             hideSubMenu();
             if (addtshirt == null || addtshirt.IsDisposed)
             {
-                addtshirt = new HomeUser(_username);
+                addtshirt = new HomeUser(_username, _balance);
                 addtshirt.FormClosed += (s, args) => addtshirt = null;
                 openChildForm(addtshirt);
             }
@@ -170,7 +175,7 @@ namespace Finals
         {
             if (addtoCartForm == null || addtoCartForm.IsDisposed)
             {
-                addtoCartForm = new cart();
+                addtoCartForm = new cart(_username);
                 addtoCartForm.FormClosed += (s, args) => addtoCartForm = null;
                 openChildForm(addtoCartForm);
             }
@@ -185,7 +190,7 @@ namespace Finals
         {
             if (ordersForm == null || ordersForm.IsDisposed)
             {
-                ordersForm = new orders();
+                ordersForm = new orders(_username);
                 ordersForm.FormClosed += (s, args) => ordersForm = null;
                 openChildForm(ordersForm);
             }

@@ -17,7 +17,7 @@ namespace Finals
 {
     public partial class addItems : Form
     {
-        SqlConnection con = new SqlConnection("Data Source=DESKTOP-QI6H2EA\\SQLEXPRESS01;Initial Catalog=NSDAP_APPAREL_dB;Integrated Security=True");
+        SqlConnection con = new SqlConnection("Data Source=IVERSONKOBE\\SQLEXPRESS;Initial Catalog=NSDAP_APPAREL_dB;Integrated Security=True");
         string imgLoc = "";
         public addItems()
         {
@@ -38,39 +38,48 @@ namespace Finals
                 {
                     imgLoc = dlg.FileName.ToString();
                     picEmp.ImageLocation = imgLoc;
-
+                    picEmp.SizeMode = PictureBoxSizeMode.StretchImage; // Set the SizeMode property to StretchImage
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+
         }
         private void btnadd_Click(object sender, EventArgs e)
         {
 
-            //otwen
-            byte[] img = null;
-            FileStream fs = new FileStream(imgLoc, FileMode.Open, FileAccess.Read);
-            BinaryReader br = new BinaryReader(fs);
-            img = br.ReadBytes((int)fs.Length);
+            try {
+                byte[] img = null;
+                FileStream fs = new FileStream(imgLoc, FileMode.Open, FileAccess.Read);
+                BinaryReader br = new BinaryReader(fs);
+                img = br.ReadBytes((int)fs.Length);
 
-            int quantity = Convert.ToInt32(txtquantity.Text);
+                int quantity = Convert.ToInt32(txtquantity.Text);
 
-            SqlCommand insertToProducts = new SqlCommand("INSERT INTO Products (Name, Quantity, Category, Size, Price, Image_apparel) VALUES (@name, @quantity, @category, @size, @price, @img)", con);
+                SqlCommand insertToProducts = new SqlCommand("INSERT INTO Products (Name, Quantity, Category, Size, Price, Image_apparel) VALUES (@name, @quantity, @category, @size, @price, @img)", con);
 
-            insertToProducts.Parameters.AddWithValue("@name", txtname.Text);
-            insertToProducts.Parameters.AddWithValue("@quantity", quantity);
-            insertToProducts.Parameters.AddWithValue("@category", txtCategory.Text);
-            insertToProducts.Parameters.AddWithValue("@size", txtsize.Text);
-            insertToProducts.Parameters.AddWithValue("@price", Double.Parse(txtprice.Text));
-            insertToProducts.Parameters.AddWithValue("@img", img);
+                insertToProducts.Parameters.AddWithValue("@name", txtname.Text);
+                insertToProducts.Parameters.AddWithValue("@quantity", quantity);
+                insertToProducts.Parameters.AddWithValue("@category", txtCategory.Text);
+                insertToProducts.Parameters.AddWithValue("@size", txtsize.Text);
+                insertToProducts.Parameters.AddWithValue("@price", Double.Parse(txtprice.Text));
+                insertToProducts.Parameters.AddWithValue("@img", img);
 
-            con.Open();
-            insertToProducts.ExecuteNonQuery();
-            con.Close();
+                con.Open();
+                insertToProducts.ExecuteNonQuery();
+                con.Close();
 
-            MessageBox.Show("Product successfully inserted", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("" +
+                    "Product successfully inserted", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                loadDatagrid();
+            } 
+            catch(Exception ex)
+            {
+                MessageBox.Show("Please insert an image", ex.Message, MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+          
 
         }
         private void loadDatagrid()

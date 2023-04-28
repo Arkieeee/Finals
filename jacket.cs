@@ -22,7 +22,7 @@ namespace Finals
             _username = username; // Set _username to the passed parameter
         }
 
-        SqlConnection con = new SqlConnection("Data Source=DESKTOP-QI6H2EA\\SQLEXPRESS01;Initial Catalog=NSDAP_APPAREL_dB;Integrated Security=True");
+        SqlConnection con = new SqlConnection("Data Source=IVERSONKOBE\\SQLEXPRESS;Initial Catalog=NSDAP_APPAREL_dB;Integrated Security=True");
         private void loadDatagrid()
         {
             con.Open();
