@@ -41,13 +41,13 @@
             this.button3 = new System.Windows.Forms.Button();
             this.transac = new System.Windows.Forms.Button();
             this.panelLogo = new System.Windows.Forms.Panel();
+            this.lblBalance = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lblUser = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelMain = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.lblBalance = new System.Windows.Forms.Label();
             this.sideMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panel2.SuspendLayout();
@@ -260,6 +260,17 @@
             this.panelLogo.Size = new System.Drawing.Size(252, 86);
             this.panelLogo.TabIndex = 0;
             // 
+            // lblBalance
+            // 
+            this.lblBalance.AutoSize = true;
+            this.lblBalance.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBalance.Location = new System.Drawing.Point(151, 52);
+            this.lblBalance.Name = "lblBalance";
+            this.lblBalance.Size = new System.Drawing.Size(53, 16);
+            this.lblBalance.TabIndex = 3;
+            this.lblBalance.Text = "Kwarta";
+            this.lblBalance.Click += new System.EventHandler(this.lblBalance_Click);
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -327,16 +338,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(593, 123);
             this.panel3.TabIndex = 2;
-            // 
-            // lblBalance
-            // 
-            this.lblBalance.AutoSize = true;
-            this.lblBalance.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBalance.Location = new System.Drawing.Point(151, 52);
-            this.lblBalance.Name = "lblBalance";
-            this.lblBalance.Size = new System.Drawing.Size(53, 16);
-            this.lblBalance.TabIndex = 3;
-            this.lblBalance.Text = "Kwarta";
             // 
             // HomeUser
             // 

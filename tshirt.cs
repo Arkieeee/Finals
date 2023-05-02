@@ -117,6 +117,7 @@ namespace Finals
 
 
                 MessageBox.Show("Success!", "Items confirmed.", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                 loadDatagrid();
 
             }

@@ -36,7 +36,7 @@ namespace Finals
 
         public void gotohome_user(object obj)
         {
-            double balance = 0; // Set a default balance of 0
+            decimal balance = 0; // Set a default balance of 0
             HomeUser homeUser = new HomeUser(Username, balance);
             Application.Run(homeUser);
         }
@@ -124,7 +124,7 @@ namespace Finals
                     SqlDataReader balanceReader = getBalance.ExecuteReader();
                     if (balanceReader.Read())
                     {
-                        double balance = Convert.ToDouble(balanceReader[0]);
+                        decimal balance = Convert.ToDecimal(balanceReader[0]);
 
                         // Show the HomeUser form with the balance value passed to the constructor
                         MessageBox.Show("Success! Welcome user: " + txtusername.Text, "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);

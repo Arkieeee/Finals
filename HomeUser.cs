@@ -16,10 +16,10 @@ namespace Finals
     public partial class HomeUser : Form
     {
         private string _username;
-        private double _balance;
+        private decimal _balance;
         Thread th;
 
-        public HomeUser(string username, double balance) // Accept username parameter in constructor
+        public HomeUser(string username, decimal balance) // Accept username parameter in constructor
         {
             InitializeComponent();
             customizeDesign();
@@ -157,25 +157,17 @@ namespace Finals
 
         private void btnhome_Click(object sender, EventArgs e)
         {
-            hideSubMenu();
-            if (addtshirt == null || addtshirt.IsDisposed)
-            {
-                addtshirt = new HomeUser(_username, _balance);
-                addtshirt.FormClosed += (s, args) => addtshirt = null;
-                openChildForm(addtshirt);
-            }
-            else
-            {
-                addtshirt.Close();
-                addtshirt = null;
-            }
+            this.Close();
+            th = new Thread(goToHome);
+            th.SetApartmentState(ApartmentState.STA);
+            th.Start();
         }
         private Form addtoCartForm = null;
         private void btn_cart_Click(object sender, EventArgs e)
         {
             if (addtoCartForm == null || addtoCartForm.IsDisposed)
             {
-                addtoCartForm = new cart(_username);
+                addtoCartForm = new cart(_username, _balance);
                 addtoCartForm.FormClosed += (s, args) => addtoCartForm = null;
                 openChildForm(addtoCartForm);
             }
@@ -199,6 +191,11 @@ namespace Finals
                 ordersForm.Close();
                 ordersForm = null;
             }
+        }
+
+        private void lblBalance_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

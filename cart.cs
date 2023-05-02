@@ -18,16 +18,20 @@ namespace Finals
     public partial class cart : Form
     {
         private string _username;
-        
+        private decimal _balance;
+
         private int ProductId;
         byte[] imageBytes;
 
-        public cart(String username)
+        public cart(string username, decimal balance)
         {
             InitializeComponent();
             _username = username; // Set _username to the passed parameter
+            _balance = balance; // Set _username to the passed parameter
             lblDate.Text = DateTime.Now.ToString();
+          //  lblBalance.Text = balance.ToString(); // Display the balance on the label
         }
+
         SqlConnection con = new SqlConnection("Data Source=IVERSONKOBE\\SQLEXPRESS;Initial Catalog=NSDAP_APPAREL_dB;Integrated Security=True");
         public void loadDatagrid()
         {
@@ -91,12 +95,8 @@ namespace Finals
                 }
 
                 // Update user's balance
-                using (SqlCommand updateBalance = new SqlCommand("UPDATE Balance SET Balance = Balance - @price WHERE Username = @username", con))
-                {
-                    updateBalance.Parameters.AddWithValue("@price", price);
-                    updateBalance.Parameters.AddWithValue("@username", _username);
-                    updateBalance.ExecuteNonQuery();
-                }
+                decimal newBalance = balance - price;
+                UpdateBalance(newBalance);
 
                 // Insert order into Orders table
                 using (SqlCommand insertToOrder = new SqlCommand("INSERT INTO Orders(Username, product_ID, Date_Purchased) VALUES(@username, @prodcut_id, @datepurchased)", con))
@@ -120,7 +120,6 @@ namespace Finals
 
                 MessageBox.Show("Success!", "Order confirmed.", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 loadDatagrid();
-
             }
             catch (Exception ex)
             {
@@ -129,9 +128,23 @@ namespace Finals
             finally
             {
                 con.Close();
-            }//mayta oaky na
+            }
         }
 
+        // Method to update the balance label
+        public void UpdateBalance(decimal newBalance)
+        {
+            using (SqlCommand com = new SqlCommand("UPDATE Balance SET Balance = @newBalance WHERE Username = @username", con))
+            {
+                com.Parameters.AddWithValue("@newBalance", newBalance);
+                com.Parameters.AddWithValue("@username", _username);
+                com.ExecuteNonQuery();
+            }
+          //  lblBalance.Text = newBalance.ToString();
+        }
     }
+
 }
+    
+
 
