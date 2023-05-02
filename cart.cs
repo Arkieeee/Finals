@@ -22,14 +22,14 @@ namespace Finals
 
         private int ProductId;
         byte[] imageBytes;
-
-        public cart(string username, decimal balance)
+        private HomeUser _homeUserForm;
+        public cart(String username, decimal balance, HomeUser homeUserForm)
         {
             InitializeComponent();
             _username = username; // Set _username to the passed parameter
-            _balance = balance; // Set _username to the passed parameter
+            _balance = balance; // Set _balance to the passed parameter
+            _homeUserForm = homeUserForm; // Set _homeUserForm to the passed parameter
             lblDate.Text = DateTime.Now.ToString();
-          //  lblBalance.Text = balance.ToString(); // Display the balance on the label
         }
 
         SqlConnection con = new SqlConnection("Data Source=IVERSONKOBE\\SQLEXPRESS;Initial Catalog=NSDAP_APPAREL_dB;Integrated Security=True");
@@ -96,7 +96,7 @@ namespace Finals
 
                 // Update user's balance
                 decimal newBalance = balance - price;
-                UpdateBalance(newBalance);
+                _homeUserForm.UpdateBalance(newBalance);
 
                 // Insert order into Orders table
                 using (SqlCommand insertToOrder = new SqlCommand("INSERT INTO Orders(Username, product_ID, Date_Purchased) VALUES(@username, @prodcut_id, @datepurchased)", con))
@@ -130,21 +130,11 @@ namespace Finals
                 con.Close();
             }
         }
-
-        // Method to update the balance label
-        public void UpdateBalance(decimal newBalance)
-        {
-            using (SqlCommand com = new SqlCommand("UPDATE Balance SET Balance = @newBalance WHERE Username = @username", con))
-            {
-                com.Parameters.AddWithValue("@newBalance", newBalance);
-                com.Parameters.AddWithValue("@username", _username);
-                com.ExecuteNonQuery();
-            }
-          //  lblBalance.Text = newBalance.ToString();
-        }
     }
-
 }
+    
+
+
     
 
 

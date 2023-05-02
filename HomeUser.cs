@@ -9,6 +9,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
 
 namespace Finals
 {
@@ -17,6 +18,7 @@ namespace Finals
     {
         private string _username;
         private decimal _balance;
+        private cart _cartForm;
         Thread th;
 
         public HomeUser(string username, decimal balance) // Accept username parameter in constructor
@@ -28,6 +30,11 @@ namespace Finals
             _balance = balance;
             lblBalance.Text = balance.ToString();
 
+        }
+        public void UpdateBalance(decimal newBalance)
+        {
+            _balance = newBalance;
+            lblBalance.Text = _balance.ToString();
         }
 
         public void goToHome(Object obj)
@@ -167,7 +174,7 @@ namespace Finals
         {
             if (addtoCartForm == null || addtoCartForm.IsDisposed)
             {
-                addtoCartForm = new cart(_username, _balance);
+                addtoCartForm = new cart(_username, _balance, this);
                 addtoCartForm.FormClosed += (s, args) => addtoCartForm = null;
                 openChildForm(addtoCartForm);
             }
