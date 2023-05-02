@@ -119,6 +119,7 @@ namespace Finals
                 con.Close();
 
                 MessageBox.Show("Success!", "Order confirmed.", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                 loadDatagrid();
             }
             catch (Exception ex)
