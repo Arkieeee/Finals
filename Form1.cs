@@ -82,6 +82,7 @@ namespace Finals
         private void btnlogin_Click(object sender, EventArgs e)
         {
             SqlCommand Checkifexist = new SqlCommand();
+            //Checkifexist.CommandText = "SELECT * FROM NSDAP_user WHERE Username = @Username and Password = @Password";
             Checkifexist.CommandText = "SELECT * FROM NSDAP_user WHERE Username = '" + txtusername.Text + "' and Password = '" + Encrypt(txtpassword.Text) + "'";
             Checkifexist.Parameters.AddWithValue("@Username", txtusername.Text);
             Checkifexist.Parameters.AddWithValue("@Password", Encrypt(txtpassword.Text));
@@ -115,7 +116,7 @@ namespace Finals
                     con.Close(); // Close the connection before opening a new one
 
                     SqlCommand getBalance = new SqlCommand();
-                    getBalance.CommandText = "SELECT balance FROM Balance WHERE Username = @Username";
+                    getBalance.CommandText = "SELECT Balance FROM Balance WHERE Username = @Username";
                     getBalance.Parameters.AddWithValue("@Username", txtusername.Text);
                     getBalance.Connection = con;
 
