@@ -50,6 +50,7 @@ namespace Finals
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             txtName.Text = dataGridView1.Rows[e.RowIndex].Cells["Name"].Value.ToString();
+         
             lblPrice.Text = dataGridView1.Rows[e.RowIndex].Cells["Price"].Value.ToString();
             ProductId = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["Product_ID"].Value.ToString());
          
@@ -83,7 +84,7 @@ namespace Finals
                 }
 
                 // Use parameterized queries to avoid SQL injection attacks
-                using (SqlCommand insertToCart = new SqlCommand("INSERT INTO Cart(Username, Product_ID,Quantity, Price) VALUES(@username, @productId, @quantity, @price)", con))
+                using (SqlCommand insertToCart = new SqlCommand("INSERT INTO Cart(Username, Product_ID, Quantity, Price) VALUES(@username, @productId, @quantity, @price)", con))
                 {
                     insertToCart.Parameters.AddWithValue("@username", _username);
                     insertToCart.Parameters.AddWithValue("@productId", ProductId);
@@ -99,6 +100,20 @@ namespace Finals
                     }
                     con.Close();
                 }
+                // Use parameterized queries to avoid SQL injection attacks
+                using (SqlCommand insertToBackup_Cart = new SqlCommand("INSERT INTO Backup_Cart(Username, Product_ID, Quantity, Price) VALUES(@username, @productId, @quantity, @price)", con))
+                {
+                    con.Open();
+                    insertToBackup_Cart.Parameters.AddWithValue("@username", _username);
+                    insertToBackup_Cart.Parameters.AddWithValue("@productId", ProductId);
+                    insertToBackup_Cart.Parameters.AddWithValue("@quantity", txtQuantity.Text);
+                    insertToBackup_Cart.Parameters.AddWithValue("@price", lblPrice.Text);
+
+                    insertToBackup_Cart.ExecuteNonQuery();
+
+                    con.Close();
+                }
+
 
 
                 MessageBox.Show("Success!", "Items confirmed.", MessageBoxButtons.OK, MessageBoxIcon.Information);

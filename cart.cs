@@ -115,8 +115,12 @@ namespace Finals
                     deleteFromCart.ExecuteNonQuery();
                 }
 
+                // Close the connection
+                con.Close();
+
                 MessageBox.Show("Success!", "Order confirmed.", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 loadDatagrid();
+
             }
             catch (Exception ex)
             {
@@ -125,7 +129,7 @@ namespace Finals
             finally
             {
                 con.Close();
-            }
+            }//mayta oaky na
         }
 
     }

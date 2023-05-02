@@ -25,7 +25,7 @@ namespace Finals
         private void loadDatagrid()
         {
             con.Open();
-            SqlCommand com = new SqlCommand("SELECT NSDAP_user.Username, NSDAP_user.Name, Order_ID, Orders.Image_apparel As Item, Orders.Name as Description, Orders.Date_Purchased as 'Date Purchased' FROM NSDAP_user INNER JOIN Orders ON NSDAP_user.Username = Orders.Username WHERE NSDAP_user.Username = '"+_username+"'", con);
+            SqlCommand com = new SqlCommand("SELECT p.Product_ID,p.Image_apparel, p.Name, c.Quantity, c.Price\r\nFROM Products p\r\nINNER JOIN Cart c ON p.Product_ID = c.Product_ID where Username = '"+_username+"'",con);
             SqlDataAdapter adap = new SqlDataAdapter(com);
             DataTable tab = new DataTable();
             adap.Fill(tab);
