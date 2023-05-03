@@ -18,7 +18,7 @@ namespace Finals
     {
        
         Thread signup;
-        Thread Admin;
+        
         Thread User;
         Thread fpass;
         public Form1()

@@ -18,7 +18,7 @@ namespace Finals
     {
         private string _username;
         private decimal _balance;
-        private cart _cartForm;
+    
         Thread th;
 
         public HomeUser(string username, decimal balance) // Accept username parameter in constructor
@@ -204,7 +204,7 @@ namespace Finals
         {
             if (cashinform == null || cashinform.IsDisposed)
             {
-                cashinform = new CashIn();
+                cashinform = new CashIn(_username, _balance, this);
                 cashinform.FormClosed += (s, args) => cashinform = null;
                 openChildForm(cashinform);
             }
