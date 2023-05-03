@@ -126,6 +126,8 @@ namespace Finals
                      
                         SqlCommand insert = new SqlCommand("insert into NSDAP_user(Name,Email,Username, Contact_Number, Address, Password)values('" +txtname.Text + "','" + txtemail.Text + "','" + txtusername.Text + "','" + txtcontact_number.Text + "','" + txtaddress.Text + "','" + Password + "')", con);
                         insert.ExecuteNonQuery();
+                        SqlCommand insertToBalance = new SqlCommand("Insert Into Balance(Username, Balance) VALUES ('"+txtusername.Text+"', 0.00)", con);
+                        insertToBalance.ExecuteNonQuery();  
                         con.Close();   
                         MessageBox.Show("Registered!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 

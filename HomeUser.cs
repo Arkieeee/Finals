@@ -199,10 +199,20 @@ namespace Finals
                 ordersForm = null;
             }
         }
-
-        private void lblBalance_Click(object sender, EventArgs e)
+        private CashIn cashinform = null;
+        private void btncashin_Click(object sender, EventArgs e)
         {
-
+            if (cashinform == null || cashinform.IsDisposed)
+            {
+                cashinform = new CashIn();
+                cashinform.FormClosed += (s, args) => cashinform = null;
+                openChildForm(cashinform);
+            }
+            else
+            {
+                cashinform.Close();
+                cashinform = null;
+            }
         }
     }
 }

@@ -48,6 +48,7 @@
             this.panelMain = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btncashin = new System.Windows.Forms.Button();
             this.sideMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panel2.SuspendLayout();
@@ -61,6 +62,7 @@
             // 
             this.sideMenu.BackColor = System.Drawing.Color.Black;
             this.sideMenu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.sideMenu.Controls.Add(this.btncashin);
             this.sideMenu.Controls.Add(this.btnhome);
             this.sideMenu.Controls.Add(this.pictureBox3);
             this.sideMenu.Controls.Add(this.button5);
@@ -269,7 +271,6 @@
             this.lblBalance.Size = new System.Drawing.Size(53, 16);
             this.lblBalance.TabIndex = 3;
             this.lblBalance.Text = "Kwarta";
-            this.lblBalance.Click += new System.EventHandler(this.lblBalance_Click);
             // 
             // label1
             // 
@@ -339,6 +340,23 @@
             this.panel3.Size = new System.Drawing.Size(593, 123);
             this.panel3.TabIndex = 2;
             // 
+            // btncashin
+            // 
+            this.btncashin.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btncashin.FlatAppearance.BorderSize = 0;
+            this.btncashin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btncashin.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btncashin.Location = new System.Drawing.Point(0, 342);
+            this.btncashin.Margin = new System.Windows.Forms.Padding(4);
+            this.btncashin.Name = "btncashin";
+            this.btncashin.Padding = new System.Windows.Forms.Padding(13, 0, 0, 0);
+            this.btncashin.Size = new System.Drawing.Size(252, 31);
+            this.btncashin.TabIndex = 12;
+            this.btncashin.Text = "Cash In";
+            this.btncashin.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btncashin.UseVisualStyleBackColor = true;
+            this.btncashin.Click += new System.EventHandler(this.btncashin_Click);
+            // 
             // HomeUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -387,5 +405,6 @@
         private System.Windows.Forms.Button btnhome;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblBalance;
+        private System.Windows.Forms.Button btncashin;
     }
 }
