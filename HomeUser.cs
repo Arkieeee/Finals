@@ -164,10 +164,11 @@ namespace Finals
 
         private void btnhome_Click(object sender, EventArgs e)
         {
-            this.Close();
-            th = new Thread(goToHome);
-            th.SetApartmentState(ApartmentState.STA);
-            th.Start();
+            if (activeForm != null)
+            {
+                activeForm.Close();
+                activeForm = null;
+            }
         }
         private Form addtoCartForm = null;
         private void btn_cart_Click(object sender, EventArgs e)

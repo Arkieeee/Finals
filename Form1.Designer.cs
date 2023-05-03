@@ -137,6 +137,7 @@
             this.txtusername.Size = new System.Drawing.Size(204, 24);
             this.txtusername.TabIndex = 10;
             this.txtusername.Text = "Username";
+            this.txtusername.TextChanged += new System.EventHandler(this.txtusername_TextChanged);
             this.txtusername.Enter += new System.EventHandler(this.txtusername_Enter);
             this.txtusername.Leave += new System.EventHandler(this.txtusername_Leave);
             // 

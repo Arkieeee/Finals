@@ -9,6 +9,7 @@ using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -16,7 +17,7 @@ namespace Finals
 {
     public partial class forgotpass : Form
     {
-        SqlConnection con = new SqlConnection("Data Source=IVERSONKOBE\\SQLEXPRESS;Initial Catalog=NSDAP_APPAREL_dB;Integrated Security=True");
+        SqlConnection con = new SqlConnection("Data Source=ARKI\\SQLEXPRESS;Initial Catalog=NSDAP_APPAREL_dB;Integrated Security=True");
         public forgotpass()
         {
             InitializeComponent();
@@ -24,7 +25,7 @@ namespace Finals
 
         private void forgotpass_Load(object sender, EventArgs e)
         {
-
+            this.ActiveControl = Return;
         }
 
         public static string Encrypt(string encryptString)
@@ -121,7 +122,7 @@ namespace Finals
             }
             else if (txtconfirmpass.Text == txtnewpass.Text)
             {
-                SqlConnection con = new SqlConnection("Data Source=DOMINICPC\\SQLEXPRESS;Initial Catalog=NSDAP_APPAREL_dB;Integrated Security=True");
+                SqlConnection con = new SqlConnection("Data Source=ARKI\\SQLEXPRESS;Initial Catalog=NSDAP_APPAREL_dB;Integrated Security=True");
                 SqlCommand CheckifExist = new SqlCommand();
                 CheckifExist.CommandText = "Select * from [dbo].[NSDAP_user] where Username = @Username";
                 CheckifExist.Parameters.AddWithValue("@Username", txtusername.Text);
@@ -155,6 +156,77 @@ namespace Finals
                         MessageBox.Show("Password Successfully Changed!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
+            }
+        }
+
+        private void Return_Click(object sender, EventArgs e)
+        {
+            // Create a new instance of Form1
+            Form1 form1 = new Form1();
+
+            // Hide the current form
+            this.Hide();
+
+            // Show Form1
+            form1.Show();
+
+        }
+
+        private void txtusername_Enter(object sender, EventArgs e)
+        {
+            if (txtusername.Text == "Username")
+            {
+                txtusername.Text = "";
+                txtusername.ForeColor = Color.Black; // Set the text color back to black for regular input
+            }
+        }
+
+        private void txtusername_Leave(object sender, EventArgs e)
+        {
+            if (txtusername.Text == "")
+            {
+                txtusername.Text = "Username";
+                txtusername.ForeColor = Color.Silver; // Set the text color back to black for regular input
+            }
+        }
+
+        private void txtnewpass_Enter(object sender, EventArgs e)
+        {
+            if (txtnewpass.Text == "Password")
+            {
+                txtnewpass.Text = "";
+                txtnewpass.UseSystemPasswordChar = true;
+                txtnewpass.ForeColor = Color.Black; // Set the text color back to black for regular input
+            }
+        }
+
+        private void txtnewpass_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtnewpass.Text))
+            {
+                txtnewpass.UseSystemPasswordChar = false;
+                txtnewpass.Text = "Password";
+                txtnewpass.ForeColor = Color.Gray;
+            }
+        }
+
+        private void txtconfirmpass_Enter(object sender, EventArgs e)
+        {
+            if (txtconfirmpass.Text == "Confirm Password")
+            {
+                txtconfirmpass.Text = "";
+                txtconfirmpass.UseSystemPasswordChar = true;
+                txtconfirmpass.ForeColor = Color.Black; // Set the text color back to black for regular input
+            }
+        }
+
+        private void txtconfirmpass_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtconfirmpass.Text))
+            {
+                txtconfirmpass.UseSystemPasswordChar = false;
+                txtconfirmpass.Text = "Confirm Password";
+                txtconfirmpass.ForeColor = Color.Gray;
             }
         }
     }

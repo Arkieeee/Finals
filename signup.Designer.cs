@@ -98,6 +98,8 @@
             this.txtname.Size = new System.Drawing.Size(204, 24);
             this.txtname.TabIndex = 13;
             this.txtname.Text = "Name";
+            this.txtname.Enter += new System.EventHandler(this.txtname_Enter);
+            this.txtname.Leave += new System.EventHandler(this.txtname_Leave);
             // 
             // panel1
             // 
@@ -128,6 +130,8 @@
             this.txtusername.Size = new System.Drawing.Size(204, 24);
             this.txtusername.TabIndex = 16;
             this.txtusername.Text = "Username";
+            this.txtusername.Enter += new System.EventHandler(this.txtusername_Enter);
+            this.txtusername.Leave += new System.EventHandler(this.txtusername_Leave);
             // 
             // panel2
             // 
@@ -156,7 +160,9 @@
             this.txtpassword.Name = "txtpassword";
             this.txtpassword.Size = new System.Drawing.Size(204, 17);
             this.txtpassword.TabIndex = 19;
-            this.txtpassword.UseSystemPasswordChar = true;
+            this.txtpassword.Text = "Password";
+            this.txtpassword.Enter += new System.EventHandler(this.txtpassword_Enter);
+            this.txtpassword.Leave += new System.EventHandler(this.txtpassword_Leave);
             // 
             // panel3
             // 
@@ -198,7 +204,9 @@
             this.txtconfirm_password.Name = "txtconfirm_password";
             this.txtconfirm_password.Size = new System.Drawing.Size(204, 17);
             this.txtconfirm_password.TabIndex = 23;
-            this.txtconfirm_password.UseSystemPasswordChar = true;
+            this.txtconfirm_password.Text = "Confirm Password";
+            this.txtconfirm_password.Enter += new System.EventHandler(this.txtconfirm_password_Enter);
+            this.txtconfirm_password.Leave += new System.EventHandler(this.txtconfirm_password_Leave);
             // 
             // panel4
             // 
@@ -257,6 +265,8 @@
             this.txtcontact_number.Size = new System.Drawing.Size(204, 24);
             this.txtcontact_number.TabIndex = 28;
             this.txtcontact_number.Text = "Contact Number";
+            this.txtcontact_number.Enter += new System.EventHandler(this.txtcontact_number_Enter);
+            this.txtcontact_number.Leave += new System.EventHandler(this.txtcontact_number_Leave);
             // 
             // panel5
             // 
@@ -287,6 +297,8 @@
             this.txtemail.Size = new System.Drawing.Size(204, 24);
             this.txtemail.TabIndex = 31;
             this.txtemail.Text = "Email";
+            this.txtemail.Enter += new System.EventHandler(this.txtemail_Enter);
+            this.txtemail.Leave += new System.EventHandler(this.txtemail_Leave);
             // 
             // panel6
             // 
@@ -317,6 +329,8 @@
             this.txtaddress.Size = new System.Drawing.Size(204, 24);
             this.txtaddress.TabIndex = 34;
             this.txtaddress.Text = "Address";
+            this.txtaddress.Enter += new System.EventHandler(this.txtaddress_Enter);
+            this.txtaddress.Leave += new System.EventHandler(this.txtaddress_Leave);
             // 
             // panel7
             // 
@@ -386,6 +400,7 @@
             this.Name = "signup";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "signup";
+            this.Load += new System.EventHandler(this.signup_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();

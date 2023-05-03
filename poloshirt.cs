@@ -21,7 +21,7 @@ namespace Finals
             InitializeComponent();
             _username = username; // Set _username to the passed parameter
         }
-        SqlConnection con = new SqlConnection("Data Source=IVERSONKOBE\\SQLEXPRESS;Initial Catalog=NSDAP_APPAREL_dB;Integrated Security=True");
+        SqlConnection con = new SqlConnection("Data Source=ARKI\\SQLEXPRESS;Initial Catalog=NSDAP_APPAREL_dB;Integrated Security=True");
         private void loadDatagrid()
         {
             con.Open();
@@ -149,8 +149,20 @@ namespace Finals
             }
         }
 
-        
-        
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 
 }

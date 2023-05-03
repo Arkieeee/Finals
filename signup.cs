@@ -17,7 +17,7 @@ namespace Finals
 {
     public partial class signup : Form
     {
-        SqlConnection con = new SqlConnection("Data Source=IVERSONKOBE\\SQLEXPRESS;Initial Catalog=NSDAP_APPAREL_dB;Integrated Security=True");
+        SqlConnection con = new SqlConnection("Data Source=ARKI\\SQLEXPRESS;Initial Catalog=NSDAP_APPAREL_dB;Integrated Security=True");
         Thread tologin;
         public signup()
         {
@@ -172,6 +172,141 @@ namespace Finals
             tologin.Start();
         }
 
+        private void txtname_Enter(object sender, EventArgs e)
+        {
+            if (txtname.Text =="Name")
+            {
+                txtname.Text = "";
+                txtname.ForeColor = Color.Black; // Set the text color back to black for regular input
+            }
+        }
+
+        private void txtname_Leave(object sender, EventArgs e)
+        {
+            if (txtname.Text == "")
+            {
+                txtname.Text = "Name";
+                txtname.ForeColor = Color.Silver; // Set the text color back to black for regular input
+            }
+        }
+
+        private void txtemail_Enter(object sender, EventArgs e)
+        {
+            if (txtemail.Text == "Email")
+            {
+                txtemail.Text = "";
+                txtemail.ForeColor = Color.Black; // Set the text color back to black for regular input
+            }
+        }
+
+        private void txtemail_Leave(object sender, EventArgs e)
+        {
+            if (txtemail.Text == "")
+            {
+                txtemail.Text = "Email";
+                txtemail.ForeColor = Color.Silver; // Set the text color back to black for regular input
+            }
+        }
+
+        private void txtusername_Enter(object sender, EventArgs e)
+        {
+            if (txtusername.Text == "Username")
+            {
+                txtusername.Text = "";
+                txtusername.ForeColor = Color.Black; // Set the text color back to black for regular input
+            }
+        }
+
+        private void txtusername_Leave(object sender, EventArgs e)
+        {
+            if (txtusername.Text == "")
+            {
+                txtusername.Text = "Username";
+                txtusername.ForeColor = Color.Silver; // Set the text color back to black for regular input
+            }
+        }
+
+        private void txtcontact_number_Enter(object sender, EventArgs e)
+        {
+            if (txtcontact_number.Text == "Contact Number")
+            {
+                txtcontact_number.Text = "";
+                txtcontact_number.ForeColor = Color.Black; // Set the text color back to black for regular input
+            }
+        }
+
+        private void txtcontact_number_Leave(object sender, EventArgs e)
+        {
+            if (txtcontact_number.Text == "")
+            {
+                txtcontact_number.Text = "Contact Number";
+                txtcontact_number.ForeColor = Color.Silver; // Set the text color back to black for regular input
+            }
+        }
+
+        private void txtaddress_Enter(object sender, EventArgs e)
+        {
+            if (txtaddress.Text == "Address")
+            {
+                txtaddress.Text = "";
+                txtaddress.ForeColor = Color.Black; // Set the text color back to black for regular input
+            }
+        }
+
+        private void txtaddress_Leave(object sender, EventArgs e)
+        {
+            if (txtaddress.Text == "")
+            {
+                txtaddress.Text = "Address";
+                txtaddress.ForeColor = Color.Silver; // Set the text color back to black for regular input
+            }
+        }
+
+        private void txtpassword_Enter(object sender, EventArgs e)
+        {
+            if (txtpassword.Text == "Password")
+            {
+                txtpassword.Text = "";
+                txtpassword.UseSystemPasswordChar = true;
+                txtpassword.ForeColor = Color.Black; // Set the text color back to black for regular input
+            }
+        }
+
+        private void txtpassword_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtpassword.Text))
+            {
+                txtpassword.UseSystemPasswordChar = false;
+                txtpassword.Text = "Password";
+                txtpassword.ForeColor = Color.Gray;
+            }
+        }
+
+        private void txtconfirm_password_Enter(object sender, EventArgs e)
+        {
+            if (txtconfirm_password.Text == "Confirm Password")
+            {
+                txtconfirm_password.Text = "";
+                txtconfirm_password.UseSystemPasswordChar = true;
+                txtconfirm_password.ForeColor = Color.Black; // Set the text color back to black for regular input
+            }
+        }
+
+        private void txtconfirm_password_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtconfirm_password.Text))
+            {
+                txtconfirm_password.UseSystemPasswordChar = false;
+                txtconfirm_password.Text = "Password";
+                txtconfirm_password.ForeColor = Color.Gray;
+            }
+        }
+
+        private void signup_Load(object sender, EventArgs e)
+        {
+            // Set the focus to a different control
+            this.ActiveControl = btnsignup;
+        }
     }
     }
 

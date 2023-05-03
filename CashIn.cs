@@ -25,7 +25,7 @@ namespace Finals
             _balance = balance; // Set _balance to the passed parameter
             _homeUserForm = homeUserForm; // Set _homeUserForm to the passed parameter
         }
-        SqlConnection con = new SqlConnection("Data Source=IVERSONKOBE\\SQLEXPRESS;Initial Catalog=NSDAP_APPAREL_dB;Integrated Security=True");
+        SqlConnection con = new SqlConnection("Data Source=ARKI\\SQLEXPRESS;Initial Catalog=NSDAP_APPAREL_dB;Integrated Security=True");
 
         private void btncashin_Click(object sender, EventArgs e)
         {
