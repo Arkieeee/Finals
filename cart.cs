@@ -107,17 +107,17 @@ namespace Finals
 
                     insertToOrder.ExecuteNonQuery();
                 }
-
+               
                 // Delete items from user's cart
-                using (SqlCommand deleteFromCart = new SqlCommand("DELETE FROM Cart WHERE Username = @username", con))
+                using (SqlCommand deleteFromCart = new SqlCommand("DELETE FROM Cart WHERE Username = @username AND WHERE Product_ID = @product_id" , con))
                 {
                     deleteFromCart.Parameters.AddWithValue("@username", _username);
+                    deleteFromCart.Parameters.AddWithValue("@username", ProductId);
                     deleteFromCart.ExecuteNonQuery();
                 }
 
                 // Close the connection
                 con.Close();
-
                 MessageBox.Show("Success!", "Order confirmed.", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 loadDatagrid();
@@ -131,11 +131,14 @@ namespace Finals
                 con.Close();
             }
         }
+
+
     }
 }
     
 
 
     
+
 
 

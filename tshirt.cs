@@ -50,6 +50,7 @@ namespace Finals
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         { 
             lblName.Text = dataGridView1.Rows[e.RowIndex].Cells["Name"].Value.ToString();
+            
             Label_Price.Text = dataGridView1.Rows[e.RowIndex].Cells["Price"].Value.ToString();
             ProductId = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["Product_ID"].Value.ToString());
          
@@ -87,12 +88,12 @@ namespace Finals
                 {
                     insertToCart.Parameters.AddWithValue("@username", _username);
                     insertToCart.Parameters.AddWithValue("@productId", ProductId);
-                    insertToCart.Parameters.AddWithValue("@quantity", txtQuantity.Text);
+                    insertToCart.Parameters.AddWithValue("@quantity", lblQuanity.Text);
                     insertToCart.Parameters.AddWithValue("@price", Label_Price.Text);
 
                     insertToCart.ExecuteNonQuery();
 
-                    using (SqlCommand updateQuantity = new SqlCommand("UPDATE Products SET Quantity = Quantity - '" + txtQuantity.Text + "' WHERE Product_ID = @productId", con))
+                    using (SqlCommand updateQuantity = new SqlCommand("UPDATE Products SET Quantity = Quantity - '" + lblQuanity.Text + "' WHERE Product_ID = @productId", con))
                     {
                         updateQuantity.Parameters.AddWithValue("@productId", ProductId);
                         updateQuantity.ExecuteNonQuery();
@@ -105,7 +106,7 @@ namespace Finals
                     con.Open();
                     insertToBackup_Cart.Parameters.AddWithValue("@username", _username);
                     insertToBackup_Cart.Parameters.AddWithValue("@productId", ProductId);
-                    insertToBackup_Cart.Parameters.AddWithValue("@quantity", txtQuantity.Text);
+                    insertToBackup_Cart.Parameters.AddWithValue("@quantity", lblQuanity.Text);
                     insertToBackup_Cart.Parameters.AddWithValue("@price", Label_Price.Text);
 
                     insertToBackup_Cart.ExecuteNonQuery();
@@ -126,8 +127,19 @@ namespace Finals
             }
         }
 
-        private void txtQuantity_TextChanged(object sender, EventArgs e)
+        private void btnAddquantity_Click(object sender, EventArgs e)
         {
+            int currentValue;
+
+            if (int.TryParse(lblQuanity.Text, out currentValue))
+            {
+                lblQuanity.Text = (currentValue + 1).ToString();
+            }
+            else
+            {
+                lblQuanity.Text = "1";
+            }
+
             decimal price;
             decimal quantity;
 
@@ -138,38 +150,44 @@ namespace Finals
                 {
                     // Show an error message and return if the price cannot be parsed
                     MessageBox.Show("Invalid price value.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
+                    return;
                 }
 
                 // Try to parse the quantity as a decimal
-                if (!decimal.TryParse(txtQuantity.Text, out quantity))
+                if (!decimal.TryParse(lblQuanity.Text, out quantity))
                 {
                     // Show an error message and return if the quantity cannot be parsed
                     MessageBox.Show("Invalid quantity value.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
+                    return;
                 }
 
-                // If txtQuantity is empty, set Label_Price to 0
-                if (string.IsNullOrEmpty(txtQuantity.Text))
+                // Calculate the total price
+                decimal totalPrice = price * quantity;
+
+                // If Label_TotalPrice already has a value, add the new price to the previous total price
+                if (!string.IsNullOrEmpty(Label_TotalPrice.Text))
                 {
-                    Label_Price.Text = "0";
+                    decimal previousTotalPrice;
+                    if (decimal.TryParse(Label_TotalPrice.Text, out previousTotalPrice))
+                    {
+                        totalPrice += previousTotalPrice;
+                    }
                 }
-                else
-                {
-                    // Calculate the total price
-                    decimal totalPrice = price * quantity;
 
-                    // Update the Label_Price field with the total price
-                    Label_Price.Text = totalPrice.ToString();
-                    con.Close();
-                }
+                // Update the Label_Price and Label_TotalPrice fields
+                Label_Price.Text = price.ToString();
+                Label_TotalPrice.Text = totalPrice.ToString();
+
+                con.Close();
             }
             catch (Exception ex)
             {
                 MessageBox.Show("An error occurred: " + ex.Message);
             }
         }
+
+       
     }
 
-    }
+}
 

@@ -147,7 +147,8 @@ namespace Finals
                 // If txtQuantity is empty, set Label_Price to 0
                 if (string.IsNullOrEmpty(txtQuantity.Text))
                 {
-                    Label_Price.Text = "0";
+                    Label_Price.Text = string.Empty;
+                    lblName.Text = string.Empty;
                 }
                 else
                 {
