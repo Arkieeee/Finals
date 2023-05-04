@@ -27,7 +27,7 @@ namespace Finals
             txtusername.Enter += new EventHandler(txtusername_Enter);
             txtusername.Leave += new EventHandler(txtusername_Leave);
         }
-        SqlConnection con = new SqlConnection("Data Source=ARKI\\SQLEXPRESS;Initial Catalog=NSDAP_APPAREL_dB;Integrated Security=True");
+        SqlConnection con = new SqlConnection("Data Source=IVERSONKOBE\\SQLEXPRESS;Initial Catalog=NSDAP_APPAREL_dB;Integrated Security=True");
         public string Username
         {
             get { return txtusername.Text; }

@@ -17,7 +17,7 @@ namespace Finals
 {
     public partial class signup : Form
     {
-        SqlConnection con = new SqlConnection("Data Source=ARKI\\SQLEXPRESS;Initial Catalog=NSDAP_APPAREL_dB;Integrated Security=True");
+        SqlConnection con = new SqlConnection("Data Source=IVERSONKOBE\\SQLEXPRESS;Initial Catalog=NSDAP_APPAREL_dB;Integrated Security=True");
         Thread tologin;
         public signup()
         {

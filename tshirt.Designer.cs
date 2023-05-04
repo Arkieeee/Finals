@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(tshirt));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.txtName = new System.Windows.Forms.TextBox();
             this.txtQuantity = new System.Windows.Forms.TextBox();
             this.btnAddToCart = new System.Windows.Forms.Button();
             this.lblPrice = new System.Windows.Forms.Label();
@@ -38,6 +37,8 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.lblName = new System.Windows.Forms.Label();
+            this.Label_Price = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -61,20 +62,12 @@
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // txtName
-            // 
-            this.txtName.Location = new System.Drawing.Point(76, 102);
-            this.txtName.Margin = new System.Windows.Forms.Padding(4);
-            this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(215, 22);
-            this.txtName.TabIndex = 2;
-            // 
             // txtQuantity
             // 
             this.txtQuantity.Location = new System.Drawing.Point(76, 135);
             this.txtQuantity.Margin = new System.Windows.Forms.Padding(4);
             this.txtQuantity.Name = "txtQuantity";
-            this.txtQuantity.Size = new System.Drawing.Size(215, 22);
+            this.txtQuantity.Size = new System.Drawing.Size(215, 26);
             this.txtQuantity.TabIndex = 2;
             this.txtQuantity.TextChanged += new System.EventHandler(this.txtQuantity_TextChanged);
             // 
@@ -82,7 +75,7 @@
             // 
             this.btnAddToCart.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.btnAddToCart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddToCart.Font = new System.Drawing.Font("SF Compact Display", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddToCart.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddToCart.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnAddToCart.Location = new System.Drawing.Point(121, 214);
             this.btnAddToCart.Name = "btnAddToCart";
@@ -97,7 +90,7 @@
             this.lblPrice.AutoSize = true;
             this.lblPrice.Location = new System.Drawing.Point(93, 165);
             this.lblPrice.Name = "lblPrice";
-            this.lblPrice.Size = new System.Drawing.Size(0, 16);
+            this.lblPrice.Size = new System.Drawing.Size(0, 20);
             this.lblPrice.TabIndex = 5;
             // 
             // pictureBox2
@@ -144,12 +137,34 @@
             this.pictureBox3.TabIndex = 13;
             this.pictureBox3.TabStop = false;
             // 
+            // lblName
+            // 
+            this.lblName.AutoSize = true;
+            this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblName.Location = new System.Drawing.Point(72, 99);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(44, 20);
+            this.lblName.TabIndex = 14;
+            this.lblName.Text = "-----";
+            // 
+            // Label_Price
+            // 
+            this.Label_Price.AutoSize = true;
+            this.Label_Price.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label_Price.Location = new System.Drawing.Point(72, 170);
+            this.Label_Price.Name = "Label_Price";
+            this.Label_Price.Size = new System.Drawing.Size(51, 20);
+            this.Label_Price.TabIndex = 15;
+            this.Label_Price.Text = "------";
+            // 
             // tshirt
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(23)))));
             this.ClientSize = new System.Drawing.Size(1015, 441);
+            this.Controls.Add(this.Label_Price);
+            this.Controls.Add(this.lblName);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.pictureBox1);
@@ -157,7 +172,6 @@
             this.Controls.Add(this.lblPrice);
             this.Controls.Add(this.btnAddToCart);
             this.Controls.Add(this.txtQuantity);
-            this.Controls.Add(this.txtName);
             this.Controls.Add(this.dataGridView1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.SystemColors.Control;
@@ -179,7 +193,6 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.TextBox txtQuantity;
         private System.Windows.Forms.Button btnAddToCart;
         private System.Windows.Forms.Label lblPrice;
@@ -187,5 +200,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Label lblName;
+        private System.Windows.Forms.Label Label_Price;
     }
 }

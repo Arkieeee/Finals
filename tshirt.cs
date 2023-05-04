@@ -27,7 +27,7 @@ namespace Finals
             
         }
 
-        SqlConnection con = new SqlConnection("Data Source=ARKI\\SQLEXPRESS;Initial Catalog=NSDAP_APPAREL_dB;Integrated Security=True");
+        SqlConnection con = new SqlConnection("Data Source=IVERSONKOBE\\SQLEXPRESS;Initial Catalog=NSDAP_APPAREL_dB;Integrated Security=True");
         private void loadDatagrid()
         {
             con.Open();
@@ -48,10 +48,9 @@ namespace Finals
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            txtName.Text = dataGridView1.Rows[e.RowIndex].Cells["Name"].Value.ToString();
-         
-            lblPrice.Text = dataGridView1.Rows[e.RowIndex].Cells["Price"].Value.ToString();
+        { 
+            lblName.Text = dataGridView1.Rows[e.RowIndex].Cells["Name"].Value.ToString();
+            Label_Price.Text = dataGridView1.Rows[e.RowIndex].Cells["Price"].Value.ToString();
             ProductId = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["Product_ID"].Value.ToString());
          
         }
@@ -89,7 +88,7 @@ namespace Finals
                     insertToCart.Parameters.AddWithValue("@username", _username);
                     insertToCart.Parameters.AddWithValue("@productId", ProductId);
                     insertToCart.Parameters.AddWithValue("@quantity", txtQuantity.Text);
-                    insertToCart.Parameters.AddWithValue("@price", lblPrice.Text);
+                    insertToCart.Parameters.AddWithValue("@price", Label_Price.Text);
 
                     insertToCart.ExecuteNonQuery();
 
@@ -107,7 +106,7 @@ namespace Finals
                     insertToBackup_Cart.Parameters.AddWithValue("@username", _username);
                     insertToBackup_Cart.Parameters.AddWithValue("@productId", ProductId);
                     insertToBackup_Cart.Parameters.AddWithValue("@quantity", txtQuantity.Text);
-                    insertToBackup_Cart.Parameters.AddWithValue("@price", lblPrice.Text);
+                    insertToBackup_Cart.Parameters.AddWithValue("@price", Label_Price.Text);
 
                     insertToBackup_Cart.ExecuteNonQuery();
 
@@ -135,11 +134,11 @@ namespace Finals
             try
             {
                 // Try to parse the price as a decimal
-                if (!decimal.TryParse(lblPrice.Text, out price))
+                if (!decimal.TryParse(Label_Price.Text, out price))
                 {
                     // Show an error message and return if the price cannot be parsed
                     MessageBox.Show("Invalid price value.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
+
                 }
 
                 // Try to parse the quantity as a decimal
@@ -147,23 +146,22 @@ namespace Finals
                 {
                     // Show an error message and return if the quantity cannot be parsed
                     MessageBox.Show("Invalid quantity value.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
+
                 }
-                if (txtQuantity.Text == "")
+
+                // If txtQuantity is empty, set Label_Price to 0
+                if (string.IsNullOrEmpty(txtQuantity.Text))
                 {
-                    lblPrice.Text = "";
+                    Label_Price.Text = "0";
                 }
                 else
                 {
-
                     // Calculate the total price
-                    decimal totalPrice = txtQuantity.Text == "" ? 0 : price * quantity;
+                    decimal totalPrice = price * quantity;
 
-                    // Update the txtPrice field with the total price
-                    lblPrice.Text = totalPrice.ToString();
-                    con.Close() ;
-
-
+                    // Update the Label_Price field with the total price
+                    Label_Price.Text = totalPrice.ToString();
+                    con.Close();
                 }
             }
             catch (Exception ex)
