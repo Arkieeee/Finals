@@ -108,11 +108,18 @@ namespace Finals
                     insertToOrder.ExecuteNonQuery();
                 }
 
+                using (SqlCommand UpdateBalance = new SqlCommand("Update Balance set Balance = Balance - @totalprice", con))
+                {
+                    UpdateBalance.Parameters.AddWithValue("@totalprice", lblPrice.Text);
+
+                    UpdateBalance.ExecuteNonQuery();
+                }
+
                 // Delete items from user's cart
-                using (SqlCommand deleteFromCart = new SqlCommand("DELETE FROM Cart WHERE Username = @username AND WHERE Product_ID = @product_id", con))
+                using (SqlCommand deleteFromCart = new SqlCommand("DELETE FROM Cart WHERE Username = @username AND Product_ID = @product_id", con))
                 {
                     deleteFromCart.Parameters.AddWithValue("@username", _username);
-                    deleteFromCart.Parameters.AddWithValue("@username", ProductId);
+                    deleteFromCart.Parameters.AddWithValue("@product_id", ProductId);
                     deleteFromCart.ExecuteNonQuery();
                 }
 
@@ -140,19 +147,21 @@ namespace Finals
         private void btnRemove_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show("Are you sure you want to remove this item from cart?", "Item removal", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            con.Open();
-            SqlCommand deletefromcart = new SqlCommand("DELETE FROM cart WHERE Product_ID = @product_id and Quantity = @quantity", con);
-            deletefromcart.Parameters.AddWithValue("@product_id", ProductId);
-            deletefromcart.Parameters.AddWithValue("@quantity", lblQuantity.Text);
-            deletefromcart.ExecuteNonQuery();
-            con.Close();
-            MessageBox.Show("Item removed from cart", "info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            loadDatagrid();
+            if (result == DialogResult.Yes)
+            {
+                con.Open();
+                SqlCommand deletefromcart = new SqlCommand("DELETE FROM cart WHERE Product_ID = @product_id and Quantity = @quantity", con);
+                deletefromcart.Parameters.AddWithValue("@product_id", ProductId);
+                deletefromcart.Parameters.AddWithValue("@quantity", lblQuantity.Text);
+                deletefromcart.ExecuteNonQuery();
+                con.Close();
+                MessageBox.Show("Item removed from cart", "info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                loadDatagrid();
+            }
 
         }
     }
 }
-    
 
 
     

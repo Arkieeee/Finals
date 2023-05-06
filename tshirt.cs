@@ -91,7 +91,7 @@ namespace Finals
                     insertToCart.Parameters.AddWithValue("@username", _username);
                     insertToCart.Parameters.AddWithValue("@productId", ProductId);
                     insertToCart.Parameters.AddWithValue("@quantity", lblQuanity.Text);
-                    insertToCart.Parameters.AddWithValue("@price", Label_Price.Text);
+                    insertToCart.Parameters.AddWithValue("@price", Label_TotalPrice.Text);
 
                     insertToCart.ExecuteNonQuery();
 
@@ -109,7 +109,7 @@ namespace Finals
                     insertToBackup_Cart.Parameters.AddWithValue("@username", _username);
                     insertToBackup_Cart.Parameters.AddWithValue("@productId", ProductId);
                     insertToBackup_Cart.Parameters.AddWithValue("@quantity", lblQuanity.Text);
-                    insertToBackup_Cart.Parameters.AddWithValue("@price", Label_Price.Text);
+                    insertToBackup_Cart.Parameters.AddWithValue("@price", Label_TotalPrice.Text);
 
                     insertToBackup_Cart.ExecuteNonQuery();
 

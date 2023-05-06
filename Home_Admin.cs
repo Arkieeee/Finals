@@ -91,10 +91,20 @@ namespace Finals
         {
             hideSubMenu();
         }
-
+        private Form Transactions= null;
         private void transac_Click(object sender, EventArgs e)
         {
-            showSubMenu(panel2);
+            if (Transactions == null || Transactions.IsDisposed)
+            {
+                Transactions = new Transactions();
+                Transactions.FormClosed += (s, args) => Transactions = null;
+                openChildForm(Transactions);
+            }
+            else
+            {
+                Transactions.Close();
+                Transactions = null;
+            }
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)

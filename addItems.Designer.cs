@@ -67,7 +67,7 @@
             this.txtsize.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtsize.ForeColor = System.Drawing.Color.Silver;
             this.txtsize.Location = new System.Drawing.Point(69, 206);
-            this.txtsize.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtsize.Margin = new System.Windows.Forms.Padding(4);
             this.txtsize.Multiline = true;
             this.txtsize.Name = "txtsize";
             this.txtsize.Size = new System.Drawing.Size(204, 25);
@@ -82,7 +82,7 @@
             this.txtquantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtquantity.ForeColor = System.Drawing.Color.Silver;
             this.txtquantity.Location = new System.Drawing.Point(69, 129);
-            this.txtquantity.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtquantity.Margin = new System.Windows.Forms.Padding(4);
             this.txtquantity.Multiline = true;
             this.txtquantity.Name = "txtquantity";
             this.txtquantity.Size = new System.Drawing.Size(205, 25);
@@ -97,7 +97,7 @@
             this.txtCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCategory.ForeColor = System.Drawing.Color.Silver;
             this.txtCategory.Location = new System.Drawing.Point(71, 167);
-            this.txtCategory.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCategory.Margin = new System.Windows.Forms.Padding(4);
             this.txtCategory.Multiline = true;
             this.txtCategory.Name = "txtCategory";
             this.txtCategory.Size = new System.Drawing.Size(204, 25);
@@ -110,7 +110,7 @@
             // 
             this.btnadd.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnadd.Location = new System.Drawing.Point(116, 320);
-            this.btnadd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnadd.Margin = new System.Windows.Forms.Padding(4);
             this.btnadd.Name = "btnadd";
             this.btnadd.Size = new System.Drawing.Size(100, 28);
             this.btnadd.TabIndex = 5;
@@ -122,7 +122,7 @@
             // 
             this.btnedit.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnedit.Location = new System.Drawing.Point(116, 356);
-            this.btnedit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnedit.Margin = new System.Windows.Forms.Padding(4);
             this.btnedit.Name = "btnedit";
             this.btnedit.Size = new System.Drawing.Size(100, 28);
             this.btnedit.TabIndex = 6;
@@ -137,7 +137,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.picEmp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(30)))));
             this.picEmp.Location = new System.Drawing.Point(94, 443);
-            this.picEmp.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.picEmp.Margin = new System.Windows.Forms.Padding(4);
             this.picEmp.Name = "picEmp";
             this.picEmp.Size = new System.Drawing.Size(319, 253);
             this.picEmp.TabIndex = 7;
@@ -147,7 +147,7 @@
             // 
             this.btnImg.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnImg.Location = new System.Drawing.Point(69, 284);
-            this.btnImg.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnImg.Margin = new System.Windows.Forms.Padding(4);
             this.btnImg.Name = "btnImg";
             this.btnImg.Size = new System.Drawing.Size(204, 28);
             this.btnImg.TabIndex = 8;
@@ -159,7 +159,7 @@
             // 
             this.btndelete.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btndelete.Location = new System.Drawing.Point(116, 391);
-            this.btndelete.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btndelete.Margin = new System.Windows.Forms.Padding(4);
             this.btndelete.Name = "btndelete";
             this.btndelete.Size = new System.Drawing.Size(100, 28);
             this.btndelete.TabIndex = 6;
@@ -173,7 +173,7 @@
             this.txtprice.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtprice.ForeColor = System.Drawing.Color.Silver;
             this.txtprice.Location = new System.Drawing.Point(69, 241);
-            this.txtprice.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtprice.Margin = new System.Windows.Forms.Padding(4);
             this.txtprice.Multiline = true;
             this.txtprice.Name = "txtprice";
             this.txtprice.Size = new System.Drawing.Size(204, 25);
@@ -191,7 +191,7 @@
             this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(379, 100);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.Size = new System.Drawing.Size(765, 335);
@@ -203,7 +203,7 @@
             this.pictureBox2.BackColor = System.Drawing.Color.White;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.Location = new System.Drawing.Point(16, 85);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(33, 31);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -216,7 +216,7 @@
             this.txtname.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtname.ForeColor = System.Drawing.Color.Silver;
             this.txtname.Location = new System.Drawing.Point(69, 85);
-            this.txtname.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtname.Margin = new System.Windows.Forms.Padding(4);
             this.txtname.Multiline = true;
             this.txtname.Name = "txtname";
             this.txtname.Size = new System.Drawing.Size(205, 25);
@@ -231,7 +231,7 @@
             this.pictureBox1.BackColor = System.Drawing.Color.White;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(16, 123);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(33, 31);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -243,7 +243,7 @@
             this.pictureBox3.BackColor = System.Drawing.Color.White;
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
             this.pictureBox3.Location = new System.Drawing.Point(16, 161);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(33, 31);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -255,7 +255,7 @@
             this.pictureBox4.BackColor = System.Drawing.Color.White;
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
             this.pictureBox4.Location = new System.Drawing.Point(16, 199);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(33, 31);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -267,7 +267,7 @@
             this.pictureBox5.BackColor = System.Drawing.Color.White;
             this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
             this.pictureBox5.Location = new System.Drawing.Point(16, 238);
-            this.pictureBox5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox5.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(33, 31);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -305,8 +305,8 @@
             "T-Shirt",
             "Polo Shirt",
             "Jacket"});
-            this.comboBox1.Location = new System.Drawing.Point(438, 56);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBox1.Location = new System.Drawing.Point(430, 60);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(160, 24);
             this.comboBox1.TabIndex = 13;
@@ -350,7 +350,7 @@
             this.Controls.Add(this.txtprice);
             this.Controls.Add(this.txtsize);
             this.Controls.Add(this.txtname);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "addItems";
             this.Text = "Add an Item";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
