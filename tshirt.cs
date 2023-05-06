@@ -33,7 +33,7 @@ namespace Finals
         private void loadDatagrid()
         {
             con.Open();
-            SqlCommand com = new SqlCommand("Select Image_apparel, Name, Quantity, Price, Product_ID from Products where Category ='T-shirt'", con);
+            SqlCommand com = new SqlCommand("Select Image_apparel as Item, Name as 'Description', Quantity, Price, Product_ID as 'Product ID' from Products where Category ='T-shirt'", con);
             SqlDataAdapter adap = new SqlDataAdapter(com);
             DataTable tab = new DataTable();
             adap.Fill(tab);
@@ -51,10 +51,10 @@ namespace Finals
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         { 
-            lblName.Text = dataGridView1.Rows[e.RowIndex].Cells["Name"].Value.ToString();
+            lblName.Text = dataGridView1.Rows[e.RowIndex].Cells["Description"].Value.ToString();
             //lblQuanity.Text = "1";
             Label_Price.Text = dataGridView1.Rows[e.RowIndex].Cells["Price"].Value.ToString();
-            ProductId = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["Product_ID"].Value.ToString());
+            ProductId = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["Product ID"].Value.ToString());
          
         }
 
