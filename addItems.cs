@@ -17,7 +17,7 @@ namespace Finals
 {
     public partial class addItems : Form
     {
-        SqlConnection con = new SqlConnection("Data Source=ARKI\\SQLEXPRESS;Initial Catalog=NSDAP_APPAREL_dB;Integrated Security=True");
+        SqlConnection con = new SqlConnection("Data Source=IVERSONKOBE\\SQLEXPRESS;Initial Catalog=NSDAP_APPAREL_dB;Integrated Security=True");
         string imgLoc = "";
         public addItems()
         {
@@ -323,7 +323,36 @@ namespace Finals
             txtCategory.Text = dataGridView1.Rows[e.RowIndex].Cells["Category"].Value.ToString();
             txtsize.Text = dataGridView1.Rows[e.RowIndex].Cells["Size"].Value.ToString();
             txtprice.Text = dataGridView1.Rows[e.RowIndex].Cells["Price"].Value.ToString();
+
+            // Check if the clicked cell is in the image column
+            if (dataGridView1.Columns[e.ColumnIndex].Name == "Image_apparel")
+            {
+                // Get the selected row
+                DataGridViewRow selectedRow = dataGridView1.Rows[e.RowIndex];
+
+                // Check if the selected row is not a header or empty row
+                if (selectedRow != null && !selectedRow.IsNewRow)
+                {
+                    // Get the image data from the cell
+                    byte[] imageData = (byte[])selectedRow.Cells["Image_apparel"].Value;
+                    if (imageData != null)
+                    {
+                        // Convert the byte array to an Image object
+                        using (MemoryStream ms = new MemoryStream(imageData))
+                        {
+                            picEmp.Image = Image.FromStream(ms);
+                        }
+                    }
+                    else
+                    {
+                        // Handle the case when the cell value is null or empty
+                        // You can clear the PictureBox or display a placeholder image
+                        picEmp.Image = null;
+                    }
+                }
+            }
         }
+
 
         private void btndelete_Click(object sender, EventArgs e)
         {

@@ -48,9 +48,7 @@
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.lblProduct_ID = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-   
             this.ordersBindingSource = new System.Windows.Forms.BindingSource(this.components);
-      
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picEmp)).BeginInit();
@@ -60,10 +58,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-   
             ((System.ComponentModel.ISupportInitialize)(this.ordersBindingSource)).BeginInit();
-          
-            //((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // txtsize
@@ -71,10 +66,11 @@
             this.txtsize.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtsize.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtsize.ForeColor = System.Drawing.Color.Silver;
-            this.txtsize.Location = new System.Drawing.Point(52, 167);
+            this.txtsize.Location = new System.Drawing.Point(69, 206);
+            this.txtsize.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtsize.Multiline = true;
             this.txtsize.Name = "txtsize";
-            this.txtsize.Size = new System.Drawing.Size(153, 20);
+            this.txtsize.Size = new System.Drawing.Size(204, 25);
             this.txtsize.TabIndex = 4;
             this.txtsize.Text = "Size";
             this.txtsize.Enter += new System.EventHandler(this.txtsize_Enter);
@@ -85,10 +81,11 @@
             this.txtquantity.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtquantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtquantity.ForeColor = System.Drawing.Color.Silver;
-            this.txtquantity.Location = new System.Drawing.Point(52, 105);
+            this.txtquantity.Location = new System.Drawing.Point(69, 129);
+            this.txtquantity.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtquantity.Multiline = true;
             this.txtquantity.Name = "txtquantity";
-            this.txtquantity.Size = new System.Drawing.Size(154, 20);
+            this.txtquantity.Size = new System.Drawing.Size(205, 25);
             this.txtquantity.TabIndex = 4;
             this.txtquantity.Text = "Quantity";
             this.txtquantity.Enter += new System.EventHandler(this.txtquantity_Enter);
@@ -99,10 +96,11 @@
             this.txtCategory.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCategory.ForeColor = System.Drawing.Color.Silver;
-            this.txtCategory.Location = new System.Drawing.Point(53, 136);
+            this.txtCategory.Location = new System.Drawing.Point(71, 167);
+            this.txtCategory.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtCategory.Multiline = true;
             this.txtCategory.Name = "txtCategory";
-            this.txtCategory.Size = new System.Drawing.Size(153, 20);
+            this.txtCategory.Size = new System.Drawing.Size(204, 25);
             this.txtCategory.TabIndex = 4;
             this.txtCategory.Text = "Category";
             this.txtCategory.Enter += new System.EventHandler(this.txtdescription_Enter);
@@ -111,9 +109,10 @@
             // btnadd
             // 
             this.btnadd.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnadd.Location = new System.Drawing.Point(87, 260);
+            this.btnadd.Location = new System.Drawing.Point(116, 320);
+            this.btnadd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnadd.Name = "btnadd";
-            this.btnadd.Size = new System.Drawing.Size(75, 23);
+            this.btnadd.Size = new System.Drawing.Size(100, 28);
             this.btnadd.TabIndex = 5;
             this.btnadd.Text = "Add";
             this.btnadd.UseVisualStyleBackColor = true;
@@ -122,9 +121,10 @@
             // btnedit
             // 
             this.btnedit.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnedit.Location = new System.Drawing.Point(87, 289);
+            this.btnedit.Location = new System.Drawing.Point(116, 356);
+            this.btnedit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnedit.Name = "btnedit";
-            this.btnedit.Size = new System.Drawing.Size(75, 23);
+            this.btnedit.Size = new System.Drawing.Size(100, 28);
             this.btnedit.TabIndex = 6;
             this.btnedit.Text = "Edit";
             this.btnedit.UseVisualStyleBackColor = true;
@@ -136,19 +136,20 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.picEmp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(30)))));
-            this.picEmp.Location = new System.Drawing.Point(405, 22);
+            this.picEmp.Location = new System.Drawing.Point(94, 443);
+            this.picEmp.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.picEmp.Name = "picEmp";
-            this.picEmp.Size = new System.Drawing.Size(332, 166);
-            this.picEmp.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.picEmp.Size = new System.Drawing.Size(319, 253);
             this.picEmp.TabIndex = 7;
             this.picEmp.TabStop = false;
             // 
             // btnImg
             // 
             this.btnImg.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnImg.Location = new System.Drawing.Point(52, 231);
+            this.btnImg.Location = new System.Drawing.Point(69, 284);
+            this.btnImg.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnImg.Name = "btnImg";
-            this.btnImg.Size = new System.Drawing.Size(153, 23);
+            this.btnImg.Size = new System.Drawing.Size(204, 28);
             this.btnImg.TabIndex = 8;
             this.btnImg.Text = "Browse Image";
             this.btnImg.UseVisualStyleBackColor = true;
@@ -157,9 +158,10 @@
             // btndelete
             // 
             this.btndelete.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btndelete.Location = new System.Drawing.Point(87, 318);
+            this.btndelete.Location = new System.Drawing.Point(116, 391);
+            this.btndelete.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btndelete.Name = "btndelete";
-            this.btndelete.Size = new System.Drawing.Size(75, 23);
+            this.btndelete.Size = new System.Drawing.Size(100, 28);
             this.btndelete.TabIndex = 6;
             this.btndelete.Text = "Delete";
             this.btndelete.UseVisualStyleBackColor = true;
@@ -170,10 +172,11 @@
             this.txtprice.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtprice.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtprice.ForeColor = System.Drawing.Color.Silver;
-            this.txtprice.Location = new System.Drawing.Point(52, 196);
+            this.txtprice.Location = new System.Drawing.Point(69, 241);
+            this.txtprice.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtprice.Multiline = true;
             this.txtprice.Name = "txtprice";
-            this.txtprice.Size = new System.Drawing.Size(153, 20);
+            this.txtprice.Size = new System.Drawing.Size(204, 25);
             this.txtprice.TabIndex = 4;
             this.txtprice.Text = "Price";
             this.txtprice.Enter += new System.EventHandler(this.txtprice_Enter);
@@ -187,9 +190,11 @@
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(284, 236);
+            this.dataGridView1.Location = new System.Drawing.Point(379, 100);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(574, 272);
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.Size = new System.Drawing.Size(765, 335);
             this.dataGridView1.TabIndex = 9;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -197,9 +202,10 @@
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.White;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(12, 69);
+            this.pictureBox2.Location = new System.Drawing.Point(16, 85);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(25, 25);
+            this.pictureBox2.Size = new System.Drawing.Size(33, 31);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 10;
             this.pictureBox2.TabStop = false;
@@ -209,10 +215,11 @@
             this.txtname.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtname.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtname.ForeColor = System.Drawing.Color.Silver;
-            this.txtname.Location = new System.Drawing.Point(52, 69);
+            this.txtname.Location = new System.Drawing.Point(69, 85);
+            this.txtname.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtname.Multiline = true;
             this.txtname.Name = "txtname";
-            this.txtname.Size = new System.Drawing.Size(154, 20);
+            this.txtname.Size = new System.Drawing.Size(205, 25);
             this.txtname.TabIndex = 4;
             this.txtname.Text = "Name";
             this.txtname.Enter += new System.EventHandler(this.txtname_Enter);
@@ -223,9 +230,10 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.White;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(12, 100);
+            this.pictureBox1.Location = new System.Drawing.Point(16, 123);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(25, 25);
+            this.pictureBox1.Size = new System.Drawing.Size(33, 31);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 10;
             this.pictureBox1.TabStop = false;
@@ -234,9 +242,10 @@
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.White;
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(12, 131);
+            this.pictureBox3.Location = new System.Drawing.Point(16, 161);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(25, 25);
+            this.pictureBox3.Size = new System.Drawing.Size(33, 31);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 10;
             this.pictureBox3.TabStop = false;
@@ -245,9 +254,10 @@
             // 
             this.pictureBox4.BackColor = System.Drawing.Color.White;
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(12, 162);
+            this.pictureBox4.Location = new System.Drawing.Point(16, 199);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(25, 25);
+            this.pictureBox4.Size = new System.Drawing.Size(33, 31);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox4.TabIndex = 10;
             this.pictureBox4.TabStop = false;
@@ -256,9 +266,10 @@
             // 
             this.pictureBox5.BackColor = System.Drawing.Color.White;
             this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(12, 193);
+            this.pictureBox5.Location = new System.Drawing.Point(16, 238);
+            this.pictureBox5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(25, 25);
+            this.pictureBox5.Size = new System.Drawing.Size(33, 31);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox5.TabIndex = 10;
             this.pictureBox5.TabStop = false;
@@ -268,9 +279,10 @@
             this.lblProduct_ID.AutoSize = true;
             this.lblProduct_ID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblProduct_ID.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblProduct_ID.Location = new System.Drawing.Point(96, 32);
+            this.lblProduct_ID.Location = new System.Drawing.Point(128, 39);
+            this.lblProduct_ID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblProduct_ID.Name = "lblProduct_ID";
-            this.lblProduct_ID.Size = new System.Drawing.Size(0, 16);
+            this.lblProduct_ID.Size = new System.Drawing.Size(0, 20);
             this.lblProduct_ID.TabIndex = 11;
             // 
             // label1
@@ -278,19 +290,12 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label1.Location = new System.Drawing.Point(9, 32);
+            this.label1.Location = new System.Drawing.Point(12, 39);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(87, 16);
+            this.label1.Size = new System.Drawing.Size(111, 20);
             this.label1.TabIndex = 12;
             this.label1.Text = "Product ID: ";
-            // 
-            // nSDAP_APPAREL_dBDataSet
-            // 
-      
-
-            // 
-        
-            
             // 
             // comboBox1
             // 
@@ -300,9 +305,10 @@
             "T-Shirt",
             "Polo Shirt",
             "Jacket"});
-            this.comboBox1.Location = new System.Drawing.Point(323, 209);
+            this.comboBox1.Location = new System.Drawing.Point(438, 56);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.Size = new System.Drawing.Size(160, 24);
             this.comboBox1.TabIndex = 13;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
@@ -311,18 +317,19 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label2.Location = new System.Drawing.Point(281, 210);
+            this.label2.Location = new System.Drawing.Point(375, 60);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(36, 16);
+            this.label2.Size = new System.Drawing.Size(47, 20);
             this.label2.TabIndex = 14;
             this.label2.Text = "Filter";
             // 
             // addItems
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(23)))));
-            this.ClientSize = new System.Drawing.Size(913, 538);
+            this.ClientSize = new System.Drawing.Size(1217, 662);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label1);
@@ -343,6 +350,7 @@
             this.Controls.Add(this.txtprice);
             this.Controls.Add(this.txtsize);
             this.Controls.Add(this.txtname);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "addItems";
             this.Text = "X";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -354,10 +362,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-  
             ((System.ComponentModel.ISupportInitialize)(this.ordersBindingSource)).EndInit();
-        
-            
             this.ResumeLayout(false);
             this.PerformLayout();
 
