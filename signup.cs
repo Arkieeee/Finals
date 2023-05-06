@@ -108,6 +108,7 @@ namespace Finals
                 CheckifExist.CommandText = "Select * from [dbo].[NSDAP_user] where Username = '" + txtusername.Text + "'";
                 CheckifExist.Parameters.AddWithValue("@username", txtusername.Text);
                 CheckifExist.Connection = con;
+                con.Close();
                 con.Open();
                 SqlDataReader dt = CheckifExist.ExecuteReader();
                 if (dt.HasRows)

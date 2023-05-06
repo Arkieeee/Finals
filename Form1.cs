@@ -82,10 +82,8 @@ namespace Finals
         private void btnlogin_Click(object sender, EventArgs e)
         {
             SqlCommand Checkifexist = new SqlCommand();
-            //Checkifexist.CommandText = "SELECT * FROM NSDAP_user WHERE Username = @Username and Password = @Password";
-            Checkifexist.CommandText = "SELECT * FROM NSDAP_user WHERE Username = '" + txtusername.Text + "' and Password = '" + Encrypt(txtpassword.Text) + "'";
+            Checkifexist.CommandText = "SELECT * FROM NSDAP_user WHERE Username = @Username";
             Checkifexist.Parameters.AddWithValue("@Username", txtusername.Text);
-            Checkifexist.Parameters.AddWithValue("@Password", Encrypt(txtpassword.Text));
             Checkifexist.Connection = con;
 
             con.Open();
@@ -93,25 +91,30 @@ namespace Finals
 
             if (txtusername.Text == "" && txtpassword.Text == "")
             {
-                MessageBox.Show("Username and password must be filled", "info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Username and password must be filled", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                con.Close();
             }
             else if (!dt.HasRows)
             {
-                MessageBox.Show("Username or password incorrect", "info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Username or password incorrect", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 con.Close();
             }
             else if (dt.HasRows)
             {
-                if (txtusername.Text == "Admin")
+                dt.Read();
+                string passwordFromDB = dt["Password"].ToString();
+                con.Close();
+
+                if (txtusername.Text == "Admin" && Encrypt(txtpassword.Text) == passwordFromDB)
                 {
                     MessageBox.Show("Success! Welcome: " + txtusername.Text, "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     con.Close();
 
                     Home_Admin home_Admin = new Home_Admin(txtusername.Text); // Pass txtusername.Text to the constructor
                     this.Hide(); // Hide the current form
-                    home_Admin.Show(); // Show the HomeUser form
+                    home_Admin.Show(); // Show the Home_Admin form
                 }
-                else
+                else if (Encrypt(txtpassword.Text) == passwordFromDB)
                 {
                     con.Close(); // Close the connection before opening a new one
 
@@ -138,9 +141,16 @@ namespace Finals
 
                     con.Close();
                 }
+                else
+                {
+                    MessageBox.Show("Username or password incorrect", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    con.Close();
+                }
             }
-        }
-        private void btnsingup_Click(object sender, EventArgs e)
+        
+
+    }
+    private void btnsingup_Click(object sender, EventArgs e)
         {
             this.Close();
             signup = new Thread(goto_signup);

@@ -352,7 +352,7 @@
             this.Controls.Add(this.txtname);
             this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "addItems";
-            this.Text = "X";
+            this.Text = "Add an Item";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.addItems_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picEmp)).EndInit();
