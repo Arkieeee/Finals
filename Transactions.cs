@@ -128,10 +128,11 @@ namespace Finals
                     loadDatagridJacket();
                     break;
                 default:
-                    loadDatagrid();
+                    loadDatagrid(); // Call the loadDatagrid method for the default case
                     break;
             }
         }
+
 
         private void txtsearch_TextChanged(object sender, EventArgs e)
         {
