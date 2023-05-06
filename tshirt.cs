@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,14 +18,15 @@ namespace Finals
     
         private int ProductId; // declare as class-level variable
 
-
+        
 
         public tshirt(string username)
         {
 
             InitializeComponent();
             _username = username; // Set _username to the passed parameter
-            
+       
+
         }
 
         SqlConnection con = new SqlConnection("Data Source=IVERSONKOBE\\SQLEXPRESS;Initial Catalog=NSDAP_APPAREL_dB;Integrated Security=True");
@@ -50,7 +52,7 @@ namespace Finals
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         { 
             lblName.Text = dataGridView1.Rows[e.RowIndex].Cells["Name"].Value.ToString();
-            
+            //lblQuanity.Text = "1";
             Label_Price.Text = dataGridView1.Rows[e.RowIndex].Cells["Price"].Value.ToString();
             ProductId = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["Product_ID"].Value.ToString());
          
@@ -140,6 +142,7 @@ namespace Finals
                 lblQuanity.Text = "1";
             }
 
+            decimal originalPrice = Convert.ToDecimal(Label_Price.Text);
             decimal price;
             decimal quantity;
 
@@ -162,21 +165,12 @@ namespace Finals
                 }
 
                 // Calculate the total price
-                decimal totalPrice = price * quantity;
-
-                // If Label_TotalPrice already has a value, add the new price to the previous total price
-                if (!string.IsNullOrEmpty(Label_TotalPrice.Text))
-                {
-                    decimal previousTotalPrice;
-                    if (decimal.TryParse(Label_TotalPrice.Text, out previousTotalPrice))
-                    {
-                        totalPrice += previousTotalPrice;
-                    }
-                }
+                decimal totalPrice = originalPrice * quantity;
 
                 // Update the Label_Price and Label_TotalPrice fields
                 Label_Price.Text = price.ToString();
                 Label_TotalPrice.Text = totalPrice.ToString();
+                con.Close();
 
                 con.Close();
             }
