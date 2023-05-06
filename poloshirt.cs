@@ -121,9 +121,8 @@ namespace Finals
             }
         }
 
-        private void btnAddquantity_Click(object sender, EventArgs e)
+           private void btnAddquantity_Click(object sender, EventArgs e)
         {
-
             int currentValue;
 
             if (int.TryParse(lblQuanity.Text, out currentValue))
@@ -135,6 +134,7 @@ namespace Finals
                 lblQuanity.Text = "1";
             }
 
+            decimal originalPrice = Convert.ToDecimal(Label_Price.Text);
             decimal price;
             decimal quantity;
 
@@ -157,21 +157,12 @@ namespace Finals
                 }
 
                 // Calculate the total price
-                decimal totalPrice = price * quantity;
-
-                // If Label_TotalPrice already has a value, add the new price to the previous total price
-                if (!string.IsNullOrEmpty(Label_TotalPrice.Text))
-                {
-                    decimal previousTotalPrice;
-                    if (decimal.TryParse(Label_TotalPrice.Text, out previousTotalPrice))
-                    {
-                        totalPrice += previousTotalPrice;
-                    }
-                }
+                decimal totalPrice = originalPrice * quantity;
 
                 // Update the Label_Price and Label_TotalPrice fields
                 Label_Price.Text = price.ToString();
                 Label_TotalPrice.Text = totalPrice.ToString();
+                con.Close();
 
                 con.Close();
             }

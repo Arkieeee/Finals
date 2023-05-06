@@ -32,13 +32,16 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.lblPrice = new System.Windows.Forms.Label();
             this.btnAddToCart = new System.Windows.Forms.Button();
-            this.txtQuantity = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.lblName = new System.Windows.Forms.Label();
             this.Label_Price = new System.Windows.Forms.Label();
+            this.lblQuanity = new System.Windows.Forms.Label();
+            this.btnAddquantity = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.Label_TotalPrice = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -75,7 +78,7 @@
             this.btnAddToCart.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnAddToCart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddToCart.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnAddToCart.Location = new System.Drawing.Point(216, 274);
+            this.btnAddToCart.Location = new System.Drawing.Point(217, 319);
             this.btnAddToCart.Margin = new System.Windows.Forms.Padding(4);
             this.btnAddToCart.Name = "btnAddToCart";
             this.btnAddToCart.Size = new System.Drawing.Size(107, 28);
@@ -83,16 +86,6 @@
             this.btnAddToCart.Text = "Add to cart";
             this.btnAddToCart.UseVisualStyleBackColor = false;
             this.btnAddToCart.Click += new System.EventHandler(this.btnAddToCart_Click_1);
-            // 
-            // txtQuantity
-            // 
-            this.txtQuantity.Location = new System.Drawing.Point(131, 166);
-            this.txtQuantity.Margin = new System.Windows.Forms.Padding(5);
-            this.txtQuantity.Multiline = true;
-            this.txtQuantity.Name = "txtQuantity";
-            this.txtQuantity.Size = new System.Drawing.Size(285, 24);
-            this.txtQuantity.TabIndex = 7;
-            this.txtQuantity.TextChanged += new System.EventHandler(this.txtQuantity_TextChanged_1);
             // 
             // label1
             // 
@@ -162,12 +155,61 @@
             this.Label_Price.TabIndex = 18;
             this.Label_Price.Text = "----";
             // 
+            // lblQuanity
+            // 
+            this.lblQuanity.AutoSize = true;
+            this.lblQuanity.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblQuanity.Location = new System.Drawing.Point(127, 160);
+            this.lblQuanity.Name = "lblQuanity";
+            this.lblQuanity.Size = new System.Drawing.Size(37, 20);
+            this.lblQuanity.TabIndex = 19;
+            this.lblQuanity.Text = "----";
+            // 
+            // btnAddquantity
+            // 
+            this.btnAddquantity.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnAddquantity.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddquantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddquantity.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnAddquantity.Location = new System.Drawing.Point(170, 160);
+            this.btnAddquantity.Name = "btnAddquantity";
+            this.btnAddquantity.Size = new System.Drawing.Size(39, 34);
+            this.btnAddquantity.TabIndex = 20;
+            this.btnAddquantity.Text = "+";
+            this.btnAddquantity.UseVisualStyleBackColor = false;
+            this.btnAddquantity.Click += new System.EventHandler(this.btnAddquantity_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(45, 246);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(57, 20);
+            this.label2.TabIndex = 21;
+            this.label2.Text = "Total:";
+            // 
+            // Label_TotalPrice
+            // 
+            this.Label_TotalPrice.AutoSize = true;
+            this.Label_TotalPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label_TotalPrice.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.Label_TotalPrice.Location = new System.Drawing.Point(134, 246);
+            this.Label_TotalPrice.Name = "Label_TotalPrice";
+            this.Label_TotalPrice.Size = new System.Drawing.Size(16, 20);
+            this.Label_TotalPrice.TabIndex = 22;
+            this.Label_TotalPrice.Text = "-";
+            // 
             // jacket
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(23)))));
             this.ClientSize = new System.Drawing.Size(1353, 543);
+            this.Controls.Add(this.Label_TotalPrice);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.btnAddquantity);
+            this.Controls.Add(this.lblQuanity);
             this.Controls.Add(this.Label_Price);
             this.Controls.Add(this.lblName);
             this.Controls.Add(this.pictureBox5);
@@ -175,7 +217,6 @@
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.lblPrice);
             this.Controls.Add(this.btnAddToCart);
-            this.Controls.Add(this.txtQuantity);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
             this.ForeColor = System.Drawing.SystemColors.ControlLightLight;
@@ -197,12 +238,15 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label lblPrice;
         private System.Windows.Forms.Button btnAddToCart;
-        private System.Windows.Forms.TextBox txtQuantity;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Label Label_Price;
+        private System.Windows.Forms.Label lblQuanity;
+        private System.Windows.Forms.Button btnAddquantity;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label Label_TotalPrice;
     }
 }
