@@ -78,14 +78,14 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(160, 24);
             this.comboBox1.TabIndex = 16;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // fromdate
             // 
-            this.fromdate.Location = new System.Drawing.Point(453, 56);
+            this.fromdate.Location = new System.Drawing.Point(453, 54);
             this.fromdate.Name = "fromdate";
             this.fromdate.Size = new System.Drawing.Size(247, 22);
             this.fromdate.TabIndex = 17;
+            this.fromdate.ValueChanged += new System.EventHandler(this.fromdate_ValueChanged);
             // 
             // todate
             // 
@@ -93,6 +93,7 @@
             this.todate.Name = "todate";
             this.todate.Size = new System.Drawing.Size(249, 22);
             this.todate.TabIndex = 18;
+            this.todate.ValueChanged += new System.EventHandler(this.todate_ValueChanged);
             // 
             // label1
             // 

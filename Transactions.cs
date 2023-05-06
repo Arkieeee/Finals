@@ -20,37 +20,44 @@ namespace Finals
         SqlConnection con = new SqlConnection("Data Source=IVERSONKOBE\\SQLEXPRESS;Initial Catalog=NSDAP_APPAREL_dB;Integrated Security=True");
         private void loadDatagrid()
         {
-            try
-            {
-                con.Open();
-                DateTime fdate = fromdate.Value; // Replace "from_date" with the actual from date
-                DateTime tdate = todate.Value; // Replace "to_date" with the actual to date
+            con.Open();
+            DateTime fdate = fromdate.Value.Date; // Get the selected from date
+            DateTime tdate = todate.Value.Date;// Get the selected to date (inclusive of the entire day)
 
-                SqlCommand com = new SqlCommand("SELECT o.Order_ID as 'Reference ID', p.Product_ID as 'Product ID', p.Image_apparel as Item, p.Name, p.Size, c.Quantity, c.Price, " +
-                    "o.Date_Purchased as 'Date Purchased' " +
-                    "FROM Products p " +
-                    "INNER JOIN Backup_Cart c ON p.Product_ID = c.Product_ID " +
-                    "INNER JOIN Orders o ON o.Product_ID = p.Product_ID AND o.Username = c.Username " +
-                    "WHERE o.Date_Purchased >= @fromdate AND o.Date_Purchased <= @todate", con);
+            SqlCommand com = new SqlCommand("SELECT o.Order_ID as 'Reference ID', p.Product_ID as 'Product ID', p.Image_apparel as Item, p.Name, p.Size, c.Quantity, c.Price, " +
+                "o.Date_Purchased as 'Date Purchased' " +
+                "FROM Products p " +
+                "INNER JOIN Backup_Cart c ON p.Product_ID = c.Product_ID " +
+                "INNER JOIN Orders o ON o.Product_ID = p.Product_ID AND o.Username = c.Username " +
+                "WHERE o.Date_Purchased between @fromdate and @todate", con);
 
-                com.Parameters.AddWithValue("@fromdate", fdate.ToString("yyyy-MM-dd"));
-                com.Parameters.AddWithValue("@todate", tdate.ToString("yyyy-MM-dd"));
+            com.Parameters.AddWithValue("@fromdate", fdate);
+            com.Parameters.AddWithValue("@todate", tdate);
+
+            SqlDataAdapter adap = new SqlDataAdapter(com);
+            DataTable tab = new DataTable();
+
+            adap.Fill(tab);
+            dataGridView1.DataSource = tab;
+
+            con.Close();
+        }
 
 
 
-                SqlDataAdapter adap = new SqlDataAdapter(com);
-                DataTable tab = new DataTable();
+        private void Transactions_Load(object sender, EventArgs e)
+        {
+            loadDatagrid();
+        }
 
-                adap.Fill(tab);
-                dataGridView1.DataSource = tab;
+        private void fromdate_ValueChanged(object sender, EventArgs e)
+        {
+            loadDatagrid();
+        }
 
-                con.Close();
-            }
-
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+        private void todate_ValueChanged(object sender, EventArgs e)
+        {
+            loadDatagrid();
         }
         private void loadDatagridTShirt()
         {
@@ -124,11 +131,6 @@ namespace Finals
                     loadDatagrid();
                     break;
             }
-        }
-
-        private void Transactions_Load(object sender, EventArgs e)
-        {
-            loadDatagrid();
         }
     }
 }
