@@ -132,5 +132,22 @@ namespace Finals
                     break;
             }
         }
+
+        private void txtsearch_TextChanged(object sender, EventArgs e)
+        {
+            con.Open();
+            SqlCommand com = new SqlCommand("SELECT o.Order_ID , p.Product_ID as 'Product ID', p.Image_apparel as Item," +
+                " p.Name, p.Size, c.Quantity, c.Price, o.Date_Purchased as 'Date Purchased' FROM Products p INNER JOIN Backup_Cart c ON" +
+                " p.Product_ID = c.Product_ID INNER JOIN Orders o ON o.Product_ID = p.Product_ID AND o.Username = c.Username" +
+                " WHERE Order_ID like'%"+txtsearch.Text+"'", con);
+
+            SqlDataAdapter adap = new SqlDataAdapter(com);
+            DataTable tab = new DataTable();
+
+            adap.Fill(tab);
+            dataGridView1.DataSource = tab;
+
+            con.Close();
+        }
     }
 }

@@ -34,6 +34,10 @@
             this.fromdate = new System.Windows.Forms.DateTimePicker();
             this.todate = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
+            this.txtsearch = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -46,7 +50,7 @@
             this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(134, 100);
+            this.dataGridView1.Location = new System.Drawing.Point(280, 101);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
@@ -58,7 +62,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label2.Location = new System.Drawing.Point(130, 56);
+            this.label2.Location = new System.Drawing.Point(13, 101);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(47, 20);
@@ -73,15 +77,15 @@
             "T-Shirt",
             "Polo Shirt",
             "Jacket"});
-            this.comboBox1.Location = new System.Drawing.Point(185, 56);
+            this.comboBox1.Location = new System.Drawing.Point(68, 101);
             this.comboBox1.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(160, 24);
+            this.comboBox1.Size = new System.Drawing.Size(191, 24);
             this.comboBox1.TabIndex = 16;
             // 
             // fromdate
             // 
-            this.fromdate.Location = new System.Drawing.Point(453, 54);
+            this.fromdate.Location = new System.Drawing.Point(12, 168);
             this.fromdate.Name = "fromdate";
             this.fromdate.Size = new System.Drawing.Size(247, 22);
             this.fromdate.TabIndex = 17;
@@ -89,7 +93,7 @@
             // 
             // todate
             // 
-            this.todate.Location = new System.Drawing.Point(742, 56);
+            this.todate.Location = new System.Drawing.Point(12, 239);
             this.todate.Name = "todate";
             this.todate.Size = new System.Drawing.Size(249, 22);
             this.todate.TabIndex = 18;
@@ -100,11 +104,48 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label1.Location = new System.Drawing.Point(706, 56);
+            this.label1.Location = new System.Drawing.Point(109, 206);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(30, 20);
             this.label1.TabIndex = 19;
             this.label1.Text = "To";
+            // 
+            // txtsearch
+            // 
+            this.txtsearch.Location = new System.Drawing.Point(393, 65);
+            this.txtsearch.Name = "txtsearch";
+            this.txtsearch.Size = new System.Drawing.Size(476, 22);
+            this.txtsearch.TabIndex = 20;
+            this.txtsearch.TextChanged += new System.EventHandler(this.txtsearch_TextChanged);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.label3.Location = new System.Drawing.Point(319, 65);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(68, 20);
+            this.label3.TabIndex = 21;
+            this.label3.Text = "Search";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(89, 303);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 22;
+            this.button1.Text = "Print";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(89, 344);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(80, 23);
+            this.button2.TabIndex = 23;
+            this.button2.Text = "View Chart";
+            this.button2.UseVisualStyleBackColor = true;
             // 
             // Transactions
             // 
@@ -112,6 +153,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(23)))));
             this.ClientSize = new System.Drawing.Size(1268, 496);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.txtsearch);
             this.Controls.Add(this.todate);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.fromdate);
@@ -137,5 +182,9 @@
         private System.Windows.Forms.DateTimePicker fromdate;
         private System.Windows.Forms.DateTimePicker todate;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtsearch;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }
