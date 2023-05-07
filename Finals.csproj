@@ -185,6 +185,7 @@
     <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
     </Reference>
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -223,6 +224,12 @@
     </Compile>
     <Compile Include="CashIn.Designer.cs">
       <DependentUpon>CashIn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Chart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Chart.Designer.cs">
+      <DependentUpon>Chart.cs</DependentUpon>
     </Compile>
     <Compile Include="forgotpass.cs">
       <SubType>Form</SubType>
@@ -297,6 +304,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CashIn.resx">
       <DependentUpon>CashIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Chart.resx">
+      <DependentUpon>Chart.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forgotpass.resx">
       <DependentUpon>forgotpass.cs</DependentUpon>

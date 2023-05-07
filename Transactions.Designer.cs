@@ -38,7 +38,7 @@
             this.txtsearch = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.btnprint = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnchart = new System.Windows.Forms.Button();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.label4 = new System.Windows.Forms.Label();
@@ -136,22 +136,25 @@
             // 
             // btnprint
             // 
+            this.btnprint.BackColor = System.Drawing.Color.White;
+            this.btnprint.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnprint.Location = new System.Drawing.Point(89, 303);
             this.btnprint.Name = "btnprint";
             this.btnprint.Size = new System.Drawing.Size(75, 23);
             this.btnprint.TabIndex = 22;
             this.btnprint.Text = "Print";
-            this.btnprint.UseVisualStyleBackColor = true;
+            this.btnprint.UseVisualStyleBackColor = false;
             this.btnprint.Click += new System.EventHandler(this.btnprint_Click);
             // 
-            // button2
+            // btnchart
             // 
-            this.button2.Location = new System.Drawing.Point(89, 344);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(80, 23);
-            this.button2.TabIndex = 23;
-            this.button2.Text = "View Chart";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnchart.Location = new System.Drawing.Point(89, 344);
+            this.btnchart.Name = "btnchart";
+            this.btnchart.Size = new System.Drawing.Size(80, 23);
+            this.btnchart.TabIndex = 23;
+            this.btnchart.Text = "View Chart";
+            this.btnchart.UseVisualStyleBackColor = true;
+            this.btnchart.Click += new System.EventHandler(this.btnchart_Click);
             // 
             // printDocument1
             // 
@@ -196,7 +199,7 @@
             this.ClientSize = new System.Drawing.Size(1268, 496);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnchart);
             this.Controls.Add(this.btnprint);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtsearch);
@@ -228,7 +231,7 @@
         private System.Windows.Forms.TextBox txtsearch;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnprint;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnchart;
         private System.Drawing.Printing.PrintDocument printDocument1;
         private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
         private System.Windows.Forms.Label label4;

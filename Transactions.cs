@@ -7,18 +7,34 @@ using System.Drawing;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace Finals
 {
     public partial class Transactions : Form
     {
+        Thread chart;
         public Transactions()
         {
             InitializeComponent();
+            
         }
         SqlConnection con = new SqlConnection("Data Source=IVERSONKOBE\\SQLEXPRESS;Initial Catalog=NSDAP_APPAREL_dB;Integrated Security=True");
+
+        public void GoToChart(object obj)
+        {
+            Application.Run(new btnload());
+        }
+        private void btnchart_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            chart = new Thread(GoToChart);
+            chart.SetApartmentState(ApartmentState.STA);
+            chart.Start();
+        }
         private void loadDatagrid(string category)
         {
             con.Open();
@@ -110,7 +126,7 @@ namespace Finals
                 string selectedCategory = comboBox1.SelectedItem.ToString();
                 loadDatagrid(selectedCategory);
             }
-            catch(Exception exeeee)
+            catch (Exception exeeee)
             {
                 MessageBox.Show(exeeee.Message, "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -228,6 +244,11 @@ namespace Finals
                 MessageBox.Show(ex.Message, "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
+
+      
     }
-}
+     
+    }
+
+
 
