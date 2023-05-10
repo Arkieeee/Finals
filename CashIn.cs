@@ -39,7 +39,7 @@ namespace Finals
 
                 // Update the balance in the database
                 SqlCommand Checkifexist = new SqlCommand();
-                Checkifexist.CommandText = "INSERT into Balance (Username, Balance) values (@username, @balance)";
+                Checkifexist.CommandText = "UPDATE Balance set Balance = Balance + @balance where Username = @username";
                 Checkifexist.Parameters.AddWithValue("@username", _username);
                 Checkifexist.Parameters.AddWithValue("@balance", cashInAmount);
                 Checkifexist.Connection = con;
@@ -48,10 +48,7 @@ namespace Finals
                 con.Close();
 
                 MessageBox.Show("Successfully Cashed In", "info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                SqlCommand UpdateBalance = new SqlCommand("Update Balance Set Balance = Balance + '"+cashInAmount+"' WHERE username = '"+_username+"'",con);
-                con.Open();
-                UpdateBalance.ExecuteNonQuery();
-                con.Close();
+               
 
                 // Update the balance in the HomeUser form
                 _balance += cashInAmount;

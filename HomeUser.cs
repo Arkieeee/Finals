@@ -20,6 +20,7 @@ namespace Finals
         private decimal _balance;
     
         Thread th;
+        Thread tologin;
 
         public HomeUser(string username, decimal balance) // Accept username parameter in constructor
         {
@@ -35,6 +36,10 @@ namespace Finals
         {
             _balance = newBalance;
             lblBalance.Text = _balance.ToString();
+        }
+        public void gotologin(object obj)
+        {
+            Application.Run(new Form1());
         }
 
         public void goToHome(Object obj)
@@ -214,6 +219,14 @@ namespace Finals
                 cashinform.Close();
                 cashinform = null;
             }
+        }
+     
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            tologin = new Thread(gotologin);
+            tologin.SetApartmentState(ApartmentState.STA);
+            tologin.Start();
         }
     }
 }

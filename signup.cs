@@ -116,7 +116,7 @@ namespace Finals
                     MessageBox.Show("Userame already existed!");
 
                 }
-                else if (txtusername.Text != "" && txtpassword.Text != "" && txtconfirm_password.Text != "")  //validating the fields whether the fields or empty or not  
+                else if (txtusername.Text == "Admin" && txtpassword.Text != "" && txtconfirm_password.Text != "")  //validating the fields whether the fields or empty or not  
                 {
                     if (txtpassword.Text.ToString().Trim().ToLower() == txtconfirm_password.Text.ToString().Trim().ToLower()) //validating Password textbox and confirm password textbox is match or unmatch    
                     {
@@ -124,10 +124,21 @@ namespace Finals
                         string Password = Encrypt(txtpassword.Text.ToString());   // Passing the Password to Encrypt method and the method will return encrypted string and stored in Password variable.  
                         con.Close();
                         con.Open();
-                     
-                        SqlCommand insert = new SqlCommand("insert into NSDAP_user(Name,Email,Username, Contact_Number, Address, Password)values('" +txtname.Text + "','" + txtemail.Text + "','" + txtusername.Text + "','" + txtcontact_number.Text + "','" + txtaddress.Text + "','" + Password + "')", con);
+
+                        SqlCommand insert = new SqlCommand("insert into NSDAP_user(Name,Email,Username, Contact_Number, Address, Password)values('" + txtname.Text + "','" + txtemail.Text + "','" + txtusername.Text + "','" + txtcontact_number.Text + "','" + txtaddress.Text + "','" + Password + "')", con);
                         insert.ExecuteNonQuery();
-                        SqlCommand insertToBalance = new SqlCommand("Insert Into Balance(Username, Balance) VALUES ('"+txtusername.Text+"', 0.00)", con);
+                    }
+                 else if (txtusername.Text != "" && txtpassword.Text != "" && txtconfirm_password.Text != "")
+                    {
+                        string Password = Encrypt(txtpassword.Text.ToString());   // Passing the Password to Encrypt method and the method will return encrypted string and stored in Password variable.  
+                        con.Close();
+                        con.Open();
+
+
+                        SqlCommand insertToBalance = new SqlCommand("Insert Into Balance(Username, Balance) VALUES ('" + txtusername.Text + "', 0.00)", con);
+                        SqlCommand insert = new SqlCommand("insert into NSDAP_user(Name,Email,Username, Contact_Number, Address, Password)values('" + txtname.Text + "','" + txtemail.Text + "','" + txtusername.Text + "','" + txtcontact_number.Text + "','" + txtaddress.Text + "','" + Password + "')", con);
+                        insert.ExecuteNonQuery();
+
                         insertToBalance.ExecuteNonQuery();  
                         con.Close();   
                         MessageBox.Show("Registered!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);

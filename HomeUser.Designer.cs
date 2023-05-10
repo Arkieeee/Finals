@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HomeUser));
             this.sideMenu = new System.Windows.Forms.Panel();
+            this.btncashin = new System.Windows.Forms.Button();
             this.btnhome = new System.Windows.Forms.Button();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.button5 = new System.Windows.Forms.Button();
@@ -48,7 +49,7 @@
             this.panelMain = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.btncashin = new System.Windows.Forms.Button();
+            this.btnLogout = new System.Windows.Forms.Button();
             this.sideMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panel2.SuspendLayout();
@@ -62,6 +63,7 @@
             // 
             this.sideMenu.BackColor = System.Drawing.Color.Black;
             this.sideMenu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.sideMenu.Controls.Add(this.btnLogout);
             this.sideMenu.Controls.Add(this.btncashin);
             this.sideMenu.Controls.Add(this.btnhome);
             this.sideMenu.Controls.Add(this.pictureBox3);
@@ -80,6 +82,23 @@
             this.sideMenu.Size = new System.Drawing.Size(252, 610);
             this.sideMenu.TabIndex = 1;
             this.sideMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.sideMenu_Paint);
+            // 
+            // btncashin
+            // 
+            this.btncashin.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btncashin.FlatAppearance.BorderSize = 0;
+            this.btncashin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btncashin.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btncashin.Location = new System.Drawing.Point(0, 342);
+            this.btncashin.Margin = new System.Windows.Forms.Padding(4);
+            this.btncashin.Name = "btncashin";
+            this.btncashin.Padding = new System.Windows.Forms.Padding(13, 0, 0, 0);
+            this.btncashin.Size = new System.Drawing.Size(252, 31);
+            this.btncashin.TabIndex = 12;
+            this.btncashin.Text = "Cash In";
+            this.btncashin.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btncashin.UseVisualStyleBackColor = true;
+            this.btncashin.Click += new System.EventHandler(this.btncashin_Click);
             // 
             // btnhome
             // 
@@ -340,22 +359,22 @@
             this.panel3.Size = new System.Drawing.Size(593, 123);
             this.panel3.TabIndex = 2;
             // 
-            // btncashin
+            // btnLogout
             // 
-            this.btncashin.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btncashin.FlatAppearance.BorderSize = 0;
-            this.btncashin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btncashin.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btncashin.Location = new System.Drawing.Point(0, 342);
-            this.btncashin.Margin = new System.Windows.Forms.Padding(4);
-            this.btncashin.Name = "btncashin";
-            this.btncashin.Padding = new System.Windows.Forms.Padding(13, 0, 0, 0);
-            this.btncashin.Size = new System.Drawing.Size(252, 31);
-            this.btncashin.TabIndex = 12;
-            this.btncashin.Text = "Cash In";
-            this.btncashin.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btncashin.UseVisualStyleBackColor = true;
-            this.btncashin.Click += new System.EventHandler(this.btncashin_Click);
+            this.btnLogout.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnLogout.FlatAppearance.BorderSize = 0;
+            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogout.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnLogout.Location = new System.Drawing.Point(0, 373);
+            this.btnLogout.Margin = new System.Windows.Forms.Padding(4);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Padding = new System.Windows.Forms.Padding(13, 0, 0, 0);
+            this.btnLogout.Size = new System.Drawing.Size(252, 31);
+            this.btnLogout.TabIndex = 13;
+            this.btnLogout.Text = "Log out";
+            this.btnLogout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // HomeUser
             // 
@@ -406,5 +425,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblBalance;
         private System.Windows.Forms.Button btncashin;
+        private System.Windows.Forms.Button btnLogout;
     }
 }

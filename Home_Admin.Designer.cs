@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home_Admin));
             this.sideMenu = new System.Windows.Forms.Panel();
+            this.btnlogout = new System.Windows.Forms.Button();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button4 = new System.Windows.Forms.Button();
@@ -58,6 +59,7 @@
             // 
             this.sideMenu.BackColor = System.Drawing.Color.Black;
             this.sideMenu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.sideMenu.Controls.Add(this.btnlogout);
             this.sideMenu.Controls.Add(this.pictureBox3);
             this.sideMenu.Controls.Add(this.panel1);
             this.sideMenu.Controls.Add(this.button4);
@@ -72,6 +74,23 @@
             this.sideMenu.Name = "sideMenu";
             this.sideMenu.Size = new System.Drawing.Size(189, 496);
             this.sideMenu.TabIndex = 0;
+            // 
+            // btnlogout
+            // 
+            this.btnlogout.BackColor = System.Drawing.Color.Black;
+            this.btnlogout.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnlogout.FlatAppearance.BorderSize = 0;
+            this.btnlogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnlogout.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnlogout.Location = new System.Drawing.Point(0, 246);
+            this.btnlogout.Name = "btnlogout";
+            this.btnlogout.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnlogout.Size = new System.Drawing.Size(189, 31);
+            this.btnlogout.TabIndex = 10;
+            this.btnlogout.Text = "Log out";
+            this.btnlogout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnlogout.UseVisualStyleBackColor = false;
+            this.btnlogout.Click += new System.EventHandler(this.btnlogout_Click_1);
             // 
             // pictureBox3
             // 
@@ -243,7 +262,7 @@
             this.lblUser.ForeColor = System.Drawing.Color.Black;
             this.lblUser.Location = new System.Drawing.Point(68, 26);
             this.lblUser.Name = "lblUser";
-            this.lblUser.Size = new System.Drawing.Size(78, 16);
+            this.lblUser.Size = new System.Drawing.Size(98, 20);
             this.lblUser.TabIndex = 1;
             this.lblUser.Text = "User ni ari";
             // 
@@ -283,7 +302,7 @@
             // 
             // Home_Admin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(880, 496);
             this.Controls.Add(this.panelMain);
@@ -325,5 +344,6 @@
         private System.Windows.Forms.Panel panelMain;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Button btnlogout;
     }
 }

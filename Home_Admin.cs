@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -12,13 +13,19 @@ namespace Finals
 {
     public partial class Home_Admin : Form
     {
+        
         private string _username;
+        Thread tologin;
         public Home_Admin(string username)
         {
             InitializeComponent();
             customizeDesign();
             _username = username; // Set _username to the passed parameter
             lblUser.Text = _username; // Set lblUser.Text to _username
+        }
+        public void gotologin(object obj)
+        {
+            Application.Run(new Form1());
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -131,6 +138,14 @@ namespace Finals
                 childForm.Show();
           }
 
-        
+   
+        private void btnlogout_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+            tologin = new Thread(gotologin);
+            tologin.SetApartmentState(ApartmentState.STA);
+            tologin.Start();
+        }
     }
-}
+    }
+
