@@ -20,6 +20,7 @@ namespace Finals
         SqlConnection con = new SqlConnection("Data Source=IVERSONKOBE\\SQLEXPRESS;Initial Catalog=NSDAP_APPAREL_dB;Integrated Security=True");
         string imgLoc = "";
         string description;
+        int currentValue;
         public addItems()
         {
             InitializeComponent();
@@ -57,7 +58,7 @@ namespace Finals
                 BinaryReader br = new BinaryReader(fs);
                 img = br.ReadBytes((int)fs.Length);
 
-                int quantity = Convert.ToInt32(txtquantity.Text);
+                int quantity = Convert.ToInt32(lblQuantity.Text);
 
                 SqlCommand insertToProducts = new SqlCommand("INSERT INTO Products (Name, Quantity, Category, Size, Price, Image_apparel) VALUES (@name, @quantity, @category, @size, @price, @img)", con);
 
@@ -168,26 +169,6 @@ namespace Finals
             }
         }
 
-        private void txtquantity_Enter(object sender, EventArgs e)
-        {
-            if (txtquantity.Text == "Quantity")
-            {
-                txtquantity.Text = "";
-                txtquantity.ForeColor = Color.Black; // Set the text color back to black for regular input
-            }
-        }
-
-        private void txtquantity_Leave(object sender, EventArgs e)
-        {
-            if (txtquantity.Text == "")
-            {
-                txtquantity.Text = "Quantity";
-                txtquantity.ForeColor = Color.Silver; // Set the text color back to black for regular input
-            }
-        }
-
-
-
 
         private void txtsize_Enter(object sender, EventArgs e)
         {
@@ -248,17 +229,6 @@ namespace Finals
                     }
                 }
 
-                if (!txtquantity.Bounds.Contains(e.Location))
-                {
-                    if (txtquantity.Text == "")
-                    {
-                        txtquantity.Text = "Quantity";
-                        txtquantity.ForeColor = Color.Silver;
-                    }
-                }
-
-             
-
                 if (!txtsize.Bounds.Contains(e.Location))
                 {
                     if (txtsize.Text == "")
@@ -284,7 +254,7 @@ namespace Finals
             int no;
             no = int.Parse(lblProduct_ID.Text);
             con.Open();
-            SqlCommand cmd = new SqlCommand("Update Products SET Name= '" + txtname.Text + "', Quantity ='" + txtquantity.Text + "', Category = '" + description+ "', Size ='" + txtsize.Text + "', Price ='"+txtprice.Text+"'  where Product_ID= '" + no + "'", con);
+            SqlCommand cmd = new SqlCommand("Update Products SET Name= '" + txtname.Text + "', Quantity ='" + lblQuantity.Text + "', Category = '" + description+ "', Size ='" + txtsize.Text + "', Price ='"+txtprice.Text+"'  where Product_ID= '" + no + "'", con);
             cmd.ExecuteNonQuery();
 
             MessageBox.Show("Successfully Updated! ", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -298,7 +268,7 @@ namespace Finals
         {
             lblProduct_ID.Text = dataGridView1.Rows[e.RowIndex].Cells["Product_ID"].Value.ToString();
             txtname.Text = dataGridView1.Rows[e.RowIndex].Cells["Name"].Value.ToString();
-            txtquantity.Text = dataGridView1.Rows[e.RowIndex].Cells["Quantity"].Value.ToString();
+        
             comboboxDescription.Text = dataGridView1.Rows[e.RowIndex].Cells["Category"].Value.ToString();
             txtsize.Text = dataGridView1.Rows[e.RowIndex].Cells["Size"].Value.ToString();
             txtprice.Text = dataGridView1.Rows[e.RowIndex].Cells["Price"].Value.ToString();
@@ -331,8 +301,6 @@ namespace Finals
                 }
             }
         }
-
-
         private void btndelete_Click(object sender, EventArgs e)
         {
             int no;
@@ -370,7 +338,8 @@ namespace Finals
                 case "Jacket":
                     loadDatagridJacket();
                     break;
-                default:
+               
+                case "All":
                     loadDatagrid();
                     break;
             }
@@ -395,8 +364,54 @@ namespace Finals
           
             }
         }
+
+        private void btnAddquantity_Click(object sender, EventArgs e)
+        {
+            try { 
+         
+
+            if (int.TryParse(lblQuantity.Text, out currentValue))
+            {
+                lblQuantity.Text = (currentValue + 1).ToString();
+            }
+            else
+            {
+                lblQuantity.Text = "1";
+            }
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred: " + ex.Message);
+            }
+        }
+
+    
+
+        private void btnMinusQuantity_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+
+                if (int.TryParse(lblQuantity.Text, out currentValue))
+                {
+                    lblQuantity.Text = (currentValue - 1).ToString();
+                }
+                else
+                {
+                    lblQuantity.Text = "1";
+                }
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred: " + ex.Message);
+            }
+        }
     }
-}
+    }
+
 
 
 

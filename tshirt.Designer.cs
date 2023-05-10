@@ -163,8 +163,8 @@
             // 
             // btnAddquantity
             // 
-            this.btnAddquantity.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnAddquantity.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddquantity.BackColor = System.Drawing.Color.Transparent;
+            this.btnAddquantity.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnAddquantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddquantity.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnAddquantity.Location = new System.Drawing.Point(121, 132);

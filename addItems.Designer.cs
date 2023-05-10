@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(addItems));
             this.txtsize = new System.Windows.Forms.TextBox();
-            this.txtquantity = new System.Windows.Forms.TextBox();
             this.btnadd = new System.Windows.Forms.Button();
             this.btnedit = new System.Windows.Forms.Button();
             this.picEmp = new System.Windows.Forms.PictureBox();
@@ -51,6 +50,10 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.comboboxDescription = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lblQuantity = new System.Windows.Forms.Label();
+            this.btnAddquantity = new System.Windows.Forms.Button();
+            this.btnMinusQuantity = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picEmp)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -75,21 +78,6 @@
             this.txtsize.Text = "Size";
             this.txtsize.Enter += new System.EventHandler(this.txtsize_Enter);
             this.txtsize.Leave += new System.EventHandler(this.txtsize_Leave);
-            // 
-            // txtquantity
-            // 
-            this.txtquantity.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtquantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtquantity.ForeColor = System.Drawing.Color.Silver;
-            this.txtquantity.Location = new System.Drawing.Point(69, 129);
-            this.txtquantity.Margin = new System.Windows.Forms.Padding(4);
-            this.txtquantity.Multiline = true;
-            this.txtquantity.Name = "txtquantity";
-            this.txtquantity.Size = new System.Drawing.Size(205, 25);
-            this.txtquantity.TabIndex = 4;
-            this.txtquantity.Text = "Quantity";
-            this.txtquantity.Enter += new System.EventHandler(this.txtquantity_Enter);
-            this.txtquantity.Leave += new System.EventHandler(this.txtquantity_Leave);
             // 
             // btnadd
             // 
@@ -287,6 +275,7 @@
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
+            "All",
             "T-Shirt",
             "Polo Shirt",
             "Jacket"});
@@ -324,12 +313,65 @@
             this.comboboxDescription.TabIndex = 15;
             this.comboboxDescription.SelectedIndexChanged += new System.EventHandler(this.comboboxDescription_SelectedIndexChanged);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(681, 468);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(44, 16);
+            this.label3.TabIndex = 16;
+            this.label3.Text = "label3";
+            // 
+            // lblQuantity
+            // 
+            this.lblQuantity.AutoSize = true;
+            this.lblQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblQuantity.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblQuantity.Location = new System.Drawing.Point(65, 127);
+            this.lblQuantity.Name = "lblQuantity";
+            this.lblQuantity.Size = new System.Drawing.Size(37, 20);
+            this.lblQuantity.TabIndex = 17;
+            this.lblQuantity.Text = "----";
+            // 
+            // btnAddquantity
+            // 
+            this.btnAddquantity.BackColor = System.Drawing.Color.Transparent;
+            this.btnAddquantity.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnAddquantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddquantity.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnAddquantity.Location = new System.Drawing.Point(235, 120);
+            this.btnAddquantity.Name = "btnAddquantity";
+            this.btnAddquantity.Size = new System.Drawing.Size(39, 34);
+            this.btnAddquantity.TabIndex = 18;
+            this.btnAddquantity.Text = "+";
+            this.btnAddquantity.UseVisualStyleBackColor = false;
+            this.btnAddquantity.Click += new System.EventHandler(this.btnAddquantity_Click);
+            // 
+            // btnMinusQuantity
+            // 
+            this.btnMinusQuantity.BackColor = System.Drawing.Color.Transparent;
+            this.btnMinusQuantity.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnMinusQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMinusQuantity.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnMinusQuantity.Location = new System.Drawing.Point(190, 120);
+            this.btnMinusQuantity.Name = "btnMinusQuantity";
+            this.btnMinusQuantity.Size = new System.Drawing.Size(39, 34);
+            this.btnMinusQuantity.TabIndex = 19;
+            this.btnMinusQuantity.Text = "-";
+            this.btnMinusQuantity.UseVisualStyleBackColor = false;
+
+            this.btnMinusQuantity.Click += new System.EventHandler(this.btnMinusQuantity_Click);
+            // 
             // addItems
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(23)))));
             this.ClientSize = new System.Drawing.Size(1217, 662);
+            this.Controls.Add(this.btnMinusQuantity);
+            this.Controls.Add(this.btnAddquantity);
+            this.Controls.Add(this.lblQuantity);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.comboboxDescription);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.comboBox1);
@@ -346,7 +388,6 @@
             this.Controls.Add(this.btndelete);
             this.Controls.Add(this.btnedit);
             this.Controls.Add(this.btnadd);
-            this.Controls.Add(this.txtquantity);
             this.Controls.Add(this.txtprice);
             this.Controls.Add(this.txtsize);
             this.Controls.Add(this.txtname);
@@ -370,7 +411,6 @@
 
         #endregion
         private System.Windows.Forms.TextBox txtsize;
-        private System.Windows.Forms.TextBox txtquantity;
         private System.Windows.Forms.Button btnadd;
         private System.Windows.Forms.Button btnedit;
         private System.Windows.Forms.PictureBox picEmp;
@@ -394,5 +434,9 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox comboboxDescription;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblQuantity;
+        private System.Windows.Forms.Button btnAddquantity;
+        private System.Windows.Forms.Button btnMinusQuantity;
     }
 }
