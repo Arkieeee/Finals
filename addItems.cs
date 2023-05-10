@@ -19,6 +19,7 @@ namespace Finals
     {
         SqlConnection con = new SqlConnection("Data Source=IVERSONKOBE\\SQLEXPRESS;Initial Catalog=NSDAP_APPAREL_dB;Integrated Security=True");
         string imgLoc = "";
+        string description;
         public addItems()
         {
             InitializeComponent();
@@ -62,7 +63,7 @@ namespace Finals
 
                 insertToProducts.Parameters.AddWithValue("@name", txtname.Text);
                 insertToProducts.Parameters.AddWithValue("@quantity", quantity);
-                insertToProducts.Parameters.AddWithValue("@category", txtCategory.Text);
+                insertToProducts.Parameters.AddWithValue("@category", description);
                 insertToProducts.Parameters.AddWithValue("@size", txtsize.Text);
                 insertToProducts.Parameters.AddWithValue("@price", Double.Parse(txtprice.Text));
                 insertToProducts.Parameters.AddWithValue("@img", img);
@@ -185,23 +186,8 @@ namespace Finals
             }
         }
 
-        private void txtdescription_Enter(object sender, EventArgs e)
-        {
-            if (txtCategory.Text == "Description")
-            {
-                txtCategory.Text = "";
-                txtCategory.ForeColor = Color.Black; // Set the text color back to black for regular input
-            }
-        }
 
-        private void txtdescription_Leave(object sender, EventArgs e)
-        {
-            if (txtCategory.Text == "")
-            {
-                txtCategory.Text = "Description";
-                txtCategory.ForeColor = Color.Silver; // Set the text color back to black for regular input
-            }
-        }
+
 
         private void txtsize_Enter(object sender, EventArgs e)
         {
@@ -271,14 +257,7 @@ namespace Finals
                     }
                 }
 
-                if (!txtCategory.Bounds.Contains(e.Location))
-                {
-                    if (txtCategory.Text == "")
-                    {
-                        txtCategory.Text = "Description";
-                        txtCategory.ForeColor = Color.Silver;
-                    }
-                }
+             
 
                 if (!txtsize.Bounds.Contains(e.Location))
                 {
@@ -305,7 +284,7 @@ namespace Finals
             int no;
             no = int.Parse(lblProduct_ID.Text);
             con.Open();
-            SqlCommand cmd = new SqlCommand("Update Products SET Name= '" + txtname.Text + "', Quantity ='" + txtquantity.Text + "', Category = '" + txtCategory.Text + "', Size ='" + txtsize.Text + "', Price ='"+txtprice.Text+"'  where Product_ID= '" + no + "'", con);
+            SqlCommand cmd = new SqlCommand("Update Products SET Name= '" + txtname.Text + "', Quantity ='" + txtquantity.Text + "', Category = '" + description+ "', Size ='" + txtsize.Text + "', Price ='"+txtprice.Text+"'  where Product_ID= '" + no + "'", con);
             cmd.ExecuteNonQuery();
 
             MessageBox.Show("Successfully Updated! ", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -320,7 +299,7 @@ namespace Finals
             lblProduct_ID.Text = dataGridView1.Rows[e.RowIndex].Cells["Product_ID"].Value.ToString();
             txtname.Text = dataGridView1.Rows[e.RowIndex].Cells["Name"].Value.ToString();
             txtquantity.Text = dataGridView1.Rows[e.RowIndex].Cells["Quantity"].Value.ToString();
-            txtCategory.Text = dataGridView1.Rows[e.RowIndex].Cells["Category"].Value.ToString();
+            comboboxDescription.Text = dataGridView1.Rows[e.RowIndex].Cells["Category"].Value.ToString();
             txtsize.Text = dataGridView1.Rows[e.RowIndex].Cells["Size"].Value.ToString();
             txtprice.Text = dataGridView1.Rows[e.RowIndex].Cells["Price"].Value.ToString();
 
@@ -394,6 +373,26 @@ namespace Finals
                 default:
                     loadDatagrid();
                     break;
+            }
+        }
+
+        private void comboboxDescription_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch(comboboxDescription.SelectedItem.ToString())
+            {
+                case "T-shirt":
+                    description = "T-shirt";
+                   
+                break;
+                case "Polo Shirt":
+                    description = "Polo Shirt";
+
+                break;
+                case "Jacket":
+                    description = "Jacket";
+
+                break;
+          
             }
         }
     }

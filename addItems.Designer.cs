@@ -32,7 +32,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(addItems));
             this.txtsize = new System.Windows.Forms.TextBox();
             this.txtquantity = new System.Windows.Forms.TextBox();
-            this.txtCategory = new System.Windows.Forms.TextBox();
             this.btnadd = new System.Windows.Forms.Button();
             this.btnedit = new System.Windows.Forms.Button();
             this.picEmp = new System.Windows.Forms.PictureBox();
@@ -51,6 +50,7 @@
             this.ordersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.comboboxDescription = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.picEmp)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -90,21 +90,6 @@
             this.txtquantity.Text = "Quantity";
             this.txtquantity.Enter += new System.EventHandler(this.txtquantity_Enter);
             this.txtquantity.Leave += new System.EventHandler(this.txtquantity_Leave);
-            // 
-            // txtCategory
-            // 
-            this.txtCategory.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCategory.ForeColor = System.Drawing.Color.Silver;
-            this.txtCategory.Location = new System.Drawing.Point(71, 167);
-            this.txtCategory.Margin = new System.Windows.Forms.Padding(4);
-            this.txtCategory.Multiline = true;
-            this.txtCategory.Name = "txtCategory";
-            this.txtCategory.Size = new System.Drawing.Size(204, 25);
-            this.txtCategory.TabIndex = 4;
-            this.txtCategory.Text = "Category";
-            this.txtCategory.Enter += new System.EventHandler(this.txtdescription_Enter);
-            this.txtCategory.Leave += new System.EventHandler(this.txtdescription_Leave);
             // 
             // btnadd
             // 
@@ -324,12 +309,28 @@
             this.label2.TabIndex = 14;
             this.label2.Text = "Filter";
             // 
+            // comboboxDescription
+            // 
+            this.comboboxDescription.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboboxDescription.FormattingEnabled = true;
+            this.comboboxDescription.Items.AddRange(new object[] {
+            "T-Shirt",
+            "Polo Shirt",
+            "Jacket"});
+            this.comboboxDescription.Location = new System.Drawing.Point(69, 168);
+            this.comboboxDescription.Margin = new System.Windows.Forms.Padding(4);
+            this.comboboxDescription.Name = "comboboxDescription";
+            this.comboboxDescription.Size = new System.Drawing.Size(205, 24);
+            this.comboboxDescription.TabIndex = 15;
+            this.comboboxDescription.SelectedIndexChanged += new System.EventHandler(this.comboboxDescription_SelectedIndexChanged);
+            // 
             // addItems
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(23)))));
             this.ClientSize = new System.Drawing.Size(1217, 662);
+            this.Controls.Add(this.comboboxDescription);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label1);
@@ -345,7 +346,6 @@
             this.Controls.Add(this.btndelete);
             this.Controls.Add(this.btnedit);
             this.Controls.Add(this.btnadd);
-            this.Controls.Add(this.txtCategory);
             this.Controls.Add(this.txtquantity);
             this.Controls.Add(this.txtprice);
             this.Controls.Add(this.txtsize);
@@ -371,7 +371,6 @@
         #endregion
         private System.Windows.Forms.TextBox txtsize;
         private System.Windows.Forms.TextBox txtquantity;
-        private System.Windows.Forms.TextBox txtCategory;
         private System.Windows.Forms.Button btnadd;
         private System.Windows.Forms.Button btnedit;
         private System.Windows.Forms.PictureBox picEmp;
@@ -394,5 +393,6 @@
       
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox comboboxDescription;
     }
 }
